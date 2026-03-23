@@ -7,3 +7,5 @@ __pycache__/
 .claude/
 evidence/**/*.png
 evidence/**/*.jpg
+.venv/
+cache/
