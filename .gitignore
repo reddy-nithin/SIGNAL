@@ -1,0 +1,9 @@
+datasets/
+models/
+__pycache__/
+*.pyc
+.env
+*.cache
+.claude/
+evidence/**/*.png
+evidence/**/*.jpg
