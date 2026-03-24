@@ -1,0 +1,38 @@
+PHARMACOLOGY: AMPHETAMINE
+
+Identifiers: RxCUI=723, ChEMBL=CHEMBL405, PubChem CID=3007
+Molecular: C9H13N, MW=135.21
+Brand Names: Adderall (mixed amphetamine salts), Dexedrine (dextroamphetamine), Vyvanse (lisdexamfetamine prodrug)
+DEA Schedule: II
+
+Amphetamine is a synthetic phenethylamine and the prototypical CNS stimulant. It exists as two enantiomers: dextroamphetamine (d-amphetamine, more dopaminergic) and levoamphetamine (l-amphetamine, more noradrenergic). Adderall contains a 3:1 ratio of d:l amphetamine salts.
+
+Mechanism:
+  - Monoamine releasing agent: reverses DAT, NET, and weakly SERT
+  - VMAT2 inhibitor: releases vesicular dopamine stores
+  - Weak MAO inhibitor (MAO-A and MAO-B)
+  - TAAR1 agonist: modulates dopaminergic signaling
+  - Net effect: increased synaptic DA and NE (less serotonergic than methamphetamine or MDMA)
+
+Pharmacokinetics:
+  Onset: oral — 30-60 minutes; Vyvanse (prodrug) — 1-2 hours
+  Half-life: 10-13 hours (d-amphetamine), 11-14 hours (l-amphetamine)
+  Duration: 4-6 hours (IR), 10-12 hours (XR/Vyvanse)
+  Metabolism: CYP2D6 (4-hydroxylation, minor), primarily renal excretion of unchanged drug (pH-dependent)
+
+Therapeutic Use vs Diversion:
+  - FDA-approved: ADHD (children and adults), narcolepsy
+  - Therapeutic doses (5-40 mg/day): controlled dopamine increase, improved attention, reduced impulsivity
+  - Diversion patterns: college students (academic performance), shift workers, weight loss
+  - Dose escalation: recreational users take 60-200+ mg for euphoria, energy, and extended wakefulness
+
+Toxicology:
+  - Acute: hypertension, tachycardia, hyperthermia, seizures, rhabdomyolysis
+  - Chronic: weight loss, insomnia, psychosis (dopaminergic), cardiomyopathy (rare at therapeutic doses)
+  - Psychosis: amphetamine-induced psychosis (paranoia, hallucinations) is clinically indistinguishable from paranoid schizophrenia, resolves with cessation
+  - LD50 (rat, oral): 96 mg/kg
+
+Street Names: "addy", "addies", "speed" (ambiguous with methamphetamine), "uppers", "study buddies"
+
+Social Media Context:
+Amphetamine references in social media often relate to ADHD medication diversion rather than illicit drug use. Context is critical: "took my addy for the exam" (Experimentation/Regular Use) differs from "been tweaking on addies for 3 days" (Dependence/Crisis).

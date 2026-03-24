@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-03-08T16:54:51.585751+00:00",
-  "total_chunks": 58,
-  "total_tokens_estimate": 16950,
+  "total_chunks": 84,
+  "total_tokens_estimate": 32527,
   "chunks": [
     {
       "filename": "classification_categories.txt",
@@ -408,6 +408,188 @@
       "type": "demographics",
       "drug_name": null,
       "rxcui": null
+    },
+    {
+      "filename": "alcohol_pharmacology.txt",
+      "token_estimate": 813,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_withdrawal.txt",
+      "token_estimate": 594,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_toxicology.txt",
+      "token_estimate": 565,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_interactions.txt",
+      "token_estimate": 598,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_treatment.txt",
+      "token_estimate": 630,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_epidemiology.txt",
+      "token_estimate": 465,
+      "type": "epidemiology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_metabolism_genetics.txt",
+      "token_estimate": 451,
+      "type": "pharmacology",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_safety_profile.txt",
+      "token_estimate": 554,
+      "type": "safety",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_classification.txt",
+      "token_estimate": 402,
+      "type": "classification",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "alcohol_adverse_events.txt",
+      "token_estimate": 556,
+      "type": "faers_signals",
+      "drug_name": "alcohol",
+      "rxcui": null
+    },
+    {
+      "filename": "benzo_pharmacology.txt",
+      "token_estimate": 599,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "benzo_withdrawal.txt",
+      "token_estimate": 638,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "benzo_interactions.txt",
+      "token_estimate": 554,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "benzo_treatment.txt",
+      "token_estimate": 535,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "benzo_adverse_events.txt",
+      "token_estimate": 645,
+      "type": "faers_signals",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "ingredient_alprazolam.txt",
+      "token_estimate": 515,
+      "type": "pharmacology",
+      "drug_name": "alprazolam",
+      "rxcui": "596"
+    },
+    {
+      "filename": "ingredient_clonazepam.txt",
+      "token_estimate": 459,
+      "type": "pharmacology",
+      "drug_name": "clonazepam",
+      "rxcui": "2598"
+    },
+    {
+      "filename": "ingredient_diazepam.txt",
+      "token_estimate": 623,
+      "type": "pharmacology",
+      "drug_name": "diazepam",
+      "rxcui": "3322"
+    },
+    {
+      "filename": "stimulant_pharmacology.txt",
+      "token_estimate": 609,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "stimulant_interactions.txt",
+      "token_estimate": 629,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "stimulant_treatment.txt",
+      "token_estimate": 822,
+      "type": "pharmacology",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "stimulant_adverse_events.txt",
+      "token_estimate": 943,
+      "type": "faers_signals",
+      "drug_name": null,
+      "rxcui": null
+    },
+    {
+      "filename": "ingredient_amphetamine.txt",
+      "token_estimate": 578,
+      "type": "pharmacology",
+      "drug_name": "amphetamine",
+      "rxcui": "725"
+    },
+    {
+      "filename": "ingredient_cocaine.txt",
+      "token_estimate": 586,
+      "type": "pharmacology",
+      "drug_name": "cocaine",
+      "rxcui": "2551"
+    },
+    {
+      "filename": "ingredient_mdma.txt",
+      "token_estimate": 653,
+      "type": "pharmacology",
+      "drug_name": "mdma",
+      "rxcui": null
+    },
+    {
+      "filename": "ingredient_methamphetamine.txt",
+      "token_estimate": 564,
+      "type": "pharmacology",
+      "drug_name": "methamphetamine",
+      "rxcui": "6816"
     }
   ]
 }

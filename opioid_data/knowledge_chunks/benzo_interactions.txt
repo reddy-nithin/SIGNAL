@@ -1,0 +1,29 @@
+BENZODIAZEPINE DRUG INTERACTIONS
+
+Benzodiazepines + Opioids (FDA BLACK BOX WARNING):
+In 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respiratory depression that is frequently fatal.
+  - CDC data: benzodiazepines are co-involved in approximately 16% of opioid overdose deaths
+  - Naloxone partially reverses the opioid component but does NOT reverse benzodiazepine effects
+  - Flumazenil (benzodiazepine antagonist) is available but rarely used in overdose due to seizure precipitation risk in dependent patients
+  - Risk is highest with short-acting, high-potency combinations (alprazolam + fentanyl)
+  - Street drug context: "bars and blues" (Xanax + counterfeit oxycodone/fentanyl) is an extremely dangerous poly-drug pattern
+
+Benzodiazepines + Alcohol:
+Both modulate GABA-A receptors through different binding sites, producing additive-to-synergistic CNS depression. Combined use dramatically increases:
+  - Respiratory depression risk
+  - Amnesia/blackout risk
+  - Fall and injury risk (especially elderly)
+  - Aspiration risk
+Cross-tolerance exists: alcoholics may require higher benzodiazepine doses for therapeutic effect, creating a narrow therapeutic window.
+
+Benzodiazepines + Gabapentinoids (pregabalin, gabapentin):
+Emerging concern. Both enhance GABAergic transmission (different mechanisms). Combined use increases sedation, respiratory depression, and overdose risk. FDA issued a warning in 2019.
+
+CYP3A4 Interactions:
+Benzodiazepines metabolized by CYP3A4 (alprazolam, midazolam, triazolam) have clinically significant interactions with:
+  - Inhibitors (increase benzo levels): ketoconazole, itraconazole, clarithromycin, ritonavir, grapefruit juice
+  - Inducers (decrease benzo levels): rifampin, carbamazepine, phenytoin
+  Note: lorazepam and oxazepam bypass CYP3A4 and are preferred when drug interactions are a concern
+
+Benzodiazepines + Z-drugs (zolpidem, zaleplon):
+Both act on GABA-A receptors. Concurrent use provides no clinical benefit and increases risk of complex sleep behaviors, respiratory depression, and next-day impairment.

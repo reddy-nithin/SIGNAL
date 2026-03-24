@@ -1,0 +1,34 @@
+ALCOHOL USE DISORDER TREATMENT
+
+FDA-Approved Medications:
+
+Naltrexone (oral 50 mg/day or IM depot 380 mg/month):
+  Mechanism: mu-opioid receptor antagonist. Blocks ethanol-induced beta-endorphin release, reducing the rewarding effects of drinking.
+  Efficacy: reduces heavy drinking days by approximately 25%, NNT (number needed to treat) ~12 for preventing return to any drinking.
+  Key consideration: contraindicated in patients currently on opioid therapy or in acute opioid withdrawal. Must be opioid-free for 7-10 days before initiation.
+  Relevance to SIGNAL: naltrexone mention in social media posts is a RECOVERY indicator, not a substance misuse signal.
+
+Acamprosate (666 mg three times daily):
+  Mechanism: modulates NMDA glutamate receptors and GABA-A receptors, partially normalizing the hyperexcitable state of the post-alcoholic brain.
+  Efficacy: increases abstinence rates, most effective in maintaining abstinence (vs naltrexone which reduces heavy drinking).
+  Key consideration: renally eliminated, dose-adjust for renal impairment. Does not interact with opioids.
+
+Disulfiram (250 mg/day):
+  Mechanism: irreversible ALDH2 inhibitor. Causes accumulation of acetaldehyde upon alcohol ingestion, producing severe nausea, flushing, tachycardia, hypotension (disulfiram-ethanol reaction).
+  Efficacy: effective only when supervised administration is ensured (compliance is the main limitation).
+  Key consideration: hepatotoxicity risk, requires liver function monitoring. Social media mentions may indicate early Recovery stage.
+
+Off-Label Medications:
+  - Gabapentin: reduces craving and anxiety, especially in patients with concurrent withdrawal symptoms
+  - Topiramate: reduces heavy drinking days, may assist with weight management
+  - Baclofen: GABA-B agonist, some evidence for reducing craving in patients with liver disease
+
+Non-Pharmacological Treatments:
+  - Cognitive Behavioral Therapy (CBT): most evidence-based psychotherapy
+  - Motivational Enhancement Therapy (MET): effective for ambivalent patients
+  - 12-Step Facilitation: Alcoholics Anonymous integration
+  - SMART Recovery: cognitive-behavioral self-management approach
+  - Contingency Management: incentive-based abstinence reinforcement
+
+Medical Detoxification:
+Supervised withdrawal using benzodiazepine taper (diazepam, chlordiazepoxide, or lorazepam) is standard of care for moderate-to-severe alcohol withdrawal. Symptom-triggered dosing based on CIWA-Ar scores reduces total benzodiazepine exposure and duration of treatment.

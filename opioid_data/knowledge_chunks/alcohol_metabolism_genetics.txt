@@ -1,0 +1,21 @@
+ALCOHOL METABOLISM GENETICS
+
+ADH/ALDH Polymorphisms:
+Genetic variation in alcohol-metabolizing enzymes significantly affects drinking behavior, alcohol-related organ damage, and AUD risk across populations.
+
+ADH1B (Alcohol Dehydrogenase 1B):
+  - ADH1B*1: standard activity (common in European populations)
+  - ADH1B*2 (His47Arg): rapid ethanol oxidation, produces acetaldehyde faster. Prevalence: ~90% in East Asian populations, ~15-25% in European populations. Associated with REDUCED AUD risk due to aversive acetaldehyde accumulation.
+  - ADH1B*3 (Arg369Cys): rapid oxidation, found primarily in populations of African descent (~15-25%). Protective against AUD.
+
+ALDH2 (Aldehyde Dehydrogenase 2):
+  - ALDH2*1: normal activity (functional acetaldehyde clearance)
+  - ALDH2*2 (Glu504Lys): dramatically reduced or absent ALDH2 activity. Prevalence: ~30-40% of East Asian populations, rare in other populations. Heterozygotes (ALDH2*1/*2) have ~10% residual activity; homozygotes (ALDH2*2/*2) have near-zero activity.
+  - ALDH2*2 carriers experience "Asian flush reaction": facial flushing, nausea, tachycardia, headache after even small amounts of alcohol due to acetaldehyde accumulation.
+  - ALDH2*2 homozygotes rarely develop AUD (strong aversive response).
+  - ALDH2*2 heterozygotes who drink despite flushing are at INCREASED risk of esophageal cancer due to chronic acetaldehyde exposure.
+
+Clinical Relevance:
+  - Disulfiram pharmacologically mimics the ALDH2*2 phenotype by inhibiting ALDH2.
+  - CYP2E1 induction in chronic drinkers creates an alternative metabolic pathway that generates reactive oxygen species, increasing hepatotoxicity independent of ADH/ALDH genotype.
+  - Pharmacogenomic testing for ADH1B/ALDH2 is not yet standard practice but may inform treatment selection in the future.

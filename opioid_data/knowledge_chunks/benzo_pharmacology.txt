@@ -1,0 +1,32 @@
+PHARMACOLOGY: BENZODIAZEPINES (CLASS OVERVIEW)
+
+Drug Class: sedative-hypnotic, anxiolytic, anticonvulsant, skeletal muscle relaxant
+DEA Schedule: Schedule IV (all benzodiazepines)
+Chemical structure: 1,4-benzodiazepine ring fused to a diazepine ring
+
+Primary Mechanism — GABA-A Positive Allosteric Modulation:
+Benzodiazepines bind to the benzodiazepine binding site (alpha/gamma subunit interface) on GABA-A receptors. They do NOT directly open the chloride channel — they increase the FREQUENCY of chloride channel opening when GABA is bound (contrast with barbiturates, which increase DURATION). This allosteric mechanism provides a ceiling effect that makes benzodiazepines safer in isolation than barbiturates, but dangerous in combination with other GABA-A modulators (alcohol, opioids).
+
+GABA-A Receptor Subtype Selectivity (clinical relevance):
+  - Alpha-1 containing: sedation, amnesia, anticonvulsant effects (most benzodiazepines)
+  - Alpha-2 containing: anxiolysis, muscle relaxation (therapeutic target)
+  - Alpha-3 containing: muscle relaxation
+  - Alpha-5 containing: memory and cognition (mediates amnestic effects)
+All classical benzodiazepines are non-selective across alpha subtypes, explaining their broad effect profile.
+
+Pharmacokinetic Classification:
+  Short-acting (t½ < 12h): triazolam (2-5h), midazolam (1.5-2.5h), alprazolam (6-12h)
+  Intermediate-acting (t½ 12-40h): lorazepam (10-20h), clonazepam (18-50h), temazepam (8-22h)
+  Long-acting (t½ > 40h): diazepam (20-100h including active metabolites), chlordiazepoxide (24-48h)
+
+Clinical relevance of half-life:
+  - Short-acting agents have higher abuse potential (rapid onset, faster reinforcement)
+  - Long-acting agents preferred for withdrawal management (smoother taper)
+  - Active metabolites (desmethyldiazepam from diazepam) can accumulate in elderly and hepatically impaired
+
+Metabolism:
+Most benzodiazepines undergo hepatic CYP3A4 and CYP2C19 metabolism via oxidation and glucuronidation.
+Exceptions: lorazepam, oxazepam, temazepam bypass CYP oxidation (direct glucuronidation by UGT) — preferred in hepatic impairment and elderly.
+
+Cross-Tolerance:
+Benzodiazepines exhibit cross-tolerance with alcohol and barbiturates (shared GABA-A mechanism). This is therapeutically exploited in alcohol withdrawal treatment (benzodiazepine substitution) but clinically dangerous when substances are co-ingested.

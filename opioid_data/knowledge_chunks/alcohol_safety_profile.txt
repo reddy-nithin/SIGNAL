@@ -1,0 +1,33 @@
+ALCOHOL SAFETY PROFILE
+
+Regulatory Status:
+Ethanol is a legal substance in most jurisdictions with age-based restrictions (21+ in the US). Unlike prescription drugs, no FDA-approved labeling exists for recreational alcohol. Safety warnings come from the Surgeon General, NIAAA, and product-specific label requirements.
+
+Pregnancy Warning — Fetal Alcohol Spectrum Disorders (FASD):
+  - No safe level of alcohol consumption during pregnancy has been established (Surgeon General, ACOG)
+  - Fetal Alcohol Syndrome (FAS): most severe form — facial dysmorphology, growth restriction, CNS damage, intellectual disability
+  - FASD prevalence: estimated 1-5% of all births in the US
+  - Alcohol is the leading preventable cause of intellectual disability
+  - First trimester exposure carries highest risk for structural defects; third trimester for brain growth
+
+Driving Impairment:
+  - BAC 0.05%: measurable impairment in divided attention and reaction time
+  - BAC 0.08%: legal per se limit in all US states; significant impairment in steering, braking, lane tracking
+  - BAC 0.10%: 6-12x increased crash risk relative to sober driving
+  - BAC 0.15%: 25x increased crash risk; visual and auditory processing severely impaired
+
+Occupational Safety:
+  - Second most common substance detected in workplace drug testing (after cannabis)
+  - DOT regulations require BAC <0.02% for safety-sensitive positions
+  - Post-accident testing is standard in transportation, construction, healthcare
+
+Labeling Requirements:
+  - Surgeon General's Warning required on all alcoholic beverage containers since 1989
+  - Caloric content labeling not currently required (under review)
+  - Standard drink definition: 14 g pure alcohol (12 oz beer at 5%, 5 oz wine at 12%, 1.5 oz spirits at 40%)
+
+Vulnerable Populations:
+  - Adolescents: developing prefrontal cortex increases impulsivity; early drinking onset (before 15) associated with 4x increased AUD risk
+  - Elderly: decreased hepatic metabolism, increased drug interactions, fall risk, cognitive impairment
+  - Hepatic/renal impairment: reduced clearance, increased sensitivity
+  - Co-occurring mental health disorders: 40% of individuals with AUD have a comorbid psychiatric disorder

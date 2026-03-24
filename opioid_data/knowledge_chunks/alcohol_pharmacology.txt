@@ -1,0 +1,43 @@
+PHARMACOLOGY: ETHANOL (ALCOHOL)
+
+Identifiers: PubChem CID=702, ChEBI=16236, DrugBank=DB00898
+Molecular: C2H5OH (CH3CH2OH), MW=46.07
+
+Primary Mechanism — GABA-A Positive Allosteric Modulation:
+Ethanol enhances inhibitory neurotransmission by potentiating GABA-A receptor chloride currents. It is a positive allosteric modulator (PAM), not a direct agonist — it increases the frequency and duration of chloride channel opening when GABA is already bound. At higher concentrations (>100 mM), ethanol may directly gate the receptor. This GABA-A potentiation produces sedation, anxiolysis, motor impairment, and at high doses, respiratory depression and coma.
+
+Secondary Mechanism — NMDA Receptor Antagonism:
+Ethanol inhibits excitatory NMDA glutamate receptors, reducing calcium influx and excitatory neurotransmission. This contributes to cognitive impairment and amnesia (blackouts). Chronic alcohol exposure upregulates NMDA receptors, which is why abrupt cessation causes glutamate-mediated hyperexcitability — the basis of withdrawal seizures and delirium tremens.
+
+Additional Targets:
+  - Dopamine: increases mesolimbic dopamine release (reward/reinforcement)
+  - Serotonin: enhances 5-HT3 receptor activity
+  - Endogenous opioids: stimulates beta-endorphin release (basis for naltrexone efficacy in treatment)
+  - Glycine receptors: potentiation at supraspinal sites
+
+Metabolism — ADH/ALDH Pathway:
+Ethanol is primarily metabolized in the liver via two sequential oxidation steps:
+  Step 1: Ethanol → acetaldehyde (via alcohol dehydrogenase, ADH)
+  Step 2: Acetaldehyde → acetate (via aldehyde dehydrogenase, ALDH2)
+Acetaldehyde is highly toxic and carcinogenic (IARC Group 1). Accumulation causes flushing, nausea, tachycardia, and headache. Disulfiram (Antabuse) exploits this by inhibiting ALDH2.
+Minor pathways: CYP2E1 (microsomal ethanol oxidizing system, induced by chronic use) and catalase (peroxisomal). CYP2E1 induction increases reactive oxygen species and hepatotoxicity risk.
+Elimination rate: approximately 7-10 g/hour (one standard drink per hour) via zero-order kinetics.
+
+Blood Alcohol Concentration (BAC) Thresholds:
+  0.02% — mild relaxation, slight warmth
+  0.05% — lowered inhibitions, impaired judgment
+  0.08% — legal impairment limit (US), motor coordination deficits
+  0.15% — significant impairment, dysarthria, ataxia
+  0.20% — confusion, nausea, blackout risk
+  0.30% — stupor, severe respiratory depression risk
+  0.35-0.40% — coma threshold, potentially fatal
+  >0.40% — LD50 range, respiratory arrest, death
+
+Toxicology:
+  LD50 (rat, oral): 7,060 mg/kg
+  Estimated human lethal BAC: 0.40-0.50%
+  Therapeutic index: very narrow for intoxication vs lethality
+  Danger level: High (narrow margin between recreational dose and lethal dose, especially with CNS depressant co-ingestion)
+
+Opioid Interaction Risk:
+Ethanol + opioids is one of the most dangerous drug combinations. Both potentiate respiratory depression through complementary mechanisms (GABA enhancement + mu-receptor activation). FAERS data and clinical literature consistently show elevated mortality when opioids are combined with alcohol. CDC reports that alcohol is present in approximately 15-20% of opioid overdose deaths.

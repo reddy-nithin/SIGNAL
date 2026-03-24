@@ -1,0 +1,42 @@
+BENZODIAZEPINE WITHDRAWAL SYNDROME
+
+Benzodiazepine withdrawal, like alcohol withdrawal, can be life-threatening. Seizures and status epilepticus are the primary lethal risks. Protracted withdrawal syndrome is a distinctive feature that differentiates benzodiazepine dependence from most other substances.
+
+Pathophysiology:
+Chronic benzodiazepine exposure causes GABA-A receptor downregulation and conformational changes, reducing GABAergic inhibition. Concurrent glutamatergic upregulation creates a hyperexcitable state upon drug cessation — mechanistically identical to alcohol withdrawal.
+
+Acute Withdrawal Timeline (abrupt cessation of short-acting agents):
+  1-2 days: anxiety, insomnia, irritability, restlessness
+  2-4 days: tremor, diaphoresis, tachycardia, hypertension, nausea
+  3-7 days: seizures (peak risk), perceptual disturbances, psychosis (rare)
+  Note: long-acting agents (diazepam) may have delayed onset (5-7 days to peak)
+
+Protracted Withdrawal Syndrome (unique to benzodiazepines):
+  Duration: weeks to months after acute withdrawal resolves (some symptoms persist 6-12 months)
+  Symptoms: anxiety, insomnia, cognitive difficulties, depersonalization, tinnitus, paresthesias, muscle tension, GI disturbances
+  Prevalence: estimated 10-15% of long-term users
+  Mechanism: slow recovery of GABA-A receptor sensitivity after prolonged allosteric modulation
+
+Risk Factors for Severe Withdrawal:
+  - High-dose use (>40 mg diazepam equivalents/day)
+  - Long duration of use (>6 months)
+  - Short-acting agent use (alprazolam highest risk)
+  - History of withdrawal seizures
+  - Concurrent alcohol dependence
+  - Abrupt discontinuation (vs gradual taper)
+
+Ashton Manual Taper Protocol (gold standard):
+Professor C. Heather Ashton's protocol recommends:
+  1. Convert to equivalent diazepam dose (long half-life enables smooth taper)
+  2. Reduce by 1-2 mg diazepam equivalent every 1-2 weeks
+  3. Slower reductions at lower doses (final 25% is hardest)
+  4. Total taper duration: typically 4-12 months for long-term users
+  5. Symptom-guided pace — slow down if withdrawal symptoms are intolerable
+
+Diazepam Equivalence Table:
+  alprazolam 0.5 mg ≈ diazepam 10 mg
+  clonazepam 0.5 mg ≈ diazepam 10 mg
+  lorazepam 1 mg ≈ diazepam 10 mg
+
+Comparison to Opioid Withdrawal:
+Like alcohol withdrawal, benzodiazepine withdrawal can cause fatal seizures. Opioid withdrawal is rarely fatal. This distinction matters for clinical prioritization — benzodiazepine dependent patients require medically supervised taper, not abrupt cessation.

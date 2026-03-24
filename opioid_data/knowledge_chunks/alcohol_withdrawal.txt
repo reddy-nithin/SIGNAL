@@ -1,0 +1,36 @@
+ALCOHOL WITHDRAWAL SYNDROME
+
+Alcohol withdrawal is a medical emergency. It is one of very few substance withdrawals that can be directly fatal (alongside benzodiazepine withdrawal). Mortality from untreated delirium tremens is 15-40%.
+
+Pathophysiology:
+Chronic alcohol exposure downregulates GABA-A receptors and upregulates NMDA glutamate receptors (neuroadaptation). Upon cessation, the resulting imbalance causes CNS hyperexcitability: unopposed glutamate excitation with insufficient GABAergic inhibition. This produces the hallmark symptoms of autonomic instability, seizures, and delirium.
+
+Timeline of Withdrawal:
+  6-12 hours: tremor, anxiety, nausea, insomnia, tachycardia, diaphoresis
+  12-24 hours: alcoholic hallucinosis (visual, auditory, tactile hallucinations with intact sensorium)
+  24-48 hours: withdrawal seizures (generalized tonic-clonic, may cluster)
+  48-96 hours: delirium tremens (DTs) — confusion, agitation, autonomic storm, fever, hallucinations, potentially fatal
+
+Risk Factors for Severe Withdrawal:
+  - History of previous withdrawal seizures or DTs
+  - Heavy daily consumption (>8 drinks/day)
+  - Duration of heavy use (>10 years)
+  - Concurrent medical illness or malnutrition
+  - Older age
+  - Co-use of benzodiazepines (cross-tolerance complicates withdrawal)
+
+Clinical Assessment — CIWA-Ar:
+The Clinical Institute Withdrawal Assessment for Alcohol (revised) scores 10 symptoms on a 0-7 scale. Total score guides treatment intensity:
+  <10: mild withdrawal, may not require pharmacotherapy
+  10-18: moderate withdrawal, consider benzodiazepine treatment
+  >18: severe withdrawal, aggressive treatment required
+
+Treatment:
+  - Benzodiazepines: first-line pharmacotherapy (diazepam or chlordiazepoxide preferred for long half-life; lorazepam if hepatic impairment)
+  - Thiamine: 100-500 mg IV before glucose to prevent Wernicke encephalopathy
+  - Fluids and electrolytes: correct hypomagnesemia, hypokalemia
+  - Phenobarbital: adjunct for refractory DTs
+  - ICU admission for DTs with hemodynamic instability
+
+Comparison to Opioid Withdrawal:
+Opioid withdrawal, while extremely uncomfortable, is rarely directly fatal in healthy adults. Alcohol withdrawal can kill through seizures, cardiac arrhythmia, or autonomic collapse. This distinction is critical for clinical triage — alcohol dependence cessation requires medical supervision.

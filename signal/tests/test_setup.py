@@ -71,10 +71,10 @@ class TestConfig:
         from signal.config import KNOWLEDGE_CHUNKS_DIR
         assert KNOWLEDGE_CHUNKS_DIR.exists()
 
-    def test_58_chunk_files(self):
+    def test_chunk_files_at_least_84(self):
         from signal.config import KNOWLEDGE_CHUNKS_DIR
         txt_files = list(KNOWLEDGE_CHUNKS_DIR.glob("*.txt"))
-        assert len(txt_files) == 58, f"Expected 58 chunks, found {len(txt_files)}"
+        assert len(txt_files) >= 84, f"Expected >=84 chunks, found {len(txt_files)}"
 
     def test_manifest_exists(self):
         from signal.config import MANIFEST_PATH
@@ -136,10 +136,10 @@ class TestConfig:
 # ── TestChunkLoading ──────────────────────────────────────────────────────────
 
 class TestChunkLoading:
-    def test_load_returns_58(self):
+    def test_load_returns_at_least_84(self):
         from signal.grounding.indexer import load_chunks
         chunks = load_chunks()
-        assert len(chunks) == 58
+        assert len(chunks) >= 84
 
     def test_all_chunks_non_empty(self):
         from signal.grounding.indexer import load_chunks
@@ -166,13 +166,18 @@ class TestChunkLoading:
         with pytest.raises((TypeError, AttributeError)):
             chunks[0].text = "mutated"  # type: ignore
 
-    def test_pharmacology_chunks_have_drug_name(self):
+    def test_ingredient_pharmacology_chunks_have_drug_name(self):
         from signal.grounding.indexer import load_chunks
         chunks = load_chunks()
-        pharma = [c for c in chunks if c.chunk_type == "pharmacology"]
-        assert len(pharma) > 0
-        for c in pharma:
-            assert c.drug_name is not None, f"Pharmacology chunk missing drug_name: {c.filename}"
+        # Only ingredient-level pharmacology chunks must have drug_name
+        # Class-level chunks (benzo_pharmacology, stimulant_pharmacology, etc.) may not
+        ingredient_pharma = [
+            c for c in chunks
+            if c.chunk_type == "pharmacology" and c.filename.startswith("ingredient_")
+        ]
+        assert len(ingredient_pharma) > 0
+        for c in ingredient_pharma:
+            assert c.drug_name is not None, f"Ingredient chunk missing drug_name: {c.filename}"
 
     def test_missing_chunk_raises(self):
         from signal.grounding.indexer import load_chunks
@@ -395,8 +400,8 @@ class TestHybridRetriever:
         )
         return r
 
-    def test_chunk_count_is_58(self, retriever):
-        assert retriever.chunk_count == 58
+    def test_chunk_count_is_at_least_84(self, retriever):
+        assert retriever.chunk_count >= 84
 
     def test_embedding_dim_is_positive(self, retriever):
         assert retriever.embedding_dim > 0

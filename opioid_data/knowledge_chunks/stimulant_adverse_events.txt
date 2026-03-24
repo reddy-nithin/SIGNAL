@@ -1,0 +1,49 @@
+STIMULANT ADVERSE EVENT PROFILE
+
+This profile summarizes key adverse events associated with stimulant use, curated from FDA labels, NIDA reports, and clinical literature. Format follows FAERS signal reporting conventions for consistency with opioid adverse event data.
+
+Cardiovascular Adverse Events (most clinically significant):
+  - Acute myocardial infarction: cocaine causes coronary vasospasm + accelerated atherosclerosis; methamphetamine causes catecholamine-induced cardiomyopathy
+  - Stroke: both hemorrhagic (hypertensive crisis) and ischemic (vasospasm); cocaine-related stroke risk 6.4x baseline within 24 hours of use
+  - Arrhythmias: QT prolongation, ventricular tachycardia, ventricular fibrillation; cocaine blocks sodium channels (local anesthetic effect on myocardium)
+  - Aortic dissection: associated with acute cocaine use and severe hypertension
+  - Cardiomyopathy: methamphetamine-associated cardiomyopathy (METH-CM) in 40% of chronic users; dilated phenotype, often reversible with abstinence
+  - Endocarditis: IV stimulant use associated with right-sided bacterial endocarditis
+
+Neurological Adverse Events:
+  - Seizures: dose-dependent, more common with cocaine (lowers seizure threshold)
+  - Neurotoxicity: methamphetamine causes dopaminergic/serotonergic neuron damage, detectable on neuroimaging as reduced DAT density
+  - Psychosis: stimulant-induced psychosis (paranoia, hallucinations, delusions) in 15-40% of chronic users; cocaine and methamphetamine
+  - Serotonin syndrome: MDMA-specific, caused by excessive 5-HT release; symptoms include hyperthermia >41C, rigidity, altered mental status
+  - Choreoathetoid movements: "crack dancing" or "tweaking" — involuntary movements with chronic use
+  - Cognitive decline: executive function, memory, and attention deficits with chronic methamphetamine use
+
+Hyperthermia and Metabolic Events:
+  - Hyperthermia: core body temperature >40C, especially with MDMA in hot environments (clubs, festivals)
+  - Rhabdomyolysis: skeletal muscle breakdown from hyperthermia, agitation, or seizures
+  - Hyponatremia: MDMA-specific, caused by excessive water intake + SIADH; can cause fatal cerebral edema
+  - Metabolic acidosis: in severe intoxication
+
+Psychiatric Adverse Events:
+  - Stimulant-induced psychosis: paranoid ideation, visual/tactile hallucinations ("formication" — sensation of insects crawling under skin)
+  - Depression: post-use "crash" with profound anhedonia; chronic use depletes monoamine reserves
+  - Anxiety and panic attacks: sympathomimetic activation
+  - Suicidality: increased risk during post-stimulant depression phase
+  - Sleep disorders: severe insomnia during use, hypersomnia during withdrawal
+
+Pulmonary Adverse Events:
+  - "Crack lung": acute eosinophilic pneumonitis from smoked cocaine
+  - Diffuse alveolar hemorrhage: cocaine-associated
+  - Pneumothorax/pneumomediastinum: from forceful inhalation maneuvers (Valsalva)
+  - Methamphetamine-associated pulmonary arterial hypertension
+
+Dermatological and Dental:
+  - "Meth mouth": severe dental decay, bruxism, xerostomia (methamphetamine-specific)
+  - Skin excoriation: secondary to formication hallucinations ("meth sores", "coke bugs")
+  - Nasal septum perforation: chronic intranasal cocaine use
+
+Poly-Substance Adverse Events:
+  - Speedball (cocaine + opioid): opposing respiratory effects mask warning signs; cocaine wears off first, leaving unopposed opioid respiratory depression
+  - Goofball (methamphetamine + opioid): similar masking of opioid sedation, unpredictable crash
+  - Stimulant + alcohol: cocaethylene formation (cocaine + ethanol), more cardiotoxic than either alone, 18-25x increased risk of sudden death
+  - MDMA + SSRI: serotonin syndrome risk; MDMA + MAOI: potentially fatal serotonin crisis

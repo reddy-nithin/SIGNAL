@@ -1,0 +1,38 @@
+PHARMACOLOGY: COCAINE
+
+Identifiers: RxCUI=2670, ChEMBL=CHEMBL370805, PubChem CID=446220
+Molecular: C17H21NO4, MW=303.35
+DEA Schedule: II (medical use as topical anesthetic; illicit use is Schedule I equivalent)
+
+Cocaine is a tropane alkaloid derived from the coca plant (Erythroxylum coca). It is a potent CNS stimulant and local anesthetic with high abuse potential.
+
+Mechanism:
+  - Triple reuptake inhibitor: blocks DAT (dopamine), NET (norepinephrine), and SERT (serotonin)
+  - Also blocks voltage-gated sodium channels (local anesthetic effect, cardiac toxicity mechanism)
+  - Does NOT reverse transporters or release vesicular stores (unlike amphetamines)
+  - Reinforcement driven by rapid DAT blockade in nucleus accumbens
+
+Pharmacokinetics:
+  Onset: smoked (crack) — 5-10 seconds; IV — 15-30 seconds; intranasal — 1-5 minutes
+  Half-life: 0.7-1.5 hours (very short, driving compulsive redosing)
+  Duration: 15-30 minutes (smoked), 30-90 minutes (intranasal)
+  Metabolism: plasma cholinesterases (butyrylcholinesterase) rapidly hydrolyze cocaine to benzoylecgonine and ecgonine methyl ester. CYP3A4 minor pathway.
+
+Cardiovascular Toxicity (primary cause of cocaine deaths):
+  - Coronary vasospasm → myocardial ischemia/infarction (even in young, healthy individuals)
+  - QT prolongation and sodium channel blockade → ventricular arrhythmias, sudden cardiac death
+  - Aortic dissection (hypertension + vessel wall damage)
+  - Accelerated atherosclerosis with chronic use
+  - Cocaine-associated cardiomyopathy
+
+Cocaethylene (Alcohol + Cocaine):
+When cocaine and alcohol are co-ingested, hepatic transesterification produces cocaethylene. This metabolite:
+  - Has a half-life 3-5x longer than cocaine
+  - Retains DAT and NET blockade activity
+  - Is more cardiotoxic than cocaine alone
+  - Increases risk of sudden cardiac death 18-25x compared to cocaine alone
+
+Street Names: "coke", "blow", "snow", "powder", "yayo"; crack cocaine: "crack", "rock", "base"
+
+Opioid Interaction — "Speedball":
+Cocaine + heroin ("speedball") or cocaine + fentanyl is one of the most dangerous poly-drug combinations. Users inject or smoke both simultaneously. The opposing CNS effects (stimulation vs depression) create unpredictable cardiorespiratory dynamics. Fentanyl-contaminated cocaine is an increasing cause of unintentional overdose deaths.

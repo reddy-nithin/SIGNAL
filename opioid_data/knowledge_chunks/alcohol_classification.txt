@@ -1,0 +1,30 @@
+ALCOHOL CLASSIFICATION
+
+Drug Class: CNS depressant, sedative-hypnotic
+Chemical Name: ethanol (ethyl alcohol, CH3CH2OH)
+DEA Schedule: not scheduled (legal regulated substance)
+WHO ATC Code: V03AB16 (ethanol as antidote), N07BB (drugs used in alcohol dependence)
+
+Pharmacological Classification:
+  - Primary: GABA-A receptor positive allosteric modulator
+  - Secondary: NMDA glutamate receptor antagonist
+  - Tertiary: non-selective CNS depressant affecting multiple receptor systems
+  - Drug class overlap: shares mechanism with benzodiazepines (GABA-A modulation) and barbiturates (GABA-A modulation), explaining cross-tolerance and dangerous co-ingestion
+
+Legal Status:
+  - United States: legal for purchase and consumption at age 21+; regulated by ATF (Bureau of Alcohol, Tobacco, Firearms and Explosives) and state liquor authorities
+  - International: legal in most countries with varying age restrictions (typically 18-21)
+  - Religious/cultural restrictions in some jurisdictions
+
+Forms of Consumption:
+  - Beer (3-12% ABV)
+  - Wine (9-16% ABV)
+  - Distilled spirits (20-95% ABV)
+  - Malt beverages and flavored alcoholic beverages
+  - Non-beverage alcohol (hand sanitizer, mouthwash) — relevant for severe AUD populations
+
+Clinical Distinction — Substance vs Medication:
+When alcohol appears in social media text, context determines classification:
+  - Recreational use, binge drinking, dependence language → substance of concern
+  - "I quit drinking", "sober 6 months" → Recovery stage indicator
+  - Medical context (e.g., alcohol-based hand sanitizer) → not relevant to substance detection

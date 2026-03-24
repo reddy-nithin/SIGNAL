@@ -1,0 +1,28 @@
+STIMULANT DRUG INTERACTIONS
+
+Stimulants + Opioids — "Speedball" and "Goofball" (EXTREME RISK):
+  Speedball: cocaine + heroin (or fentanyl) — injected or smoked simultaneously
+  Goofball: methamphetamine + heroin (or fentanyl) — injected or smoked
+  Mechanism of danger: opposing CNS effects create unpredictable cardiorespiratory dynamics. The stimulant masks opioid sedation, enabling higher opioid doses. When the shorter-acting stimulant wears off, unopposed opioid respiratory depression can be fatal.
+  Additional risk: stimulant-induced tachycardia and hypertension combined with opioid bradycardia creates cardiac instability.
+  Fentanyl contamination: cocaine and methamphetamine supplies are increasingly contaminated with fentanyl, causing unintentional opioid overdoses in stimulant users who do not use opioids intentionally.
+
+Stimulants + Alcohol:
+  Cocaine + alcohol: produces cocaethylene (hepatic transesterification), a longer-acting and more cardiotoxic metabolite. 18-25x increased sudden cardiac death risk vs cocaine alone.
+  Amphetamines + alcohol: stimulant masks subjective intoxication, leading to continued drinking and higher BAC. Increased risk of alcohol poisoning and impaired driving.
+
+Stimulants + MAO Inhibitors (CONTRAINDICATED):
+  Amphetamines + MAOIs: potentially fatal hypertensive crisis. Amphetamines release catecholamines; MAO inhibition prevents their degradation. Massive sympathomimetic surge can cause intracerebral hemorrhage.
+  MDMA + MAOIs: serotonin syndrome with potentially fatal hyperthermia.
+  This interaction extends to dietary MAOIs (aged cheese, fermented foods) in patients taking amphetamines.
+
+Stimulants + Serotonergic Agents:
+  MDMA + SSRIs: SSRIs block SERT, reducing MDMA's ability to release serotonin. Paradoxically reduces MDMA effects but increases serotonin syndrome risk with high doses.
+  MDMA + tramadol: high serotonin syndrome risk (tramadol has serotonergic activity + lowers seizure threshold).
+  Methamphetamine + SSRIs: less clinically significant than MDMA, but serotonin syndrome reported.
+
+Stimulants + Benzodiazepines:
+  Common co-use pattern: benzodiazepines used to "come down" from stimulant binges. Creates oscillating CNS stimulation/depression cycles. Benzodiazepine dependence often develops secondarily in chronic stimulant users.
+
+Stimulants + Cannabis:
+  Combined tachycardia risk: both increase heart rate. Cannabis may increase anxiety and paranoia during stimulant use. Limited data on pharmacokinetic interaction.

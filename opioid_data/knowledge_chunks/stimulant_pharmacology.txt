@@ -1,0 +1,41 @@
+PHARMACOLOGY: STIMULANTS (CLASS OVERVIEW)
+
+Drug Class: CNS stimulant, sympathomimetic
+Subclasses: amphetamines, cathinones, tropane alkaloids (cocaine), entactogens (MDMA)
+
+Primary Mechanism — Monoamine Enhancement:
+All stimulants increase synaptic concentrations of dopamine (DA), norepinephrine (NE), and/or serotonin (5-HT), but through different mechanisms:
+
+1. Releasing agents (amphetamines, methamphetamine, MDMA):
+   - Enter presynaptic terminal via monoamine transporters (DAT, NET, SERT)
+   - Reverse transporter function, causing efflux of monoamines into synapse
+   - Displace vesicular monoamine stores (via VMAT2 interaction)
+   - Result: massive increase in synaptic DA/NE/5-HT independent of neuronal firing
+
+2. Reuptake inhibitors (cocaine, methylphenidate):
+   - Block DAT, NET, and/or SERT, preventing monoamine clearance from synapse
+   - Do NOT cause transporter reversal or vesicular release
+   - Result: amplification of normal neuronal signaling
+
+Dopaminergic Reward Circuit:
+Stimulant reinforcement is primarily mediated by dopamine release in the nucleus accumbens (mesolimbic pathway). The magnitude and speed of dopamine increase determines abuse potential:
+  - Smoked/IV methamphetamine: massive, rapid DA surge → highest addiction potential
+  - Oral therapeutic amphetamine (Adderall): gradual DA increase → lower addiction potential at prescribed doses
+  - Cocaine: rapid but short-lived DA reuptake blockade → compulsive redosing pattern
+
+Noradrenergic Effects (peripheral sympathomimetic):
+All stimulants activate the sympathetic nervous system via NE:
+  - Tachycardia, hypertension, vasoconstriction
+  - Hyperthermia, diaphoresis
+  - Mydriasis (pupil dilation)
+  - Appetite suppression
+  These cardiovascular effects are the primary source of acute stimulant toxicity.
+
+Neurotoxicity:
+Methamphetamine and MDMA cause dose-dependent neurotoxicity:
+  - Methamphetamine: dopaminergic terminal degeneration, reactive oxygen species, mitochondrial damage
+  - MDMA: serotonergic terminal degeneration, oxidative stress
+  - Cocaine: generally not directly neurotoxic but causes ischemic damage via vasospasm
+
+No Physical Dependence (in classical sense):
+Stimulant withdrawal produces dysphoria, fatigue, hypersomnia, and increased appetite — not the autonomic instability of alcohol/benzodiazepine withdrawal. Stimulant withdrawal is not life-threatening but psychological dependence can be profound.

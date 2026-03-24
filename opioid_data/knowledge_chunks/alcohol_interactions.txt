@@ -1,0 +1,21 @@
+ALCOHOL DRUG INTERACTIONS
+
+Alcohol + Opioids (CRITICAL — HIGH MORTALITY RISK):
+Both alcohol and opioids cause respiratory depression through different mechanisms (GABA-A potentiation vs mu-receptor activation). Combined, they produce synergistic respiratory depression that is greater than additive. CDC data indicates alcohol is co-involved in approximately 15-20% of opioid overdose deaths. Even moderate alcohol consumption (BAC 0.05%) significantly lowers the lethal dose threshold for opioids. FDA requires boxed warnings on all opioid labels regarding alcohol co-ingestion. Naloxone reverses opioid effects but does NOT reverse alcohol-mediated respiratory depression.
+
+Alcohol + Benzodiazepines (HIGH RISK):
+Both act on GABA-A receptors — alcohol as a positive allosteric modulator and benzodiazepines at the benzodiazepine binding site. Combined GABA-A potentiation produces profound sedation, respiratory depression, and amnesia. Cross-tolerance exists: chronic alcohol users often require higher benzodiazepine doses, complicating withdrawal management. This combination is the second most common drug-drug combination in overdose deaths.
+
+Alcohol + Acetaminophen (Hepatotoxicity Risk):
+Chronic alcohol use induces CYP2E1, which converts acetaminophen to the hepatotoxic metabolite NAPQI at increased rates. Simultaneously, alcohol depletes glutathione (the primary detoxification pathway for NAPQI). This dual mechanism means chronic drinkers are at substantially elevated risk of liver failure from acetaminophen doses that would be safe in non-drinkers. FDA recommends no more than 2 g/day acetaminophen for regular drinkers (vs standard 4 g/day limit).
+
+Alcohol + Stimulants (Masked Impairment):
+Cocaine and amphetamines may mask subjective alcohol intoxication, leading to continued drinking and higher BAC levels. Cocaethylene, formed from concurrent alcohol and cocaine use, is cardiotoxic with a longer half-life than cocaine alone, increasing risk of sudden cardiac death.
+
+Alcohol + Antidepressants:
+SSRIs: increased sedation, impaired motor coordination, potential serotonin syndrome risk with high alcohol doses.
+MAOIs: tyramine-like hypertensive crisis risk with certain alcoholic beverages (beer, wine).
+Tricyclics: enhanced sedation, cardiac conduction delays.
+
+Alcohol + Metformin:
+Risk of lactic acidosis, especially with binge drinking or hepatic impairment.

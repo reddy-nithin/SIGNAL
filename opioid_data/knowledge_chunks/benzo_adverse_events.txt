@@ -1,0 +1,34 @@
+BENZODIAZEPINE ADVERSE EVENT PROFILE
+
+This profile summarizes key adverse events associated with benzodiazepine use, curated from FDA labels, Ashton Manual, and clinical literature. Format follows FAERS signal reporting conventions for consistency with opioid adverse event data.
+
+High-Frequency Adverse Events (therapeutic doses):
+  - Sedation and drowsiness (most common, dose-dependent)
+  - Cognitive impairment: reduced attention, processing speed, and working memory
+  - Anterograde amnesia: inability to form new memories during drug effect (alpha-5 mediated)
+  - Psychomotor impairment: increased fall risk, impaired driving, slowed reaction time
+  - Paradoxical reactions (uncommon): agitation, aggression, disinhibition (more common in elderly, children, and those with personality disorders)
+
+Serious Adverse Events (acute):
+  - Respiratory depression: primarily dangerous in combination with opioids, alcohol, or other CNS depressants. In isolation, benzodiazepine ceiling effect provides relative safety.
+  - Complex sleep behaviors: sleepwalking, sleep-driving, sleep-eating (FDA boxed warning added 2020)
+  - Neonatal withdrawal syndrome: benzodiazepines cross placenta, causing "floppy infant syndrome" and neonatal withdrawal
+
+Serious Adverse Events (chronic use):
+  - Physical dependence: develops in 40-50% of patients taking therapeutic doses for >4 weeks
+  - Tolerance: primarily to sedative and anticonvulsant effects, less to anxiolytic effects
+  - Cognitive decline: long-term use associated with 1.5-2x increased dementia risk (epidemiological data, causality debated)
+  - Depression: benzodiazepines may worsen depressive symptoms with chronic use
+  - Rebound anxiety: anxiety exceeding baseline levels upon discontinuation
+
+Withdrawal-Related Adverse Events:
+  - Seizures: generalized tonic-clonic, peak risk days 2-7 after abrupt cessation (can be fatal)
+  - Status epilepticus: medical emergency, especially with abrupt high-dose discontinuation
+  - Psychosis: rare but documented with abrupt withdrawal
+  - Protracted withdrawal syndrome: anxiety, insomnia, depersonalization, paresthesias lasting weeks to months
+
+Poly-Substance Adverse Events:
+  - Benzodiazepines + opioids: synergistic respiratory depression (FDA black box warning, 16% of opioid OD deaths involve benzos)
+  - Benzodiazepines + alcohol: enhanced GABA-A depression, respiratory failure, amnesia
+  - Benzodiazepines + gabapentinoids: additive sedation and respiratory depression (FDA 2019 warning)
+  - Benzodiazepines + methadone: particularly dangerous combination in MAT populations

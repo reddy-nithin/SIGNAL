@@ -1,0 +1,41 @@
+PHARMACOLOGY: DIAZEPAM
+
+Identifiers: RxCUI=3322, ChEMBL=CHEMBL657, PubChem CID=3016
+Molecular: C16H13ClN2O, MW=284.74
+Brand Name: Valium
+DEA Schedule: IV
+
+Diazepam is the prototypical benzodiazepine. It is the most commonly used agent for benzodiazepine taper protocols due to its long half-life, active metabolites, and availability in small-increment dosage forms.
+
+Receptor Binding:
+  - GABA-A positive allosteric modulator (benzodiazepine binding site)
+  - Non-selective across alpha subtypes
+  - Also binds peripheral benzodiazepine receptors (TSPO/translocator protein) at high concentrations
+
+Potency: moderate (10 mg diazepam is the standard benzodiazepine equivalence unit)
+Onset: rapid (15-30 minutes oral, highly lipophilic — rapid CNS penetration)
+Half-life: 20-100 hours (including active metabolite desmethyldiazepam, t½ 36-200h)
+Duration: initial CNS effects 1-2 hours (redistribution), but active metabolites extend pharmacological activity
+
+Active Metabolites:
+  - Desmethyldiazepam (nordiazepam): t½ 36-200 hours, pharmacologically active
+  - Temazepam: t½ 8-22 hours, pharmacologically active (also prescribed as standalone hypnotic)
+  - Oxazepam: t½ 4-15 hours, pharmacologically active (also prescribed as standalone anxiolytic)
+  These cascading active metabolites explain both the smooth pharmacokinetic profile (useful for tapers) and the risk of accumulation in elderly/hepatically impaired patients.
+
+Metabolism:
+  - Phase I: CYP3A4 and CYP2C19 (N-demethylation to desmethyldiazepam, 3-hydroxylation to temazepam)
+  - Phase II: glucuronidation of oxazepam (final metabolite) by UGT
+  - Hepatic impairment significantly prolongs elimination
+
+Clinical Indications:
+  - FDA-approved: anxiety disorders, alcohol withdrawal, muscle spasm, seizure disorders, procedural sedation
+  - Primary role in addiction medicine: gold standard for benzodiazepine withdrawal taper (Ashton Manual) and alcohol withdrawal management
+
+Abuse Profile:
+  - Moderate abuse potential (rapid onset but long duration reduces reinforcement cycle)
+  - Street names: "vals", "vallies", "blues" (context-dependent — "blues" more commonly refers to oxycodone M30 tablets)
+  - Less commonly diverted than alprazolam
+
+Therapeutic Advantage for Taper:
+Available in 2 mg, 5 mg, and 10 mg tablets, enabling fine-grained dose reductions. The long half-life with active metabolites provides self-tapering pharmacokinetics — missed doses produce less interdose withdrawal than short-acting agents.

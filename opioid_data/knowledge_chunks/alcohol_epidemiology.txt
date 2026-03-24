@@ -1,0 +1,30 @@
+ALCOHOL USE EPIDEMIOLOGY
+
+Prevalence (United States, NIAAA/SAMHSA):
+  - 84.0% of adults (18+) report lifetime alcohol use
+  - 69.5% report past-year alcohol use
+  - 54.9% report past-month alcohol use
+  - 25.8% report past-month binge drinking (5+ drinks on an occasion for men, 4+ for women)
+  - 6.3% report past-month heavy drinking (binge drinking on 5+ days per month)
+  - 28.6 million adults (10.6%) met criteria for alcohol use disorder (AUD) in 2023
+
+Mortality:
+  - Approximately 178,000 alcohol-related deaths per year in the US (2020-2021 average, CDC)
+  - Third leading preventable cause of death (after tobacco and poor diet/physical inactivity)
+  - Alcohol-related liver disease deaths: approximately 56,000/year
+  - Alcohol-impaired driving fatalities: approximately 13,000/year
+  - Alcohol-related overdose deaths (including poly-substance): rising trend since 2019
+
+Demographics:
+  - Age: highest binge drinking rates in 18-34 age group
+  - Sex: men have higher rates of AUD (12.1% vs 9.1%), but the gender gap is narrowing
+  - Race/ethnicity: highest AUD prevalence among American Indian/Alaska Native populations
+  - Socioeconomic: U-shaped relationship — both low and high income groups show elevated risk patterns
+
+Comparison to Opioid Epidemic:
+Alcohol kills approximately 2-3x more Americans annually than opioids (~178,000 vs ~80,000). However, the opioid crisis receives disproportionately more policy attention due to its rapid acceleration and pharmaceutical industry liability. Many opioid overdose deaths involve concurrent alcohol use, making these epidemics deeply intertwined.
+
+Global Burden (WHO):
+  - 3 million deaths annually worldwide attributable to alcohol (5.3% of all deaths)
+  - 5.1% of global burden of disease and injury (DALYs) attributable to alcohol
+  - Leading risk factor for death in males aged 15-49 globally

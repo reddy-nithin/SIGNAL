@@ -1,0 +1,36 @@
+PHARMACOLOGY: ALPRAZOLAM
+
+Identifiers: RxCUI=596, ChEMBL=CHEMBL661, PubChem CID=2118
+Molecular: C17H13ClN4, MW=308.76
+Brand Name: Xanax
+DEA Schedule: IV
+
+Alprazolam is classified as a triazolobenzodiazepine (triazole ring fused to benzodiazepine core). It is the most prescribed benzodiazepine in the United States and the most commonly diverted benzodiazepine in illicit markets.
+
+Receptor Binding:
+  - GABA-A positive allosteric modulator (benzodiazepine binding site)
+  - High affinity for alpha-1 subunit-containing GABA-A receptors (sedation, amnesia)
+  - Non-selective across alpha subtypes
+
+Potency: high (equivalent to 0.5 mg = 10 mg diazepam)
+Onset: rapid (15-30 minutes oral), contributing to abuse potential
+Half-life: 6-12 hours (short-acting, no active metabolites at clinical significance)
+Duration: 4-6 hours (necessitates multiple daily doses, creating interdose withdrawal)
+
+Metabolism:
+  - Primary: CYP3A4 oxidation to alpha-hydroxyalprazolam (minor activity) and 4-hydroxyalprazolam
+  - Significant CYP3A4 inhibitor interactions (ketoconazole increases AUC 3.98x)
+
+Abuse Profile:
+  - Highest abuse potential among commonly prescribed benzodiazepines (rapid onset + short duration)
+  - Street names: "bars" (2 mg tablets), "xans", "zans", "sticks", "footballs" (0.5-1 mg), "school buses" (yellow 2 mg)
+  - Pressed/counterfeit Xanax tablets are common in illicit markets, often containing unknown doses or other substances (including fentanyl)
+  - Frequently co-used with opioids ("bars and blues") — extremely high-risk combination
+
+Toxicology:
+  - LD50 in isolation is relatively high (benzodiazepine ceiling effect)
+  - Lethality dramatically increased with co-ingestants: opioids, alcohol, other sedatives
+  - Tolerance develops rapidly, especially to anxiolytic and sedative effects
+
+Clinical Indication: FDA-approved for generalized anxiety disorder and panic disorder
+Prescribing Trends: declining new prescriptions due to increased awareness of dependence risk, though alprazolam remains the most prescribed benzodiazepine by volume

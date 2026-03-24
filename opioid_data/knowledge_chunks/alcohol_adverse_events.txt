@@ -1,0 +1,38 @@
+ALCOHOL ADVERSE EVENT PROFILE
+
+This profile summarizes key adverse events associated with alcohol use, curated from NIAAA, WHO, and clinical literature. Format follows FAERS signal reporting conventions for consistency with opioid adverse event data.
+
+High-Frequency Adverse Events (common at recreational doses):
+  - Impaired judgment and coordination (dose-dependent, BAC >0.05%)
+  - Nausea and vomiting (protective reflex at moderate-high doses)
+  - Hangover syndrome: headache, fatigue, dehydration, cognitive impairment (next-day)
+  - Amnesia/blackout: anterograde memory impairment (NMDA antagonism, BAC >0.15%)
+  - Disinhibition and risk-taking behavior
+
+Serious Adverse Events (acute):
+  - Respiratory depression (BAC >0.30%, potentiated by opioids/benzodiazepines)
+  - Aspiration pneumonia (vomiting while obtunded)
+  - Cardiac arrhythmia: atrial fibrillation ("holiday heart"), prolonged QT
+  - Acute pancreatitis
+  - Hypoglycemia (inhibition of gluconeogenesis, dangerous in diabetics)
+  - Rhabdomyolysis (prolonged immobilization during stupor)
+
+Serious Adverse Events (chronic):
+  - Alcoholic liver disease: steatosis → hepatitis → cirrhosis → hepatocellular carcinoma
+  - Wernicke-Korsakoff syndrome: thiamine deficiency encephalopathy/amnesia
+  - Alcoholic cardiomyopathy: dilated cardiomyopathy with systolic dysfunction
+  - Peripheral neuropathy: distal symmetric sensorimotor
+  - Cerebellar degeneration: progressive gait ataxia
+  - Alcohol-related cancers: oral, pharyngeal, esophageal, hepatic, colorectal, breast
+  - Immune suppression: increased susceptibility to pneumonia, tuberculosis
+
+Withdrawal-Related Adverse Events:
+  - Seizures (generalized tonic-clonic, 24-48 hours post-cessation)
+  - Delirium tremens (mortality 15-40% if untreated)
+  - Autonomic instability: hypertension, tachycardia, hyperthermia, diaphoresis
+
+Poly-Substance Adverse Events:
+  - Alcohol + opioids: synergistic respiratory depression (leading cause of poly-substance overdose death)
+  - Alcohol + benzodiazepines: enhanced GABA-A depression, respiratory failure
+  - Alcohol + cocaine: cocaethylene formation, enhanced cardiotoxicity
+  - Alcohol + acetaminophen: hepatotoxicity from CYP2E1-mediated NAPQI formation

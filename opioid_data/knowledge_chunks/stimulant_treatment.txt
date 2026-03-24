@@ -1,0 +1,44 @@
+STIMULANT USE DISORDER TREATMENT
+
+No FDA-Approved Pharmacotherapy:
+Unlike opioid use disorder (buprenorphine, methadone, naltrexone) and alcohol use disorder (naltrexone, acamprosate, disulfiram), there are NO FDA-approved medications for stimulant use disorder as of 2024. This is a critical gap in substance abuse treatment.
+
+Medications Under Investigation:
+  - Mirtazapine: some evidence for reduced methamphetamine use in MSM populations
+  - Bupropion + naltrexone: combination showed modest efficacy for methamphetamine use disorder in 2023 ADAPT-2 trial
+  - Topiramate: mixed evidence for cocaine use reduction
+  - Lisdexamfetamine: agonist replacement approach (similar logic to methadone for opioids), under study for cocaine use disorder
+  - N-acetylcysteine (NAC): restores glutamate homeostasis, some evidence in cocaine relapse prevention
+  - Modafinil: investigated for cocaine dependence, results inconsistent
+  - Methylphenidate: agonist replacement for amphetamine use disorder, limited evidence
+
+Behavioral Interventions (Primary Treatment):
+  1. Contingency Management (CM): MOST EFFECTIVE proven treatment for stimulant use disorder
+     - Patients receive tangible rewards (vouchers, prizes) for stimulant-free urine tests
+     - Effect size d=0.42-0.62, significantly better than other behavioral interventions
+     - VA system implementation: "Motivational Incentives" program
+     - Limitation: effects often diminish after incentives are removed
+  2. Cognitive Behavioral Therapy (CBT):
+     - Relapse prevention skills: identifying triggers, coping strategies, behavioral alternatives
+     - Moderate evidence for sustained abstinence when combined with CM
+  3. Community Reinforcement Approach (CRA):
+     - Social, recreational, and occupational reinforcement of abstinence
+     - Often combined with CM for best outcomes
+  4. Matrix Model: structured 16-week outpatient program combining CBT, family education, 12-step, individual counseling, and drug testing. Specifically designed for stimulant users.
+
+Acute Intoxication Management:
+  - No specific antidote (unlike naloxone for opioids or flumazenil for benzodiazepines)
+  - Supportive care: IV benzodiazepines for agitation/seizures, cooling for hyperthermia
+  - Hypertensive emergency: avoid beta-blockers (unopposed alpha stimulation risk), use phentolamine or nicardipine
+  - Cardiac monitoring: stimulants cause coronary vasospasm, QT prolongation, arrhythmias
+  - Serotonin syndrome risk with MDMA: cyproheptadine, cooling, benzodiazepines
+
+Withdrawal Management:
+  - Stimulant withdrawal is NOT medically dangerous (unlike alcohol/benzo withdrawal)
+  - "Crash" phase: hypersomnia, increased appetite, dysphoria, psychomotor retardation (days 1-3)
+  - Subacute withdrawal: anhedonia, fatigue, drug craving, disrupted sleep (weeks 1-4)
+  - No taper protocol needed — withdrawal is managed supportively
+  - Suicide risk assessment important during post-stimulant depression
+
+Social Media Signals for Recovery:
+Mentions of "contingency management", "CM program", "vouchers for clean tests", "Matrix Model", "clean urine", "the crash was worth it" are Recovery stage indicators in stimulant use context. Unlike opioid recovery posts, stimulant recovery rarely mentions medication-assisted treatment.

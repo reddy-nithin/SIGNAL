@@ -1,0 +1,31 @@
+BENZODIAZEPINE USE DISORDER TREATMENT
+
+Acute Reversal — Flumazenil:
+  Mechanism: competitive antagonist at the benzodiazepine binding site on GABA-A receptors
+  Indication: reversal of acute benzodiazepine overdose in non-dependent patients
+  Dose: 0.2 mg IV, may repeat to max 3-5 mg
+  Half-life: 40-80 minutes (shorter than most benzodiazepines — re-sedation risk)
+  CRITICAL WARNING: flumazenil can precipitate seizures in benzodiazepine-dependent patients. Use with extreme caution and only when respiratory support is unavailable. NOT recommended as routine reversal in chronic users.
+
+Medically Supervised Taper (Primary Treatment):
+No FDA-approved medications exist specifically for benzodiazepine use disorder. Gradual dose reduction is the standard of care:
+  1. Ashton Manual protocol: convert to diazepam, taper 1-2 mg every 1-2 weeks
+  2. Alternatively: taper the patient's current benzodiazepine at 10-25% every 1-2 weeks
+  3. Inpatient detox for high-dose dependence (>100 mg diazepam equivalents/day)
+  4. Phenobarbital substitution: alternative for patients who cannot tolerate diazepam taper
+
+Adjunctive Medications During Taper:
+  - Carbamazepine/valproate: anticonvulsant protection during taper
+  - Gabapentin/pregabalin: anxiety and insomnia management (caution: own abuse potential)
+  - SSRIs/SNRIs: treat underlying anxiety disorder that may have prompted benzodiazepine use
+  - Hydroxyzine: non-addictive anxiolytic alternative
+  - Propranolol: manages autonomic symptoms (tachycardia, tremor)
+
+Psychosocial Interventions:
+  - CBT for insomnia (CBT-I): addresses the insomnia that often drives benzodiazepine dependence
+  - Motivational interviewing: enhances taper adherence
+  - Gradual exposure therapy: for patients using benzodiazepines for anxiety disorders
+  - Support groups: BenzoBuddies and similar peer support communities (often referenced in social media posts — RECOVERY stage indicator)
+
+Social Media Signals for Recovery:
+Mentions of "taper", "Ashton Manual", "switching to Valium", "cutting dose", "benzo-free" are strong Recovery stage indicators in the context of benzodiazepine dependence.

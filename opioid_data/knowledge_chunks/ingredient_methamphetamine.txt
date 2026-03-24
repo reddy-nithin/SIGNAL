@@ -1,0 +1,41 @@
+PHARMACOLOGY: METHAMPHETAMINE
+
+Identifiers: RxCUI=6816, ChEMBL=CHEMBL1201201, PubChem CID=10836
+Molecular: C10H15N, MW=149.23
+Brand Name: Desoxyn (rarely prescribed)
+DEA Schedule: II
+
+Methamphetamine is a potent synthetic amphetamine with high abuse potential. It is the most commonly used illicit stimulant worldwide and a major contributor to the "fourth wave" of the US drug overdose crisis (stimulant-involved deaths, often combined with fentanyl).
+
+Mechanism:
+  - Potent releasing agent at DAT, NET, and SERT (reverses transporter function)
+  - VMAT2 inhibitor (disrupts vesicular monoamine storage)
+  - Weak MAO inhibitor (slows monoamine degradation)
+  - Net effect: massive dopamine efflux (10x greater than amphetamine per unit dose)
+
+Pharmacokinetics:
+  Onset: smoked/IV — seconds; oral — 30-60 minutes; intranasal — 3-5 minutes
+  Half-life: 10-12 hours (much longer than cocaine, enabling prolonged binges)
+  Duration: 8-24 hours depending on dose and route
+  Metabolism: CYP2D6 (N-demethylation to amphetamine, 4-hydroxylation)
+
+Neurotoxicity:
+  - Dopaminergic terminal degeneration in striatum (DAT density reduced 20-30% after chronic use)
+  - Reactive oxygen species generation from dopamine auto-oxidation
+  - Mitochondrial dysfunction
+  - Microglial activation and neuroinflammation
+  - Gray matter volume loss (partially reversible with sustained abstinence)
+
+Cardiovascular Toxicity:
+  - Hypertension, tachycardia (sympathomimetic)
+  - Methamphetamine-associated cardiomyopathy (dilated, often irreversible)
+  - Aortic dissection, stroke (vasospasm + hypertension)
+  - Pulmonary hypertension (especially with IV use)
+
+Dental Toxicity:
+  "Meth mouth": severe dental caries, periodontal disease, tooth fracture from xerostomia (dry mouth), bruxism, poor hygiene, and acidic oral environment.
+
+Street Names: "ice", "crystal", "glass", "tina", "crank", "speed" (though "speed" can also refer to amphetamine), "tweak"
+
+Opioid Interaction — "Goofball":
+Methamphetamine + heroin/fentanyl ("goofball") is an increasingly common poly-drug pattern. Users report using methamphetamine to counteract opioid sedation or extend functionality while maintaining opioid dependence. This combination carries extreme cardiac and respiratory risk.

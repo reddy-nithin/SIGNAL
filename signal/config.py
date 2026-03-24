@@ -254,3 +254,7 @@ DISTILBERT_CV_FOLDS: int = 5
 
 # Training data
 TRAINING_EXEMPLARS_PATH: Path = MODELS_DIR / "training_exemplars.json"
+
+# ── Clinical Grounding (Phase 4) ─────────────────────────────────────────────
+SUPPLEMENTARY_SIGNALS_PATH: Path = OPIOID_DATA_DIR / "supplementary_signals.json"
+GEMINI_BRIEF_CACHE_DIR: Path = CACHE_DIR / "gemini_briefs"

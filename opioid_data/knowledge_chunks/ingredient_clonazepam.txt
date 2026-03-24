@@ -1,0 +1,37 @@
+PHARMACOLOGY: CLONAZEPAM
+
+Identifiers: RxCUI=2598, ChEMBL=CHEMBL452, PubChem CID=2802
+Molecular: C15H10ClN3O3, MW=315.71
+Brand Name: Klonopin
+DEA Schedule: IV
+
+Clonazepam is a 7-nitrobenzodiazepine with prominent anticonvulsant properties in addition to standard benzodiazepine effects. It is the second most commonly prescribed benzodiazepine in the US.
+
+Receptor Binding:
+  - GABA-A positive allosteric modulator (benzodiazepine binding site)
+  - High affinity across alpha subtypes
+  - Enhanced anticonvulsant activity attributed to strong alpha-1 and alpha-2 subunit binding
+  - Serotonergic effects reported (may contribute to its use in panic disorder)
+
+Potency: high (0.5 mg clonazepam ≈ 10 mg diazepam)
+Onset: intermediate (30-60 minutes oral)
+Half-life: 18-50 hours (long-acting)
+Duration: 6-12 hours for anxiolytic effect (despite long half-life, subjective effects wane earlier)
+
+Metabolism:
+  - Primary: CYP3A4 nitroreduction to 7-aminoclonazepam (inactive metabolite)
+  - Also: CYP3A4 hydroxylation
+  - 7-aminoclonazepam is the primary urinary metabolite detected in drug screening
+
+Clinical Indications:
+  - FDA-approved: seizure disorders (Lennox-Gastaut, akinetic seizures, absence seizures), panic disorder
+  - Off-label: anxiety disorders, REM sleep behavior disorder, akathisia
+
+Abuse Profile:
+  - Lower abuse potential than alprazolam (slower onset, longer duration)
+  - Street names: "k-pins", "k-pins", "pins"
+  - Less commonly found as counterfeit/pressed tablets compared to alprazolam
+  - Still carries dependence risk with chronic use
+
+Withdrawal Considerations:
+  Long half-life makes withdrawal onset delayed (3-5 days after last dose) and generally smoother than short-acting agents, but protracted withdrawal symptoms may last longer. Direct taper is feasible without conversion to diazepam in many cases.

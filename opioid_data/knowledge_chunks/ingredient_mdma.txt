@@ -1,0 +1,37 @@
+PHARMACOLOGY: MDMA (3,4-METHYLENEDIOXYMETHAMPHETAMINE)
+
+Identifiers: RxCUI=N/A (not FDA-approved as of 2026), ChEMBL=CHEMBL47885, PubChem CID=1615
+Molecular: C11H15NO2, MW=193.24
+DEA Schedule: I (no currently accepted medical use, though FDA breakthrough therapy designation granted for PTSD)
+
+MDMA is a substituted amphetamine with unique entactogenic (empathy-enhancing) and psychostimulant properties. It is pharmacologically distinct from classical stimulants due to its predominant serotonergic activity.
+
+Mechanism:
+  - Potent SERT reversal agent: massive serotonin (5-HT) release into synapse (primary effect)
+  - Moderate DAT and NET reversal: dopamine and norepinephrine release (secondary)
+  - Relative selectivity: 5-HT >> DA > NE (opposite of methamphetamine: DA >> NE > 5-HT)
+  - Oxytocin release: contributes to prosocial and empathogenic effects
+  - 5-HT2A receptor activation: contributes to mild perceptual alterations
+
+Pharmacokinetics:
+  Onset: oral — 30-60 minutes
+  Half-life: 6-9 hours
+  Duration: 3-5 hours (subjective effects)
+  Metabolism: CYP2D6 (N-demethylation to MDA, which is also active), CYP3A4
+  Non-linear kinetics: CYP2D6 auto-inhibition at higher doses, causing disproportionate plasma level increases
+
+Acute Toxicity:
+  - Hyperthermia: primary cause of MDMA fatalities. Serotonin syndrome-like mechanism exacerbated by physical activity (dancing) and warm environments (clubs). Core temperature >40°C triggers DIC, rhabdomyolysis, and multi-organ failure.
+  - Hyponatremia: MDMA stimulates ADH (vasopressin) release. Combined with excessive water intake ("stay hydrated" advice at raves), dilutional hyponatremia can cause cerebral edema and death. More common in females.
+  - Serotonin syndrome: risk increased with co-administration of SSRIs, MAOIs, or other serotonergic agents
+  - Cardiac: tachycardia, hypertension, rarely arrhythmia
+
+Neurotoxicity:
+  - Selective serotonergic terminal degeneration in cortex and hippocampus (demonstrated in animal models)
+  - Human evidence: reduced SERT density on PET imaging after heavy use, correlation with memory deficits
+  - Recovery: partial serotonergic recovery occurs with sustained abstinence (months to years)
+
+Street Names: "molly" (crystalline/powder form, implies "pure" MDMA), "ecstasy" or "E" (tablet form), "mandy", "X"
+
+Adulterant Risk:
+MDMA tablets and "molly" are frequently adulterated with methamphetamine, cathinones (bath salts), PMA/PMMA (highly dangerous serotonergic agents with delayed onset), or fentanyl. Drug checking services and fentanyl test strips are harm reduction tools relevant to MDMA users.

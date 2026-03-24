@@ -1,0 +1,32 @@
+ALCOHOL TOXICOLOGY AND ORGAN DAMAGE
+
+Acute Toxicity:
+Alcohol intoxication causes dose-dependent CNS depression progressing from disinhibition to sedation, coma, and death. Respiratory depression is the primary cause of acute alcohol fatality. Aspiration of vomitus is a secondary cause. LD50 in humans corresponds to BAC 0.40-0.50% (approximately 300-400 g of ethanol for a 70 kg adult).
+
+Chronic Organ Damage:
+
+Liver Disease (most common organ target):
+  - Alcoholic fatty liver (steatosis): reversible, occurs in >90% of heavy drinkers
+  - Alcoholic hepatitis: inflammatory, 20-30% mortality in severe cases
+  - Alcoholic cirrhosis: irreversible fibrosis, develops in 10-20% of chronic heavy drinkers
+  - Hepatocellular carcinoma: increased risk with cirrhosis
+  Mechanism: acetaldehyde toxicity, CYP2E1-generated reactive oxygen species, mitochondrial damage, stellate cell activation
+
+Neurological Damage:
+  - Wernicke encephalopathy: acute thiamine (B1) deficiency causing confusion, ataxia, ophthalmoplegia. Medical emergency — treat with IV thiamine before glucose.
+  - Korsakoff syndrome: chronic anterograde amnesia from mammillary body and thalamic damage. Often irreversible. Wernicke-Korsakoff syndrome affects approximately 12-14% of chronic alcoholics.
+  - Cerebellar degeneration: progressive ataxia from Purkinje cell loss
+  - Peripheral neuropathy: distal symmetric sensorimotor neuropathy (thiamine and direct toxicity)
+  - Alcohol-related dementia: cortical atrophy, cognitive decline
+
+Pancreatic Damage:
+  - Acute pancreatitis: alcohol is the second most common cause (after gallstones)
+  - Chronic pancreatitis: alcohol is the leading cause, causing exocrine insufficiency and diabetes
+
+Cardiovascular Effects:
+  - Alcoholic cardiomyopathy: dilated cardiomyopathy from chronic heavy use
+  - Atrial fibrillation: "holiday heart syndrome" from acute binge drinking
+  - Hypertension: dose-dependent blood pressure elevation
+
+Cancer Risk (IARC Group 1 Carcinogen):
+Acetaldehyde is classified as a Group 1 carcinogen. Alcohol consumption increases risk of cancers of the oral cavity, pharynx, larynx, esophagus, liver, colorectum, and female breast. Risk increases linearly with consumption — no safe threshold established for cancer risk.
