@@ -130,43 +130,60 @@ Query: "I've been using again and can't stop"
 ---
 
 ## Phase 2: Substance Resolution
-**Date started:** ___  |  **Date completed:** ___
+**Date started:** 2026-03-23  |  **Date completed:** 2026-03-23
 
 ### Slang Lexicon
-- Total entries: ___
-- Drug classes covered: ___
-- Sample resolutions tested:
+- **362 entries** across 6 drug classes (opioids ~130, benzos ~47, stimulants ~60, cannabis ~35, alcohol ~21, other ~47)
+- 14/14 mandatory opioids covered, no duplicate terms
+- Compiled longest-first regex patterns for non-overlapping matching
 
-| Input Slang | Rule-Based | Embedding | LLM | Ground Truth | All Correct? |
-|---|---|---|---|---|---|
-| "popping blues" | | | | counterfeit oxy/fentanyl | |
-| "mixing bars and lean" | | | | alprazolam + codeine | |
-| "been on subs for 6 months" | | | | buprenorphine (MAT) | |
+### Detection Methods Implemented
+1. **Rule-based** — Lexicon regex + NegEx-lite (25 negation triggers, 40-token window). Confidence: 0.90 (match), 0.30 (negated)
+2. **Embedding** — Vertex AI/SBERT cosine similarity against 24 substance prototypes (threshold 0.72)
+3. **LLM** — Gemini 2.5-flash zero-shot extraction with SHA256 disk caching
+4. **Ensemble** — Weighted voting (rule:0.35, emb:0.25, llm:0.40), threshold 0.30, negation majority vote
+
+### Test Suite
+- **110 tests passing** in 0.14s
+- 50 synthetic slang cases: **100% accuracy** (50/50)
+- Coverage: types, lexicon, negation, rule-based, embedding (mocked), LLM (mocked), ensemble fusion
 
 ### Method Comparison — Substance Detection
 
-**Evaluation Source 1: UCI Drug Review ground truth**
+**Evaluation Source 1: UCI Drug Review ground truth (n=2000)**
 
-| Method | Precision | Recall | F1 | Accuracy |
+| Method | Precision | Recall | F1 |
+|---|---|---|---|
+| Rule-based | 0.467 | 0.559 | 0.509 |
+| Ensemble (RB only) | 0.465 | 0.550 | 0.504 |
+| Embedding | — | — | — (requires API) |
+| LLM (Gemini) | — | — | — (requires API) |
+
+**Per-class breakdown (rule-based):**
+
+| Drug Class | Precision | Recall | F1 | Support |
 |---|---|---|---|---|
-| Rule-based | | | | |
-| Embedding | | | | |
-| LLM (Gemini) | | | | |
-| Ensemble | | | | |
+| Benzo | 0.737 | 0.556 | 0.634 | 977 |
+| Stimulant | 0.728 | 0.578 | 0.645 | 185 |
+| Opioid | 0.442 | 0.573 | 0.499 | 813 |
+| Other | 0.004 | 0.040 | 0.007 | 25 |
 
 **Evaluation Source 2: Synthetic slang test set (50 cases)**
 
 | Method | Correct Resolutions | Accuracy |
 |---|---|---|
-| Rule-based | /50 | |
-| Embedding | /50 | |
-| LLM (Gemini) | /50 | |
+| Rule-based | 50/50 | 100% |
 
 ### Key Findings
-<!-- What worked, what didn't, interesting disagreements between methods -->
+1. **Benzos/stimulants perform best** (F1 0.63-0.65) — brand names like "Xanax", "Adderall" are in lexicon and commonly appear in reviews
+2. **Opioid precision is lower** (0.44) due to ambiguous terms: "chronic" and "joint" in cannabis lexicon get falsely matched in pain management reviews ("chronic pain", "joint pain")
+3. **FP analysis**: Top false positives are ambiguous words with dual meanings in medical context
+4. **UCI limitation**: Dataset uses brand/generic prescription names, not street slang — the lexicon's street slang value is better measured by synthetic test set (100%)
+5. **Full 3-method comparison** with embedding + LLM requires API calls and will be captured during dashboard testing (Phase 5)
 
-### Screenshots
-<!-- evidence/phase2/ -->
+### Artifacts
+- `evidence/phase2/substance_eval_results.json` — Full evaluation metrics JSON
+- `signal/eval/evaluator.py` — Evaluation orchestrator (runnable via `python -m signal.eval.evaluator`)
 
 ---
 
@@ -321,12 +338,12 @@ Total latency: ___
 
 ## Metrics Summary (For Report Quick-Reference)
 
-### Substance Detection
+### Substance Detection (UCI Drug Review, n=2000)
 | Metric | Rule-Based | Embedding | LLM | Ensemble |
 |---|---|---|---|---|
-| Precision | | | | |
-| Recall | | | | |
-| F1 | | | | |
+| Precision | 0.467 | TBD | TBD | 0.465 (RB only) |
+| Recall | 0.559 | TBD | TBD | 0.550 (RB only) |
+| F1 | 0.509 | TBD | TBD | 0.504 (RB only) |
 
 ### Narrative Stage Classification
 | Metric | Rule-Based | DistilBERT | LLM | Ensemble |

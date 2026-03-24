@@ -229,3 +229,28 @@ DRUG_CLASS_LABELS: tuple[str, ...] = (
 
 # Detection method identifiers
 DETECTION_METHODS: tuple[str, ...] = ("rule_based", "embedding", "llm")
+
+# ── Narrative Stage Classification ────────────────────────────────────────────
+
+NARRATIVE_ENSEMBLE_WEIGHTS: dict[str, float] = {
+    "rule_based": 0.20,
+    "fine_tuned": 0.35,
+    "llm": 0.45,
+}
+NARRATIVE_ENSEMBLE_THRESHOLD: float = 0.15
+NARRATIVE_CLASSIFICATION_METHODS: tuple[str, ...] = ("rule_based", "fine_tuned", "llm")
+
+# Gemini narrative cache
+GEMINI_NARRATIVE_CACHE_DIR: Path = CACHE_DIR / "gemini_narrative"
+
+# DistilBERT training
+DISTILBERT_MODEL_NAME: str = "distilbert-base-uncased"
+DISTILBERT_CHECKPOINT_DIR: Path = MODELS_DIR / "distilbert_narrative"
+DISTILBERT_MAX_LENGTH: int = 256
+DISTILBERT_EPOCHS: int = 5
+DISTILBERT_BATCH_SIZE: int = 16
+DISTILBERT_LEARNING_RATE: float = 2e-5
+DISTILBERT_CV_FOLDS: int = 5
+
+# Training data
+TRAINING_EXEMPLARS_PATH: Path = MODELS_DIR / "training_exemplars.json"

@@ -136,8 +136,8 @@ SIGNAL/
 <!-- UPDATE THIS SECTION AS WORK PROGRESSES -->
 - [x] Phase 0: Foundation (Day 1) — completed 2026-03-22
 - [x] Phase 1: Ingestion + Exemplars (Days 2-3)
-- [ ] Phase 2: Substance Resolution (Days 4-6)
-- [ ] Phase 3: Narrative Stages + DistilBERT (Days 7-10)
+- [x] Phase 2: Substance Resolution (Days 4-6) — completed 2026-03-23
+- [x] Phase 3: Narrative Stages + DistilBERT (Days 7-10) — completed 2026-03-23
 - [ ] Phase 4: Clinical Grounding + Multi-Substance KB (Days 11-13)
 - [ ] Phase 5: Dashboard (Days 14-15)
 - [ ] Phase 6: Polish + Submit (Day 16)
