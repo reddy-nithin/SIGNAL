@@ -72,6 +72,9 @@ class SIGNALPipeline:
             SignalReport with all layers populated.
         """
         t0 = time.perf_counter()
+        text = text.strip() if text else ""
+        if not text:
+            raise ValueError("Input text must not be empty.")
         post = self._make_post(text, post_id)
         retriever = self._ensure_retriever()
 

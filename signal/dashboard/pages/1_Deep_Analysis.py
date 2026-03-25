@@ -257,7 +257,11 @@ analyze_clicked = st.button("Analyze", type="primary", use_container_width=True)
 if analyze_clicked and user_text.strip():
     with st.spinner("Running 4-layer SIGNAL analysis..."):
         pipeline = _get_pipeline()
-        report = pipeline.analyze(user_text.strip())
+        try:
+            report = pipeline.analyze(user_text.strip())
+        except ValueError as e:
+            st.warning(f"Invalid input: {e}")
+            st.stop()
 
     # Metrics row
     c1, c2, c3, c4 = st.columns(4)
