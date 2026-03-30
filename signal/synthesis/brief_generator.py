@@ -62,7 +62,8 @@ def _call_gemini(prompt: str) -> str:
     if cached is not None:
         return cached
 
-    api_key = os.environ.get("GEMINI_API_KEY")
+    from signal.config import _get_secret  # noqa: PLC0415
+    api_key = _get_secret("GEMINI_API_KEY")
     if api_key:
         import google.genai as genai
         client = genai.Client(api_key=api_key)

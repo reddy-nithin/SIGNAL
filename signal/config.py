@@ -10,6 +10,21 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+
+def _get_secret(key: str, default: str | None = None) -> str | None:
+    """Read a secret from env var, then Streamlit secrets, then default.
+
+    Works in both local (os.environ) and Streamlit Cloud (st.secrets) contexts.
+    """
+    value = os.environ.get(key)
+    if value:
+        return value
+    try:
+        import streamlit as st  # noqa: PLC0415
+        return st.secrets.get(key, default)
+    except Exception:
+        return default
+
 # ── Paths ─────────────────────────────────────────────────────────────────────
 PROJECT_ROOT: Path = Path(__file__).resolve().parent.parent
 OPIOID_DATA_DIR: Path = PROJECT_ROOT / "opioid_data"
@@ -30,7 +45,7 @@ BM25_INDEX_PATH: Path = MODELS_DIR / "bm25_index.pkl"
 CHUNK_METADATA_PATH: Path = MODELS_DIR / "chunk_metadata.json"
 
 # ── Vertex AI / Gemini ────────────────────────────────────────────────────────
-VERTEX_PROJECT_ID: str = os.environ.get("GCP_PROJECT_ID", "gws-workspace-cli-1773579890")
+VERTEX_PROJECT_ID: str = _get_secret("GCP_PROJECT_ID", "") or ""
 VERTEX_LOCATION: str = "us-central1"
 EMBEDDING_MODEL: str = "text-embedding-004"
 EMBEDDING_DIM: int = 768

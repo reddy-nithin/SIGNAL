@@ -21,6 +21,17 @@ if str(_root) not in _sys.path:
 
 import streamlit as st
 
+from signal.dashboard.theme import (
+    inject_css,
+    stage_arc_html,
+    pipeline_html,
+    metric_grid_html,
+    nav_cards_html,
+    gradient_divider_html,
+    section_header_html,
+    STAGE_COLORS,
+)
+
 st.set_page_config(
     page_title="SIGNAL",
     page_icon="📡",
@@ -28,9 +39,19 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Sidebar ──────────────────────────────────────────────────────────────────
+inject_css()
 
-st.sidebar.title("SIGNAL")
+# ── Sidebar ───────────────────────────────────────────────────────────────────
+
+st.sidebar.markdown(
+    '<div style="padding: 4px 0 12px 0;">'
+    '<span style="font-size:1.4rem; font-weight:800; letter-spacing:0.1em; '
+    'background:linear-gradient(135deg, #FF6B6B, #FFA07A); '
+    '-webkit-background-clip:text; -webkit-text-fill-color:transparent; '
+    'background-clip:text;">SIGNAL</span>'
+    '</div>',
+    unsafe_allow_html=True,
+)
 st.sidebar.caption(
     "Substance Intelligence through Grounded\n"
     "Narrative Analysis of Language"
@@ -42,65 +63,106 @@ st.sidebar.markdown(
     "from Social Signals"
 )
 
-# ── Landing page ─────────────────────────────────────────────────────────────
+# ── Hero Section ──────────────────────────────────────────────────────────────
 
-st.title("SIGNAL")
 st.markdown(
-    "### Substance Intelligence through Grounded Narrative Analysis of Language"
+    """
+<div class="signal-hero">
+  <div class="signal-hero-title">SIGNAL</div>
+  <div class="signal-hero-subtitle">
+    Substance Intelligence through Grounded Narrative Analysis of Language
+  </div>
+  <div class="signal-hero-context">
+    NSF NRT Challenge 1 &nbsp;&middot;&nbsp; UMKC 2026 Spring Research-A-Thon
+  </div>
+</div>
+""",
+    unsafe_allow_html=True,
 )
 
-st.markdown("""
-SIGNAL classifies **where in the addiction narrative arc** a social media post
-falls — from Curiosity through Crisis to Recovery — resolves street drug slang
-to clinical entities, then grounds every detection in real pharmacological data.
+# ── Key Stats Grid ────────────────────────────────────────────────────────────
 
-The result: **evidence-cited analyst briefs** for public health workers.
-""")
+st.markdown(
+    metric_grid_html([
+        ("84",    "Knowledge Chunks",      "#4ECDC4"),
+        ("310",   "Adverse Event Signals", "#45B7D1"),
+        ("6",     "Narrative Stages",      "#FFA07A"),
+        ("3 × 2", "Detection Methods",     "#FF6B6B"),
+    ]),
+    unsafe_allow_html=True,
+)
 
-st.divider()
+# ── Addiction Narrative Arc ───────────────────────────────────────────────────
 
-# Key stats
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("Knowledge Chunks", "84")
-c2.metric("Adverse Event Signals", "310")
-c3.metric("Narrative Stages", "6")
-c4.metric("Detection Methods", "3 × 2 tasks")
+st.markdown(
+    section_header_html(
+        "Addiction Narrative Arc",
+        "6 stages classified from unstructured social media text — a novel NLP task",
+    ),
+    unsafe_allow_html=True,
+)
+st.markdown(stage_arc_html(), unsafe_allow_html=True)
 
-st.divider()
+st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
-# Page descriptions
-col1, col2, col3 = st.columns(3)
+# ── Page Navigation Cards ─────────────────────────────────────────────────────
 
-with col1:
-    st.markdown("### Deep Analysis")
-    st.markdown(
-        "Paste any social media post for full 4-layer analysis: "
-        "substance resolution, narrative stage classification, "
-        "clinical grounding, and an evidence-cited analyst brief."
-    )
+st.markdown(
+    section_header_html("Dashboard Pages"),
+    unsafe_allow_html=True,
+)
+st.markdown(
+    nav_cards_html([
+        (
+            "Page 01",
+            "Deep Analysis",
+            "Paste any social media post for full 4-layer analysis: "
+            "substance resolution, narrative stage classification, "
+            "clinical grounding, and an evidence-cited analyst brief.",
+        ),
+        (
+            "Page 02",
+            "Narrative Pulse",
+            "Cross-community narrative stage distributions. Identify "
+            "which communities are in escalation patterns vs. "
+            "recovery-dominant, with risk tier scoring.",
+        ),
+        (
+            "Page 03",
+            "Method Comparison",
+            "Compare 3 detection methods across both tasks. "
+            "Precision, recall, F1, DistilBERT cross-validation, "
+            "and inter-method agreement statistics.",
+        ),
+    ]),
+    unsafe_allow_html=True,
+)
 
-with col2:
-    st.markdown("### Narrative Pulse")
-    st.markdown(
-        "See how narrative stage distributions differ across online "
-        "communities. Identify which communities are in escalation "
-        "patterns vs. recovery-dominant."
-    )
+st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
-with col3:
-    st.markdown("### Method Comparison")
-    st.markdown(
-        "Compare 3 detection methods on both substance resolution "
-        "and narrative stage classification. Precision, recall, F1, "
-        "and inter-method agreement statistics."
-    )
+# ── Architecture Pipeline ─────────────────────────────────────────────────────
 
-st.divider()
+st.markdown(
+    section_header_html(
+        "4-Layer Detection Pipeline",
+        "Each layer feeds into the next — substance → stage → grounding → brief",
+    ),
+    unsafe_allow_html=True,
+)
+st.markdown(
+    pipeline_html([
+        "Layer 1 — Substance Resolution",
+        "Layer 2 — Narrative Stage Classification",
+        "Layer 3 — Clinical Grounding",
+        "Layer 4 — Analyst Brief",
+    ]),
+    unsafe_allow_html=True,
+)
 
-st.markdown("""
-**Architecture:** 4-layer pipeline
-**Layer 1:** Substance Resolution (rule-based lexicon, embedding classifier, Gemini zero-shot)
-**Layer 2:** Narrative Stage Classification (rule-based patterns, fine-tuned DistilBERT, Gemini few-shot)
-**Layer 3:** Clinical Grounding (FAISS/BM25 retrieval + FAERS signal lookup)
-**Layer 4:** Analyst Brief (Gemini synthesis with evidence citations)
-""")
+st.markdown(
+    '<div style="margin-top:12px; font-size:0.83rem; opacity:0.45; text-align:center;">'
+    'Rule-based &middot; Embedding classifier &middot; Fine-tuned DistilBERT &middot; '
+    'Gemini LLM &middot; FAISS/BM25 retrieval &middot; FAERS adverse event signals'
+    '</div>',
+    unsafe_allow_html=True,
+)

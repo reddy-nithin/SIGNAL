@@ -140,7 +140,13 @@ SIGNAL/
 - [x] Phase 3: Narrative Stages + DistilBERT (Days 7-10) — completed 2026-03-23
 - [x] Phase 4: Clinical Grounding + Multi-Substance KB (Days 11-13) — completed 2026-03-24
 - [x] Phase 5: Dashboard (Days 14-15) — completed 2026-03-24
-- [ ] Phase 6: Polish + Submit (Day 16) — in progress 2026-03-24
+- [ ] Phase 6: Polish + Submit (Day 16) — in progress 2026-03-25
+  - [x] Dashboard improvements (2026-03-25): DistilBERT hero metric, risk banner, auto-load demos, structured brief, lexicon viz, community risk tiers, intervention cards, Sankey diagram
+  - [ ] Re-run `python -m signal.dashboard.demo_cache` to generate Sankey vote data
+  - [ ] Competition report final polish
+  - [ ] Deploy app (Streamlit Cloud / HF Spaces)
+  - [ ] Record 2-minute demo video
+  - [ ] Submit by noon April 6
 
 ## Rules for Claude Code Sessions
 1. Read this file first every session.

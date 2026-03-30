@@ -16,23 +16,43 @@ if not getattr(_sys.modules.get("signal"), "__path__", None):
 if str(_root) not in _sys.path:
     _sys.path.insert(0, str(_root))
 
+import html
 import json
-from pathlib import Path
+import re
+import time
+from types import SimpleNamespace
 
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from signal.config import CACHE_DIR, STAGE_NAMES
+from signal.config import CACHE_DIR
 from signal.dashboard.theme import (
     STAGE_COLORS,
     STAGE_ORDER,
     METHOD_COLORS,
     PLOTLY_LAYOUT,
+    inject_css,
+    risk_banner_html,
+    section_header_html,
+    gradient_divider_html,
     agreement_badge,
 )
 
-# ── Demo examples ────────────────────────────────────────────────────────────
+inject_css()
+
+# ── Risk Level Map ─────────────────────────────────────────────────────────────
+
+RISK_MAP: dict[str, tuple[str, str]] = {
+    "Curiosity":       ("info",    "Low risk — Prevention and education window is open. Monitoring recommended."),
+    "Experimentation": ("info",    "Low-moderate — Early-stage use. Education and brief intervention appropriate."),
+    "Regular Use":     ("warning", "Moderate — Patterned use established. Screening and brief intervention recommended."),
+    "Dependence":      ("warning", "High — Dependence markers present. MAT referral and treatment access resources indicated."),
+    "Crisis":          ("error",   "Acute risk — Immediate crisis intervention and harm reduction resources indicated."),
+    "Recovery":        ("success", "Recovery — Peer support, MAT maintenance, and relapse prevention resources recommended."),
+}
+
+# ── Demo examples ──────────────────────────────────────────────────────────────
 
 DEMO_EXAMPLES: dict[str, str] = {
     "Curiosity — opioids": (
@@ -60,7 +80,7 @@ DEMO_EXAMPLES: dict[str, str] = {
 DEMO_CACHE_PATH = CACHE_DIR / "demo_reports.json"
 
 
-# ── Pipeline access ──────────────────────────────────────────────────────────
+# ── Pipeline access ────────────────────────────────────────────────────────────
 
 @st.cache_resource(show_spinner="Loading SIGNAL pipeline...")
 def _get_pipeline():
@@ -78,9 +98,26 @@ def _load_cached_reports() -> dict | None:
     return None
 
 
-# ── Rendering helpers ────────────────────────────────────────────────────────
+def _dict_to_report(d: dict) -> SimpleNamespace:
+    """Recursively convert a nested dict/list to SimpleNamespace for attribute access."""
+    if isinstance(d, dict):
+        return SimpleNamespace(**{k: _dict_to_report(v) for k, v in d.items()})
+    if isinstance(d, list):
+        return [_dict_to_report(item) for item in d]
+    return d
 
-def _render_substances(report):
+
+# ── Rendering helpers ──────────────────────────────────────────────────────────
+
+def _render_risk_banner(stage: str) -> None:
+    """Render the styled risk level banner using the theme helper."""
+    if stage not in RISK_MAP:
+        return
+    _, message = RISK_MAP[stage]
+    st.markdown(risk_banner_html(stage, message), unsafe_allow_html=True)
+
+
+def _render_substances(report) -> None:
     """Render Layer 1: Substance Resolution tab."""
     matches = report.substance_results.matches
     if not matches:
@@ -89,8 +126,10 @@ def _render_substances(report):
 
     n_methods = len(report.substance_results.method_results)
     st.markdown(
-        f"**{len(matches)} substance(s) detected** — "
-        f"Agreement: {agreement_badge(report.substance_results.agreement_count, n_methods)}",
+        section_header_html(
+            f"{len(matches)} substance(s) detected",
+            f"Agreement: {agreement_badge(report.substance_results.agreement_count, n_methods)}",
+        ),
         unsafe_allow_html=True,
     )
 
@@ -110,35 +149,41 @@ def _render_substances(report):
         for mr in report.substance_results.method_results:
             method_label = mr.method.replace("_", " ").title()
             det_names = [m.clinical_name for m in mr.matches if not m.is_negated]
+            color = METHOD_COLORS.get(mr.method, "#888")
             st.markdown(
-                f"**{method_label}** ({mr.elapsed_ms:.0f}ms): "
-                f"{', '.join(det_names) if det_names else 'none detected'}"
+                f'<div style="padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05);">'
+                f'<span style="color:{color}; font-weight:700;">{method_label}</span> '
+                f'<span style="opacity:0.5; font-size:0.85em;">({mr.elapsed_ms:.0f}ms)</span>'
+                f'<span style="margin-left:12px;">'
+                f'{", ".join(det_names) if det_names else "<em>none detected</em>"}'
+                f'</span></div>',
+                unsafe_allow_html=True,
             )
 
 
-def _render_narrative(report):
+def _render_narrative(report) -> None:
     """Render Layer 2: Narrative Stage tab."""
     top = report.narrative_results.top_stage
     n_methods = len(report.narrative_results.method_results)
+    color = STAGE_COLORS.get(top.stage, "#888")
 
     st.markdown(
-        f"### Stage: **{top.stage}** ({top.confidence:.0%}) — "
-        f"Agreement: {agreement_badge(report.narrative_results.agreement_count, n_methods)}",
+        f'<div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">'
+        f'<span style="font-size:1.5rem; font-weight:800; color:{color};">{top.stage}</span>'
+        f'<span style="font-size:1rem; opacity:0.7; font-weight:600;">{top.confidence:.0%} confidence</span>'
+        f'<span style="font-size:0.85rem; opacity:0.5;">— Agreement: {agreement_badge(report.narrative_results.agreement_count, n_methods)}</span>'
+        f'</div>',
         unsafe_allow_html=True,
     )
 
     # Ensemble confidence bar chart
     stages = [sc.stage for sc in report.narrative_results.all_stages]
     confs = [sc.confidence for sc in report.narrative_results.all_stages]
-    colors = [
-        STAGE_COLORS.get(s, "#888") if s == top.stage
-        else STAGE_COLORS.get(s, "#888") + "66"  # dim non-top
-        for s in stages
-    ]
 
     fig = go.Figure(go.Bar(
         x=confs, y=stages, orientation="h",
         marker_color=[STAGE_COLORS.get(s, "#888") for s in stages],
+        marker_line_width=0,
         text=[f"{c:.0%}" for c in confs],
         textposition="auto",
     ))
@@ -161,11 +206,9 @@ def _render_narrative(report):
     from signal.narrative.ensemble import build_comparison_table
     comp_rows = build_comparison_table(report.narrative_results)
     df = pd.DataFrame(comp_rows)
-    # Pivot: stages as rows, methods as columns
     pivot = df.pivot_table(index="stage", columns="method", values="confidence")
-    # Reorder
-    stage_order = [s for s in STAGE_ORDER if s in pivot.index]
-    pivot = pivot.reindex(stage_order)
+    stage_order_present = [s for s in STAGE_ORDER if s in pivot.index]
+    pivot = pivot.reindex(stage_order_present)
 
     with st.expander("Per-method stage scores"):
         st.dataframe(pivot.style.format("{:.0%}").background_gradient(
@@ -173,7 +216,7 @@ def _render_narrative(report):
         ), use_container_width=True)
 
 
-def _render_grounding(report):
+def _render_grounding(report) -> None:
     """Render Layer 3: Clinical Grounding tab."""
     contexts = report.clinical_contexts
     if not contexts:
@@ -181,23 +224,32 @@ def _render_grounding(report):
         return
 
     for ctx in contexts:
-        with st.expander(f"{ctx.substance} ({ctx.drug_class})", expanded=len(contexts) <= 2):
+        with st.expander(
+            f"{ctx.substance}  ·  {ctx.drug_class}",
+            expanded=len(contexts) <= 2,
+        ):
             # Evidence chunks
             if ctx.evidence:
-                st.markdown("**Retrieved Knowledge Chunks**")
+                st.markdown(
+                    section_header_html("Retrieved Knowledge Chunks"),
+                    unsafe_allow_html=True,
+                )
                 ev_rows = []
                 for ev in ctx.evidence:
                     ev_rows.append({
                         "Chunk": ev.chunk_filename,
                         "Type": ev.chunk_type,
                         "Relevance": f"{ev.relevance_score:.3f}",
-                        "Snippet": ev.text_snippet[:200] + "..." if len(ev.text_snippet) > 200 else ev.text_snippet,
+                        "Snippet": ev.text_snippet[:200] + "…" if len(ev.text_snippet) > 200 else ev.text_snippet,
                     })
                 st.dataframe(pd.DataFrame(ev_rows), use_container_width=True, hide_index=True)
 
             # FAERS signals
             if ctx.faers_signals:
-                st.markdown("**Adverse Event Signals**")
+                st.markdown(
+                    section_header_html("Adverse Event Signals"),
+                    unsafe_allow_html=True,
+                )
                 sig_rows = []
                 for sig in ctx.faers_signals:
                     prr_str = f"{sig.prr:.1f}" if sig.prr is not None else "—"
@@ -221,18 +273,79 @@ def _render_grounding(report):
                     )
 
 
-def _render_brief(report):
-    """Render Layer 4: Analyst Brief tab."""
-    if not report.analyst_brief:
+def _render_brief(report) -> None:
+    """Render Layer 4: Analyst Brief tab — structured section renderer with fallback."""
+    brief_text = report.analyst_brief if hasattr(report, "analyst_brief") else None
+    if not brief_text:
         st.info("No analyst brief generated (no substances detected or brief was skipped).")
         return
-    st.markdown(report.analyst_brief)
+
+    # Try to split into sections on patterns like "1. SUBSTANCE IDENTIFICATION" or "## Header"
+    section_pattern = re.compile(
+        r"(?:^|\n)(?:\d+\.\s+)?([A-Z][A-Z\s&/\-]{4,}:?)\s*\n",
+        re.MULTILINE,
+    )
+
+    parts = section_pattern.split(brief_text)
+
+    if len(parts) < 3:
+        st.markdown(brief_text)
+        return
+
+    preamble = parts[0].strip()
+    if preamble:
+        st.markdown(preamble)
+
+    sections: list[tuple[str, str]] = []
+    for i in range(1, len(parts) - 1, 2):
+        header = parts[i].strip()
+        body = parts[i + 1].strip() if i + 1 < len(parts) else ""
+        if header and body:
+            sections.append((header, body))
+
+    if not sections:
+        st.markdown(brief_text)
+        return
+
+    action_keywords = {"RECOMMEND", "ACTION", "INTERVENTION", "RESPONSE"}
+
+    for j, (header, body) in enumerate(sections):
+        is_action = any(kw in header.upper() for kw in action_keywords)
+        is_last = j == len(sections) - 1
+
+        color = "#FAFAFA"
+        if "SUBSTANCE" in header.upper() or "DRUG" in header.upper():
+            color = "#4ECDC4"
+        elif "NARRATIVE" in header.upper() or "STAGE" in header.upper():
+            color = "#45B7D1"
+        elif "RISK" in header.upper() or "CLINICAL" in header.upper():
+            color = "#FFA07A"
+        elif "INTERACTION" in header.upper() or "POLY" in header.upper():
+            color = "#E63946"
+        elif "RECOMMEND" in header.upper() or "ACTION" in header.upper():
+            color = "#98D8C8"
+
+        with st.expander(header, expanded=(is_action or is_last)):
+            st.markdown(
+                f'<div style="border-left:3px solid {color}; padding:2px 0 2px 12px; '
+                f'margin-bottom:10px;">'
+                f'<span style="color:{color}; font-weight:700; font-size:0.85rem; '
+                f'letter-spacing:0.05em; text-transform:uppercase;">{header}</span>'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+            st.markdown(body)
 
 
-# ── Main page ────────────────────────────────────────────────────────────────
+# ── Main page ──────────────────────────────────────────────────────────────────
 
-st.title("Deep Analysis")
-st.caption("Paste any social media post for full 4-layer SIGNAL analysis")
+st.markdown(
+    section_header_html(
+        "Deep Analysis",
+        "Full 4-layer SIGNAL analysis on any social media post",
+    ),
+    unsafe_allow_html=True,
+)
 
 # Input area
 col_input, col_example = st.columns([3, 1])
@@ -249,26 +362,90 @@ with col_input:
         "Post text",
         value=default_text,
         height=150,
-        placeholder="Paste a social media post here...",
+        placeholder="Paste a social media post here…",
+        max_chars=3000,
+    )
+
+# Show styled post preview when a demo is loaded
+if example_choice != "Custom input" and user_text.strip():
+    safe_preview = html.escape(user_text.strip())
+    st.markdown(
+        f'<div style="border:1px solid rgba(255,255,255,0.08); border-left:3px solid rgba(255,255,255,0.25); '
+        f'background:rgba(255,255,255,0.02); border-radius:6px; padding:12px 16px; '
+        f'font-size:0.88rem; opacity:0.75; line-height:1.6; margin:4px 0 12px 0; '
+        f'font-style:italic;">"{safe_preview}"</div>',
+        unsafe_allow_html=True,
     )
 
 analyze_clicked = st.button("Analyze", type="primary", use_container_width=True)
 
+# ── Rate limiting ──────────────────────────────────────────────────────────────
+
+_RATE_LIMIT = 10       # max analyses per session
+_COOLDOWN_SEC = 5      # seconds between consecutive analyses
+
+if "analysis_count" not in st.session_state:
+    st.session_state.analysis_count = 0
+if "last_analysis_time" not in st.session_state:
+    st.session_state.last_analysis_time = 0.0
+
+# ── Result rendering (from cache or live pipeline) ─────────────────────────────
+
+cached_reports = _load_cached_reports()
+report = None
+
 if analyze_clicked and user_text.strip():
-    with st.spinner("Running 4-layer SIGNAL analysis..."):
-        pipeline = _get_pipeline()
-        try:
-            report = pipeline.analyze(user_text.strip())
-        except ValueError as e:
-            st.warning(f"Invalid input: {e}")
-            st.stop()
+    now = time.time()
+    seconds_since_last = now - st.session_state.last_analysis_time
+    if st.session_state.analysis_count >= _RATE_LIMIT:
+        st.warning(f"Session limit reached ({_RATE_LIMIT} analyses). Refresh the page to continue.")
+        st.stop()
+    elif seconds_since_last < _COOLDOWN_SEC:
+        remaining = int(_COOLDOWN_SEC - seconds_since_last) + 1
+        st.info(f"Please wait {remaining}s before analyzing again.")
+        st.stop()
+    else:
+        with st.spinner("Running 4-layer SIGNAL analysis…"):
+            pipeline = _get_pipeline()
+            try:
+                report = pipeline.analyze(user_text.strip())
+                st.session_state.analysis_count += 1
+                st.session_state.last_analysis_time = time.time()
+            except ValueError as e:
+                st.warning(f"Invalid input: {e}")
+                st.stop()
+            except Exception:
+                st.error("Analysis failed. Please try again or select a demo example.")
+                st.stop()
+
+elif not analyze_clicked and example_choice != "Custom input" and cached_reports:
+    cached_dict = cached_reports.get(example_choice)
+    if cached_dict:
+        report = _dict_to_report(cached_dict)
+
+elif analyze_clicked:
+    st.warning("Please enter some text to analyze.")
+
+# ── Render results ─────────────────────────────────────────────────────────────
+
+if report is not None:
+    substance_count = len(report.substance_results.matches)
+    top_stage = report.narrative_results.top_stage.stage
+    stage_conf = report.narrative_results.top_stage.confidence
+    elapsed = getattr(report, "elapsed_ms", 0)
 
     # Metrics row
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Substances", len(report.substance_results.matches))
-    c2.metric("Narrative Stage", report.narrative_results.top_stage.stage)
-    c3.metric("Stage Confidence", f"{report.narrative_results.top_stage.confidence:.0%}")
-    c4.metric("Elapsed", f"{report.elapsed_ms:.0f}ms")
+    c1.metric("Substances", substance_count)
+    c2.metric("Narrative Stage", top_stage)
+    c3.metric("Stage Confidence", f"{stage_conf:.0%}")
+    if elapsed:
+        c4.metric("Elapsed", f"{elapsed:.0f} ms")
+
+    # Risk Level synthesis banner
+    _render_risk_banner(top_stage)
+
+    st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
     # Tabs
     tab1, tab2, tab3, tab4 = st.tabs([
@@ -287,5 +464,8 @@ if analyze_clicked and user_text.strip():
     with tab4:
         _render_brief(report)
 
-elif analyze_clicked:
-    st.warning("Please enter some text to analyze.")
+elif example_choice != "Custom input" and cached_reports is None:
+    st.info(
+        "Pre-cached demo results not found. Click **Analyze** to run live, "
+        "or pre-cache with: `python -m signal.dashboard.demo_cache`"
+    )

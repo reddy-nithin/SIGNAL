@@ -147,6 +147,16 @@ def compute_narrative_agreement(
     stats["stage_distribution"] = dict(stage_dist)
     stats["n_posts"] = len(results)
 
+    # Capture per-post method votes for Sankey diagram
+    method_votes: list[dict[str, str]] = []
+    for r in results:
+        vote: dict[str, str] = {}
+        for mr in r.method_results:
+            vote[mr.method] = mr.top_stage.stage
+        if vote:
+            method_votes.append(vote)
+    stats["method_votes_per_post"] = method_votes
+
     # Cache
     cache_path = CACHE_DIR / "method_comparison.json"
     cache_path.write_text(json.dumps(stats, indent=2))

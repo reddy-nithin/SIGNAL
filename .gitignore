@@ -9,3 +9,6 @@ evidence/**/*.png
 evidence/**/*.jpg
 .venv/
 cache/
+!cache/demo_reports.json
+!cache/method_comparison.json
+!cache/narrative_distributions.json

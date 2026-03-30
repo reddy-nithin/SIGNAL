@@ -1,0 +1,1024 @@
+{
+  "pairwise_kappa": {
+    "fine_tuned_vs_llm": 0.1228,
+    "fine_tuned_vs_rule_based": 0.1493,
+    "llm_vs_rule_based": 0.1762
+  },
+  "fleiss_kappa": 0.1175,
+  "pairwise_agreement": {
+    "fine_tuned_vs_llm": 0.265,
+    "fine_tuned_vs_rule_based": 0.355,
+    "llm_vs_rule_based": 0.39
+  },
+  "all_agree_pct": 0.14,
+  "stage_distribution": {
+    "Recovery": 64,
+    "Dependence": 38,
+    "Crisis": 91,
+    "Regular Use": 1,
+    "Curiosity": 6
+  },
+  "n_posts": 200,
+  "method_votes_per_post": [
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Experimentation",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Recovery",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Regular Use"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Curiosity"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Curiosity"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Experimentation",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Crisis",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Experimentation",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Curiosity"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Experimentation",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Curiosity",
+      "llm": "Curiosity"
+    },
+    {
+      "rule_based": "Experimentation",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Regular Use",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Curiosity",
+      "llm": "Curiosity"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Curiosity",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Curiosity",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Crisis",
+      "fine_tuned": "Regular Use",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Crisis",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Recovery",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Curiosity",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Dependence",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Experimentation",
+      "llm": "Dependence"
+    },
+    {
+      "rule_based": "Regular Use",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Dependence",
+      "llm": "Crisis"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Regular Use",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Recovery",
+      "fine_tuned": "Recovery",
+      "llm": "Recovery"
+    },
+    {
+      "rule_based": "Dependence",
+      "fine_tuned": "Experimentation",
+      "llm": "Crisis"
+    }
+  ]
+}

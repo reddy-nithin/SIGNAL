@@ -75,6 +75,8 @@ class SIGNALPipeline:
         text = text.strip() if text else ""
         if not text:
             raise ValueError("Input text must not be empty.")
+        if len(text) > 3000:
+            raise ValueError("Input text exceeds the 3000-character limit.")
         post = self._make_post(text, post_id)
         retriever = self._ensure_retriever()
 

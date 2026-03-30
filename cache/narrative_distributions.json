@@ -1,0 +1,156 @@
+[
+  {
+    "label": "teaching",
+    "stage_counts": {
+      "Curiosity": 12,
+      "Experimentation": 3,
+      "Regular Use": 19,
+      "Dependence": 51,
+      "Crisis": 78,
+      "Recovery": 37
+    },
+    "stage_proportions": {
+      "Curiosity": 0.06,
+      "Experimentation": 0.015,
+      "Regular Use": 0.095,
+      "Dependence": 0.255,
+      "Crisis": 0.39,
+      "Recovery": 0.185
+    },
+    "total_classified": 200,
+    "group_size": 1063,
+    "sample_size": 200
+  },
+  {
+    "label": "depression",
+    "stage_counts": {
+      "Curiosity": 14,
+      "Experimentation": 3,
+      "Regular Use": 25,
+      "Dependence": 41,
+      "Crisis": 76,
+      "Recovery": 41
+    },
+    "stage_proportions": {
+      "Curiosity": 0.07,
+      "Experimentation": 0.015,
+      "Regular Use": 0.125,
+      "Dependence": 0.205,
+      "Crisis": 0.38,
+      "Recovery": 0.205
+    },
+    "total_classified": 200,
+    "group_size": 1379,
+    "sample_size": 200
+  },
+  {
+    "label": "autism",
+    "stage_counts": {
+      "Curiosity": 11,
+      "Experimentation": 6,
+      "Regular Use": 27,
+      "Dependence": 61,
+      "Crisis": 54,
+      "Recovery": 41
+    },
+    "stage_proportions": {
+      "Curiosity": 0.055,
+      "Experimentation": 0.03,
+      "Regular Use": 0.135,
+      "Dependence": 0.305,
+      "Crisis": 0.27,
+      "Recovery": 0.205
+    },
+    "total_classified": 200,
+    "group_size": 3610,
+    "sample_size": 200
+  },
+  {
+    "label": "addiction",
+    "stage_counts": {
+      "Curiosity": 10,
+      "Experimentation": 2,
+      "Regular Use": 6,
+      "Dependence": 78,
+      "Crisis": 27,
+      "Recovery": 77
+    },
+    "stage_proportions": {
+      "Curiosity": 0.05,
+      "Experimentation": 0.01,
+      "Regular Use": 0.03,
+      "Dependence": 0.39,
+      "Crisis": 0.135,
+      "Recovery": 0.385
+    },
+    "total_classified": 200,
+    "group_size": 502,
+    "sample_size": 200
+  },
+  {
+    "label": "bpd",
+    "stage_counts": {
+      "Curiosity": 8,
+      "Experimentation": 9,
+      "Regular Use": 27,
+      "Dependence": 42,
+      "Crisis": 63,
+      "Recovery": 51
+    },
+    "stage_proportions": {
+      "Curiosity": 0.04,
+      "Experimentation": 0.045,
+      "Regular Use": 0.135,
+      "Dependence": 0.21,
+      "Crisis": 0.315,
+      "Recovery": 0.255
+    },
+    "total_classified": 200,
+    "group_size": 8298,
+    "sample_size": 200
+  },
+  {
+    "label": "bipolarreddit",
+    "stage_counts": {
+      "Curiosity": 11,
+      "Experimentation": 4,
+      "Regular Use": 19,
+      "Dependence": 67,
+      "Crisis": 33,
+      "Recovery": 66
+    },
+    "stage_proportions": {
+      "Curiosity": 0.055,
+      "Experimentation": 0.02,
+      "Regular Use": 0.095,
+      "Dependence": 0.335,
+      "Crisis": 0.165,
+      "Recovery": 0.33
+    },
+    "total_classified": 200,
+    "group_size": 2720,
+    "sample_size": 200
+  },
+  {
+    "label": "healthanxiety",
+    "stage_counts": {
+      "Curiosity": 17,
+      "Experimentation": 4,
+      "Regular Use": 29,
+      "Dependence": 58,
+      "Crisis": 25,
+      "Recovery": 67
+    },
+    "stage_proportions": {
+      "Curiosity": 0.085,
+      "Experimentation": 0.02,
+      "Regular Use": 0.145,
+      "Dependence": 0.29,
+      "Crisis": 0.125,
+      "Recovery": 0.335
+    },
+    "total_classified": 200,
+    "group_size": 2427,
+    "sample_size": 200
+  }
+]
