@@ -9,7 +9,7 @@
           "substance_name": "oxy",
           "clinical_name": "oxycodone",
           "drug_class": "opioid",
-          "confidence": 0.715,
+          "confidence": 0.8634,
           "method": "ensemble",
           "context_snippet": "Has anyone tried oxy for back pain? What does it feel like? Is it safe...",
           "is_negated": false,
@@ -38,9 +38,32 @@
         },
         {
           "post_id": "curiosity_\u2014_opioids",
-          "matches": [],
+          "matches": [
+            {
+              "substance_name": "oxycodone",
+              "clinical_name": "oxycodone",
+              "drug_class": "opioid",
+              "confidence": 0.5936,
+              "method": "embedding",
+              "context_snippet": "Has anyone tried oxy for back pain? What does it feel like? Is it safe to take occasionally or is it...",
+              "is_negated": false,
+              "char_start": 0,
+              "char_end": 111
+            },
+            {
+              "substance_name": "hydrocodone",
+              "clinical_name": "hydrocodone",
+              "drug_class": "opioid",
+              "confidence": 0.5573,
+              "method": "embedding",
+              "context_snippet": "Has anyone tried oxy for back pain? What does it feel like? Is it safe to take occasionally or is it...",
+              "is_negated": false,
+              "char_start": 0,
+              "char_end": 111
+            }
+          ],
           "method": "embedding",
-          "elapsed_ms": 6225.08
+          "elapsed_ms": 7676.69
         },
         {
           "post_id": "curiosity_\u2014_opioids",
@@ -58,10 +81,10 @@
             }
           ],
           "method": "llm",
-          "elapsed_ms": 1.47
+          "elapsed_ms": 0.7
         }
       ],
-      "agreement_count": 2
+      "agreement_count": 3
     },
     "narrative_results": {
       "post_id": "curiosity_\u2014_opioids",
@@ -83,7 +106,7 @@
         {
           "stage": "Experimentation",
           "stage_index": 1,
-          "confidence": 0.0392,
+          "confidence": 0.0482,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Curiosity, fine_tuned=Curiosity, llm=Curiosity"
         },
@@ -97,21 +120,21 @@
         {
           "stage": "Dependence",
           "stage_index": 3,
-          "confidence": 0.0418,
+          "confidence": 0.0395,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Curiosity, fine_tuned=Curiosity, llm=Curiosity"
         },
         {
           "stage": "Crisis",
           "stage_index": 4,
-          "confidence": 0.0375,
+          "confidence": 0.0341,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Curiosity, fine_tuned=Curiosity, llm=Curiosity"
         },
         {
           "stage": "Recovery",
           "stage_index": 5,
-          "confidence": 0.0365,
+          "confidence": 0.0331,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Curiosity, fine_tuned=Curiosity, llm=Curiosity"
         }
@@ -171,7 +194,7 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 526.86
+          "elapsed_ms": 5676.48
         },
         {
           "post_id": "curiosity_\u2014_opioids",
@@ -227,7 +250,7 @@
             }
           ],
           "method": "fine_tuned",
-          "elapsed_ms": 1523.82
+          "elapsed_ms": 1893.58
         },
         {
           "post_id": "curiosity_\u2014_opioids",
@@ -236,7 +259,7 @@
             "stage_index": 0,
             "confidence": 0.95,
             "method": "llm",
-            "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+            "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
           },
           "all_stages": [
             {
@@ -244,46 +267,46 @@
               "stage_index": 0,
               "confidence": 0.95,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             },
             {
               "stage": "Experimentation",
               "stage_index": 1,
-              "confidence": 0.01,
+              "confidence": 0.03,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             },
             {
               "stage": "Regular Use",
               "stage_index": 2,
               "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             },
             {
               "stage": "Dependence",
               "stage_index": 3,
-              "confidence": 0.01,
+              "confidence": 0.005,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             },
             {
               "stage": "Crisis",
               "stage_index": 4,
-              "confidence": 0.01,
+              "confidence": 0.0025,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             },
             {
               "stage": "Recovery",
               "stage_index": 5,
-              "confidence": 0.01,
+              "confidence": 0.0025,
               "method": "llm",
-              "reasoning": "The post explicitly asks 'Has anyone tried oxy?' and 'What does it feel like?' indicating pre-use interest and a desire to understand the experience. The question 'Is it safe to take occasionally or is it too risky?' further highlights a pre-use risk assessment, directly matching the 'Pre-use interest, questions about substances' and 'Is it safe to...' signals for the Curiosity stage."
+              "reasoning": "The post directly asks 'What does it feel like?' and 'Is it safe to take occasionally or is it too risky?', which are classic signals of pre-use interest and questions about a substance, aligning perfectly with the Curiosity stage."
             }
           ],
           "method": "llm",
-          "elapsed_ms": 2.24
+          "elapsed_ms": 5.66
         }
       ],
       "agreement_count": 3
@@ -304,28 +327,28 @@
             "chunk_filename": "safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt",
             "chunk_type": "safety",
             "drug_name": "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet",
-            "relevance_score": 0.8097314238548279,
+            "relevance_score": 0.8876004815101624,
             "text_snippet": "DRUG SAFETY PROFILE: 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet\n\nRxCUI: 1049502\nCategory: natural/semi-synthetic\nOpioid ingredients: oxycodone\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Accidental overdose, Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, neonatal, fatal, rems, abuse, misuse\nWarning text: Risk of Medication Errors Ensure accuracy when prescribing, dispensing, and administering Oxycodone H"
-          },
-          {
-            "chunk_filename": "signals_oxycodone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "oxycodone",
-            "relevance_score": 0.6661503911018372,
-            "text_snippet": "FAERS SAFETY SIGNALS: OXYCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 14\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 65,099 reports, 3/3 methods flagging\n    Signal strength: PRR=46.51, ROR=59.56, EBGM=27.94\n  - Overdose: 46,720 reports, 3/3 methods flagging\n    Signal strength: PRR=11.16, ROR=13.10, EBGM=9.72\n  - Death: 28,513 reports, 3/3 methods flagging\n    Signal streng"
           },
           {
             "chunk_filename": "opioid_ingredients_list.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.6656951904296875,
+            "relevance_score": 0.789350152015686,
             "text_snippet": "COMPLETE OPIOID INGREDIENT LIST BY CATEGORY\n\n### Combination (4 ingredients)\n  - codeine\n  - hydrocodone\n  - oxycodone\n  - tramadol\n\n### Natural/Semi-Synthetic (6 ingredients)\n  - hydromorphone\n  - morphine\n  - naloxone\n  - naltrexone\n  - oxycodone\n  - oxymorphone\n\n### Semi-Synthetic (2 ingredients)\n  - buprenorphine\n  - butorphanol\n\n### Synthetic (6 ingredients)\n  - fentanyl\n  - meperidine\n  - naloxone\n  - pentazocine\n  - tapentadol\n  - tramadol\n\n### Treatment/Recovery (1 ingredients)\n  - metha"
+          },
+          {
+            "chunk_filename": "signals_oxycodone.txt",
+            "chunk_type": "faers_signals",
+            "drug_name": "oxycodone",
+            "relevance_score": 0.7318572402000427,
+            "text_snippet": "FAERS SAFETY SIGNALS: OXYCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 14\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 65,099 reports, 3/3 methods flagging\n    Signal strength: PRR=46.51, ROR=59.56, EBGM=27.94\n  - Overdose: 46,720 reports, 3/3 methods flagging\n    Signal strength: PRR=11.16, ROR=13.10, EBGM=9.72\n  - Death: 28,513 reports, 3/3 methods flagging\n    Signal streng"
           },
           {
             "chunk_filename": "ingredient_oxymorphone.txt",
             "chunk_type": "pharmacology",
             "drug_name": "oxymorphone",
-            "relevance_score": 0.6242191791534424,
+            "relevance_score": 0.6887415647506714,
             "text_snippet": "PHARMACOLOGY: OXYMORPHONE\n\nIdentifiers: RxCUI=7814, ChEMBL=CHEMBL963, PubChem CID=5284604\nMolecular: C17H19NO4, MW=301.34\n\nReceptor Binding Affinities:\n  - mu: Ki = 1.79 nM (source: ChEMBL)\n  - kappa: Ki = 25.3 nM (source: ChEMBL)\n  - delta: Ki = 70.0 nM (source: ChEMBL)\n\nPotency vs morphine: 0.18x\n\nOxymorphone is classified as an opioid because it acts as a full agonist at the mu opioid receptor (OPRM1) with Ki = 1.8 nM, showing 14-fold selectivity over kappa. Its primary opioid effects \u2014 analg"
           }
         ],
@@ -468,8 +491,8 @@
         "narrative_stage": "Curiosity"
       }
     ],
-    "analyst_brief": "---\nSIGNAL INTELLIGENCE BRIEF\nDate: 2024-07-30\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: oxycodone (opioid)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Curiosity (confidence: 0.80)\nReasoning: The user's post asks \"What does it feel like?\" and \"Is it safe to take occasionally or is it too risky?\", indicating an exploratory interest in the substance and its effects rather than active use or established misuse patterns.\n\n3. CLINICAL RISK PROFILE\n**Substance: oxycodone (class: opioid)**\n*   **Pharmacology:** Oxycodone is an opioid with the molecular formula C18H21NO4 and a molecular weight of 315.4 [KB:ingredient_oxycodone.txt]. It functions by binding to the mu-opioid receptor with a Ki of 12.0 nM [KB:ingredient_oxycodone.txt]. It is categorized as a natural/semi-synthetic opioid [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt], [KB:opioid_ingredients_list.txt].\n*   **Key Adverse Events:**\n    *   **Respiratory Depression:** Significant FAERS signals include Respiratory depression (PRR=5.3, ROR=5.4), Respiratory failure (PRR=1.5, ROR=1.5), and Respiratory arrest (PRR=5.4, ROR=5.5) [FAERS:oxycodone+Respiratory depression], [FAERS:oxycodone+Respiratory failure], [FAERS:oxycodone+Respiratory arrest].\n    *   **Dependence & Abuse:** There are strong signals for Drug dependence (PRR=46.5, ROR=59.6), Drug abuse (PRR=11.3, ROR=11.8), and Substance abuse (PRR=13.9, ROR=14.0) [FAERS:oxycodone+Drug dependence], [FAERS:oxycodone+Drug abuse], [FAERS:oxycodone+Substance abuse].\n    *   **Overdose:** Signals indicate risks of Overdose (PRR=11.2, ROR=13.1), Intentional overdose (PRR=1.2, ROR=1.2), and Accidental overdose (PRR=4.8, ROR=4.8) [FAERS:oxycodone+Overdose], [FAERS:oxycodone+Intentional overdose], [FAERS:oxycodone+Accidental overdose].\n    *   **Drug Toxicity:** A signal exists for Drug toxicity (PRR=3.4, ROR=3.4) [FAERS:oxycodone+Drug toxicity].\n    *   **Black Box Warning:** Oxycodone formulations, such as 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablets, carry a BOXED WARNING (Black Box) [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt].\n\n4. POLY-DRUG INTERACTION RISKS\nN/A - Only one substance (oxycodone) was detected in the input post.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Curiosity\" narrative stage, the user's questions about the subjective effects (\"What does it feel like?\") and the safety of occasional use (\"Is it safe to take occasionally or is it too risky?\") highlight critical areas of risk. The perceived positive effects could contribute to rapid development of drug dependence (PRR=46.5, ROR=59.6) and drug abuse (PRR=11.3, ROR=11.8), even with initial exploratory use [FAERS:oxycodone+Drug dependence], [FAERS:oxycodone+Drug abuse]. The inquiry about occasional use directly confronts the significant risk of accidental overdose (PRR=4.8, ROR=4.8) and life-threatening respiratory depression (PRR=5.3, ROR=5.4), which is subject to a Black Box Warning [FAERS:oxycodone+Accidental overdose], [FAERS:oxycodone+Respiratory depression], [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt]. These severe risks can manifest even from a single exposure.\n\n6. RECOMMENDED ACTIONS\n*   **Targeted Public Health Messaging:** Develop and disseminate educational content that directly addresses the dangers of oxycodone, emphasizing the high potential for dependence, abuse, and overdose even with infrequent or initial use, aligning with the user's \"Curiosity\" stage questions [FAERS:oxycodone+Drug dependence], [FAERS:oxycodone+Drug abuse], [FAERS:oxycodone+Overdose].\n*   **Promote Safe Pain Management Alternatives:** Provide accessible information about non-opioid pain management strategies and encourage consultation with healthcare professionals for back pain or other medical conditions, to reduce interest in opioid initiation [Implied from user's stated reason for asking].\n*   **Highlight Black Box Warnings:** Clearly communicate the existence and implications of the Black Box Warning for oxycodone, focusing on the risks of respiratory depression, overdose, and potential for severe adverse outcomes [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt], [FAERS:oxycodone+Respiratory depression], [FAERS:oxycodone+Overdose].\n*   **Monitor for Escalation:** Continue to monitor social media for users in the \"Curiosity\" stage regarding opioids, as this represents an early opportunity for intervention before potential initiation or escalation of use.\n---",
-    "elapsed_ms": 14457.53
+    "analyst_brief": "SIGNAL INTELLIGENCE BRIEF\nDate: 2023-10-27\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: oxycodone (opioid)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Curiosity (confidence: 0.80)\nReasoning: The user's post explicitly asks \"Has anyone tried oxy for back pain? What does it feel like? Is it safe to take occasionally or is it too risky?\" indicating an exploratory interest in the substance and its perceived safety profile, rather than active use, seeking supply, or reporting adverse events.\n\n3. CLINICAL RISK PROFILE\n**Oxycodone (opioid)**\n*   **Pharmacology Summary:** Oxycodone is a semi-synthetic opioid with the molecular formula C18H21NO4 and a molecular weight of 315.4 [KB:ingredient_oxycodone.txt]. It is classified as an opioid, specifically a natural/semi-synthetic type [KB:opioid_ingredients_list.txt, KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt]. It exhibits a strong binding affinity for the mu-opioid receptor (Ki = 12.0 nM) [KB:ingredient_oxycodone.txt].\n*   **Key Adverse Events:** Oxycodone carries a Boxed Warning (Black Box) [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt]. Significant adverse events reported include drug dependence [FAERS:oxycodone+Drug dependence] (PRR=46.5, ROR=59.6), drug abuse [FAERS:oxycodone+Drug abuse] (PRR=11.3, ROR=11.8), substance abuse [FAERS:oxycodone+Substance abuse] (PRR=13.9, ROR=14.0), and overdose [FAERS:oxycodone+Overdose] (PRR=11.2, ROR=13.1), which encompasses both accidental overdose [FAERS:oxycodone+Accidental overdose] (PRR=4.8, ROR=4.8) and intentional overdose [FAERS:oxycodone+Intentional overdose] (PRR=1.2, ROR=1.2). Other severe risks include respiratory depression [FAERS:oxycodone+Respiratory depression] (PRR=5.3, ROR=5.4), respiratory arrest [FAERS:oxycodone+Respiratory arrest] (PRR=5.4, ROR=5.5), respiratory failure [FAERS:oxycodone+Respiratory failure] (PRR=1.5, ROR=1.5), and drug toxicity [FAERS:oxycodone+Drug toxicity] (PRR=3.4, ROR=3.4).\n\n4. POLY-DRUG INTERACTION RISKS\nOnly oxycodone was detected in the input post. Therefore, no poly-drug interaction risks can be assessed for this signal.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Curiosity\" narrative stage, particularly the user's question about the safety of \"occasional\" use for back pain, the primary risks revolve around misunderstanding the addictive potential and severe adverse effects of oxycodone. Even occasional use carries a significant risk of developing drug dependence [FAERS:oxycodone+Drug dependence] and drug abuse [FAERS:oxycodone+Drug abuse], which can escalate rapidly. There is also an inherent risk of accidental overdose [FAERS:oxycodone+Accidental overdose] and severe respiratory depression [FAERS:oxycodone+Respiratory depression] or respiratory arrest [FAERS:oxycodone+Respiratory arrest] with any use, especially in opioid-naive individuals or if dosage is not strictly medically supervised. The user's query about \"safety\" highlights a critical knowledge gap regarding the potent and dangerous nature of this opioid.\n\n6. RECOMMENDED ACTIONS\n*   **Public Health Messaging on Opioid Risks:** Develop and disseminate targeted public health messages that clearly articulate the high potential for drug dependence [FAERS:oxycodone+Drug dependence], drug abuse [FAERS:oxycodone+Drug abuse], and overdose [FAERS:oxycodone+Overdose] associated with oxycodone, even when used infrequently or for pain management. Emphasize that opioids carry a Boxed Warning [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt].\n*   **Promote Safe Pain Management Alternatives:** Provide educational resources on evidence-based, non-opioid alternatives for chronic pain conditions like back pain.\n*   **Encourage Medical Consultation:** Advise individuals experiencing pain to consult with a healthcare professional for proper diagnosis and a safe, effective treatment plan, underscoring that opioid use should be strictly managed by a physician.\n*   **Naloxone Awareness:** Increase awareness about the signs of opioid overdose (e.g., respiratory depression [FAERS:oxycodone+Respiratory depression]) and the availability of naloxone as a life-saving intervention.",
+    "elapsed_ms": 22545.38
   },
   "Experimentation \u2014 benzo + alcohol": {
     "post_id": "experimentation_\u2014_benzo_+_alcohol",
@@ -481,7 +504,7 @@
           "substance_name": "xans",
           "clinical_name": "alprazolam",
           "drug_class": "benzo",
-          "confidence": 0.715,
+          "confidence": 0.8531,
           "method": "ensemble",
           "context_snippet": "Tried mixing xans with a few drinks at a party last weekend. Wild e...",
           "is_negated": false,
@@ -517,13 +540,25 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 0.86
+          "elapsed_ms": 2.75
         },
         {
           "post_id": "experimentation_\u2014_benzo_+_alcohol",
-          "matches": [],
+          "matches": [
+            {
+              "substance_name": "alprazolam",
+              "clinical_name": "alprazolam",
+              "drug_class": "benzo",
+              "confidence": 0.5525,
+              "method": "embedding",
+              "context_snippet": "Tried mixing xans with a few drinks at a party last weekend. Wild experience, not something I'd do r...",
+              "is_negated": false,
+              "char_start": 0,
+              "char_end": 116
+            }
+          ],
           "method": "embedding",
-          "elapsed_ms": 492.51
+          "elapsed_ms": 523.9
         },
         {
           "post_id": "experimentation_\u2014_benzo_+_alcohol",
@@ -552,10 +587,10 @@
             }
           ],
           "method": "llm",
-          "elapsed_ms": 0.96
+          "elapsed_ms": 0.84
         }
       ],
-      "agreement_count": 2
+      "agreement_count": 3
     },
     "narrative_results": {
       "post_id": "experimentation_\u2014_benzo_+_alcohol",
@@ -570,7 +605,7 @@
         {
           "stage": "Curiosity",
           "stage_index": 0,
-          "confidence": 0.0702,
+          "confidence": 0.0612,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Experimentation, llm=Experimentation"
         },
@@ -591,14 +626,14 @@
         {
           "stage": "Dependence",
           "stage_index": 3,
-          "confidence": 0.0505,
+          "confidence": 0.055,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Experimentation, llm=Experimentation"
         },
         {
           "stage": "Crisis",
           "stage_index": 4,
-          "confidence": 0.0483,
+          "confidence": 0.0528,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Experimentation, llm=Experimentation"
         },
@@ -665,7 +700,7 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 558.99
+          "elapsed_ms": 489.95
         },
         {
           "post_id": "experimentation_\u2014_benzo_+_alcohol",
@@ -721,7 +756,7 @@
             }
           ],
           "method": "fine_tuned",
-          "elapsed_ms": 88.19
+          "elapsed_ms": 548.91
         },
         {
           "post_id": "experimentation_\u2014_benzo_+_alcohol",
@@ -730,54 +765,54 @@
             "stage_index": 1,
             "confidence": 0.95,
             "method": "llm",
-            "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+            "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
           },
           "all_stages": [
             {
               "stage": "Curiosity",
               "stage_index": 0,
-              "confidence": 0.03,
+              "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             },
             {
               "stage": "Experimentation",
               "stage_index": 1,
               "confidence": 0.95,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             },
             {
               "stage": "Regular Use",
               "stage_index": 2,
               "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             },
             {
               "stage": "Dependence",
               "stage_index": 3,
-              "confidence": 0.0,
+              "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             },
             {
               "stage": "Crisis",
               "stage_index": 4,
-              "confidence": 0.0,
+              "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             },
             {
               "stage": "Recovery",
               "stage_index": 5,
               "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post describes a singular, past instance of substance use ('Tried mixing xans... last weekend') and explicitly states it's not a regular behavior ('not something I'd do regularly though'), which are strong indicators of the Experimentation stage, characterized by first or early, recreational use."
+              "reasoning": "The post describes a single, past instance of substance use ('Tried mixing xans with a few drinks at a party last weekend') framed recreationally ('Wild experience'). The user explicitly states it's 'not something I'd do regularly though,' indicating it was an isolated, exploratory event rather than patterned use or addiction. These signals are classic indicators of the Experimentation stage."
             }
           ],
           "method": "llm",
-          "elapsed_ms": 1.05
+          "elapsed_ms": 1.78
         }
       ],
       "agreement_count": 2
@@ -788,39 +823,39 @@
         "drug_class": "benzo",
         "evidence": [
           {
-            "chunk_filename": "safety_naloxone_0_5_mg_pentazocine_50_mg_oral_tablet.txt",
-            "chunk_type": "safety",
-            "drug_name": "naloxone 0.5 MG / pentazocine 50 MG Oral Tablet",
-            "relevance_score": 0.699999988079071,
-            "text_snippet": "DRUG SAFETY PROFILE: naloxone 0.5 MG / pentazocine 50 MG Oral Tablet\n\nRxCUI: 312289\nCategory: synthetic\nOpioid ingredients: naloxone, pentazocine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "ingredient_alprazolam.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": "alprazolam",
+            "relevance_score": 0.9428846836090088,
+            "text_snippet": "PHARMACOLOGY: ALPRAZOLAM\n\nIdentifiers: RxCUI=596, ChEMBL=CHEMBL661, PubChem CID=2118\nMolecular: C17H13ClN4, MW=308.76\nBrand Name: Xanax\nDEA Schedule: IV\n\nAlprazolam is classified as a triazolobenzodiazepine (triazole ring fused to benzodiazepine core). It is the most prescribed benzodiazepine in the United States and the most commonly diverted benzodiazepine in illicit markets.\n\nReceptor Binding:\n  - GABA-A positive allosteric modulator (benzodiazepine binding site)\n  - High affinity for alpha-1"
           },
           {
-            "chunk_filename": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.16 ML buprenorphine 50 MG/ML Prefilled Syringe",
-            "relevance_score": 0.6833591461181641,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "benzo_interactions.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.8270127177238464,
+            "text_snippet": "BENZODIAZEPINE DRUG INTERACTIONS\n\nBenzodiazepines + Opioids (FDA BLACK BOX WARNING):\nIn 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respiratory depression that is frequently fatal.\n  - CDC data: benzodiazepines are co-involved in approximately 16% of opioid overdose deaths\n  - Naloxone partially reverses the opioid component but does NOT re"
           },
           {
-            "chunk_filename": "safety_0_5_ml_fentanyl_0_05_mg_ml_prefilled_syringe.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe",
-            "relevance_score": 0.6656597852706909,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe\n\nRxCUI: 2629337\nCategory: synthetic\nOpioid ingredients: fentanyl\n\nBoxed Warning: None\n\nREMS Required: Medication Guide\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Respiratory depression, Serotonin syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "benzo_pharmacology.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.7090413570404053,
+            "text_snippet": "PHARMACOLOGY: BENZODIAZEPINES (CLASS OVERVIEW)\n\nDrug Class: sedative-hypnotic, anxiolytic, anticonvulsant, skeletal muscle relaxant\nDEA Schedule: Schedule IV (all benzodiazepines)\nChemical structure: 1,4-benzodiazepine ring fused to a diazepine ring\n\nPrimary Mechanism \u2014 GABA-A Positive Allosteric Modulation:\nBenzodiazepines bind to the benzodiazepine binding site (alpha/gamma subunit interface) on GABA-A receptors. They do NOT directly open the chloride channel \u2014 they increase the FREQUENCY of c"
           },
           {
-            "chunk_filename": "safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector",
-            "relevance_score": 0.6489402651786804,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector\n\nRxCUI: 2596175\nCategory: unclassified\nOpioid ingredients: naloxone\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "ingredient_clonazepam.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": "clonazepam",
+            "relevance_score": 0.6816039085388184,
+            "text_snippet": "PHARMACOLOGY: CLONAZEPAM\n\nIdentifiers: RxCUI=2598, ChEMBL=CHEMBL452, PubChem CID=2802\nMolecular: C15H10ClN3O3, MW=315.71\nBrand Name: Klonopin\nDEA Schedule: IV\n\nClonazepam is a 7-nitrobenzodiazepine with prominent anticonvulsant properties in addition to standard benzodiazepine effects. It is the second most commonly prescribed benzodiazepine in the US.\n\nReceptor Binding:\n  - GABA-A positive allosteric modulator (benzodiazepine binding site)\n  - High affinity across alpha subtypes\n  - Enhanced an"
           },
           {
-            "chunk_filename": "safety_levorphanol_tartrate_2_mg_oral_tablet.txt",
-            "chunk_type": "safety",
-            "drug_name": "levorphanol tartrate 2 MG Oral Tablet",
-            "relevance_score": 0.6466373205184937,
-            "text_snippet": "DRUG SAFETY PROFILE: levorphanol tartrate 2 MG Oral Tablet\n\nRxCUI: 197873\nCategory: unclassified\nOpioid ingredients: levorphanol\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, neonatal, fatal, rems, abuse, misuse\nWarning text: WARNING: SERIOUS AND LIFE-THREATENING RISKS FROM USE OF LEVORPHANOL TARTRATE TABLETS Addiction, Abuse, and Misuse Because the use of levorphanol tartrate tabl"
+            "chunk_filename": "benzo_withdrawal.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.6126033663749695,
+            "text_snippet": "BENZODIAZEPINE WITHDRAWAL SYNDROME\n\nBenzodiazepine withdrawal, like alcohol withdrawal, can be life-threatening. Seizures and status epilepticus are the primary lethal risks. Protracted withdrawal syndrome is a distinctive feature that differentiates benzodiazepine dependence from most other substances.\n\nPathophysiology:\nChronic benzodiazepine exposure causes GABA-A receptor downregulation and conformational changes, reducing GABAergic inhibition. Concurrent glutamatergic upregulation creates a "
           }
         ],
         "faers_signals": [
@@ -866,8 +901,8 @@
               "alcohol",
               "benzo"
             ],
-            "risk_description": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n",
-            "source_chunk": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt"
+            "risk_description": "PHARMACOLOGY: ETHANOL (ALCOHOL)\n\nIdentifiers: PubChem CID=702, ChEBI=16236, DrugBank=DB00898\nMolecular: C2H5OH (CH3CH2OH), MW=46.07\n\nPrimary Mechanism \u2014 GABA-A Positive Allosteric Modulation:\nEthanol enhances inhibitory neurotransmission by potentiating GABA-A receptor chloride currents. It is a pos",
+            "source_chunk": "alcohol_pharmacology.txt"
           }
         ],
         "narrative_stage": "Experimentation"
@@ -877,39 +912,39 @@
         "drug_class": "alcohol",
         "evidence": [
           {
-            "chunk_filename": "signals_oxymorphone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "oxymorphone",
-            "relevance_score": 0.699999988079071,
-            "text_snippet": "FAERS SAFETY SIGNALS: OXYMORPHONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 11\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Death: 12,420 reports, 3/3 methods flagging\n    Signal strength: PRR=9.15, ROR=14.35, EBGM=9.03\n  - Overdose: 8,120 reports, 3/3 methods flagging\n    Signal strength: PRR=15.86, ROR=20.94, EBGM=15.49\n  - Drug abuse: 2,027 reports, 3/3 methods flagging\n    Signal strength: PR"
+            "chunk_filename": "alcohol_classification.txt",
+            "chunk_type": "classification",
+            "drug_name": "alcohol",
+            "relevance_score": 0.940963625907898,
+            "text_snippet": "ALCOHOL CLASSIFICATION\n\nDrug Class: CNS depressant, sedative-hypnotic\nChemical Name: ethanol (ethyl alcohol, CH3CH2OH)\nDEA Schedule: not scheduled (legal regulated substance)\nWHO ATC Code: V03AB16 (ethanol as antidote), N07BB (drugs used in alcohol dependence)\n\nPharmacological Classification:\n  - Primary: GABA-A receptor positive allosteric modulator\n  - Secondary: NMDA glutamate receptor antagonist\n  - Tertiary: non-selective CNS depressant affecting multiple receptor systems\n  - Drug class ove"
           },
           {
-            "chunk_filename": "signals_hydromorphone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "hydromorphone",
-            "relevance_score": 0.6468289494514465,
-            "text_snippet": "FAERS SAFETY SIGNALS: HYDROMORPHONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 16\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Death: 15,435 reports, 3/3 methods flagging\n    Signal strength: PRR=4.57, ROR=5.43, EBGM=4.50\n  - Drug dependence: 14,270 reports, 3/3 methods flagging\n    Signal strength: PRR=24.66, ROR=29.85, EBGM=22.54\n  - Overdose: 13,861 reports, 3/3 methods flagging\n    Signal stre"
+            "chunk_filename": "alcohol_epidemiology.txt",
+            "chunk_type": "epidemiology",
+            "drug_name": "alcohol",
+            "relevance_score": 0.8731639385223389,
+            "text_snippet": "ALCOHOL USE EPIDEMIOLOGY\n\nPrevalence (United States, NIAAA/SAMHSA):\n  - 84.0% of adults (18+) report lifetime alcohol use\n  - 69.5% report past-year alcohol use\n  - 54.9% report past-month alcohol use\n  - 25.8% report past-month binge drinking (5+ drinks on an occasion for men, 4+ for women)\n  - 6.3% report past-month heavy drinking (binge drinking on 5+ days per month)\n  - 28.6 million adults (10.6%) met criteria for alcohol use disorder (AUD) in 2023\n\nMortality:\n  - Approximately 178,000 alcoh"
           },
           {
-            "chunk_filename": "signals_hydrocodone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "hydrocodone",
-            "relevance_score": 0.6440324783325195,
-            "text_snippet": "FAERS SAFETY SIGNALS: HYDROCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 12\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 40,492 reports, 3/3 methods flagging\n    Signal strength: PRR=31.06, ROR=37.97, EBGM=23.43\n  - Overdose: 35,187 reports, 3/3 methods flagging\n    Signal strength: PRR=10.93, ROR=12.86, EBGM=9.87\n  - Death: 22,402 reports, 3/3 methods flagging\n    Signal stre"
+            "chunk_filename": "alcohol_safety_profile.txt",
+            "chunk_type": "safety",
+            "drug_name": "alcohol",
+            "relevance_score": 0.871458113193512,
+            "text_snippet": "ALCOHOL SAFETY PROFILE\n\nRegulatory Status:\nEthanol is a legal substance in most jurisdictions with age-based restrictions (21+ in the US). Unlike prescription drugs, no FDA-approved labeling exists for recreational alcohol. Safety warnings come from the Surgeon General, NIAAA, and product-specific label requirements.\n\nPregnancy Warning \u2014 Fetal Alcohol Spectrum Disorders (FASD):\n  - No safe level of alcohol consumption during pregnancy has been established (Surgeon General, ACOG)\n  - Fetal Alcoho"
           },
           {
-            "chunk_filename": "signals_methadone.txt",
+            "chunk_filename": "alcohol_adverse_events.txt",
             "chunk_type": "faers_signals",
-            "drug_name": "methadone",
-            "relevance_score": 0.6331576108932495,
-            "text_snippet": "FAERS SAFETY SIGNALS: METHADONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 17\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Overdose: 5,853 reports, 3/3 methods flagging\n    Signal strength: PRR=7.01, ROR=7.78, EBGM=6.90\n  - Drug dependence: 5,852 reports, 3/3 methods flagging\n    Signal strength: PRR=14.74, ROR=16.50, EBGM=14.24\n  - Drug abuse: 5,424 reports, 3/3 methods flagging\n    Signal streng"
+            "drug_name": "alcohol",
+            "relevance_score": 0.8239198327064514,
+            "text_snippet": "ALCOHOL ADVERSE EVENT PROFILE\n\nThis profile summarizes key adverse events associated with alcohol use, curated from NIAAA, WHO, and clinical literature. Format follows FAERS signal reporting conventions for consistency with opioid adverse event data.\n\nHigh-Frequency Adverse Events (common at recreational doses):\n  - Impaired judgment and coordination (dose-dependent, BAC >0.05%)\n  - Nausea and vomiting (protective reflex at moderate-high doses)\n  - Hangover syndrome: headache, fatigue, dehydrati"
           },
           {
-            "chunk_filename": "signals_oxycodone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "oxycodone",
-            "relevance_score": 0.6118512153625488,
-            "text_snippet": "FAERS SAFETY SIGNALS: OXYCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 14\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 65,099 reports, 3/3 methods flagging\n    Signal strength: PRR=46.51, ROR=59.56, EBGM=27.94\n  - Overdose: 46,720 reports, 3/3 methods flagging\n    Signal strength: PRR=11.16, ROR=13.10, EBGM=9.72\n  - Death: 28,513 reports, 3/3 methods flagging\n    Signal streng"
+            "chunk_filename": "alcohol_pharmacology.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": "alcohol",
+            "relevance_score": 0.8142434358596802,
+            "text_snippet": "PHARMACOLOGY: ETHANOL (ALCOHOL)\n\nIdentifiers: PubChem CID=702, ChEBI=16236, DrugBank=DB00898\nMolecular: C2H5OH (CH3CH2OH), MW=46.07\n\nPrimary Mechanism \u2014 GABA-A Positive Allosteric Modulation:\nEthanol enhances inhibitory neurotransmission by potentiating GABA-A receptor chloride currents. It is a positive allosteric modulator (PAM), not a direct agonist \u2014 it increases the frequency and duration of chloride channel opening when GABA is already bound. At higher concentrations (>100 mM), ethanol may"
           }
         ],
         "faers_signals": [
@@ -990,15 +1025,15 @@
               "alcohol",
               "benzo"
             ],
-            "risk_description": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n",
-            "source_chunk": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt"
+            "risk_description": "PHARMACOLOGY: ETHANOL (ALCOHOL)\n\nIdentifiers: PubChem CID=702, ChEBI=16236, DrugBank=DB00898\nMolecular: C2H5OH (CH3CH2OH), MW=46.07\n\nPrimary Mechanism \u2014 GABA-A Positive Allosteric Modulation:\nEthanol enhances inhibitory neurotransmission by potentiating GABA-A receptor chloride currents. It is a pos",
+            "source_chunk": "alcohol_pharmacology.txt"
           }
         ],
         "narrative_stage": "Experimentation"
       }
     ],
-    "analyst_brief": "---\nSIGNAL INTELLIGENCE BRIEF\nDate: 2023-10-27\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: alprazolam (benzo), alcohol (alcohol)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Experimentation (confidence: 0.66). The user describes a single instance of mixing substances and expresses reluctance to repeat the experience, indicating an exploratory, non-habitual usage pattern.\n\n3. CLINICAL RISK PROFILE\n**Substance: alprazolam (benzo)**\n*   Pharmacology Summary: Provided knowledge base entries frequently highlight warnings regarding benzodiazepine co-administration in the context of opioid safety profiles [KB:safety_naloxone_0_5_mg_pentazocine_50_mg_oral_tablet.txt], [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt], [KB:safety_0_5_ml_fentanyl_0_05_mg_ml_prefilled_syringe.txt], [KB:safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt].\n*   Key Adverse Events: Respiratory depression [FAERS:alprazolam+Respiratory depression], Drug dependence [FAERS:alprazolam+Drug dependence], Withdrawal seizure [FAERS:alprazolam+Withdrawal seizure], Cognitive impairment [FAERS:alprazolam+Cognitive impairment], Somnolence [FAERS:alprazolam+Somnolence].\n\n**Substance: alcohol (alcohol)**\n*   Pharmacology Summary: No direct pharmacology summary available from the provided knowledge base.\n*   Key Adverse Events: Hepatotoxicity [FAERS:alcohol+Hepatotoxicity], Withdrawal seizure [FAERS:alcohol+Withdrawal seizure], Delirium tremens [FAERS:alcohol+Delirium tremens], Pancreatitis [FAERS:alcohol+Pancreatitis], Wernicke encephalopathy [FAERS:alcohol+Wernicke encephalopathy], Fetal alcohol syndrome [FAERS:alcohol+Fetal alcohol syndrome], Respiratory depression [FAERS:alcohol+Respiratory depression], Cardiomyopathy [FAERS:alcohol+Cardiomyopathy], Drug interaction respiratory depression [FAERS:alcohol+Drug interaction respiratory depression], Cirrhosis [FAERS:alcohol+Cirrhosis].\n\n4. POLY-DRUG INTERACTION RISKS\nCo-administration of benzodiazepines (such as alprazolam) and alcohol poses significant risks. Warnings exist concerning \"Benzodiazepine co-administration\" with other depressants [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt]. A key reported adverse event for alcohol is drug interaction leading to respiratory depression [FAERS:alcohol+Drug interaction respiratory depression]. Both substances individually contribute to respiratory depression [FAERS:alprazolam+Respiratory depression], [FAERS:alcohol+Respiratory depression], making their combination particularly dangerous due to additive central nervous system depressant effects.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Experimentation\" stage, the user may be unaware of the severe synergistic risks associated with combining central nervous system depressants like alprazolam and alcohol. The stated \"Wild experience\" might mask or downplay dangerous physiological effects. Even a single instance of co-administration can lead to acute overdose, severe respiratory depression, coma, or death, particularly when unfamiliar with the individual effects and interactions of the substances [FAERS:alprazolam+Respiratory depression], [FAERS:alcohol+Respiratory depression], [FAERS:alcohol+Drug interaction respiratory depression]. The user's disinterest in regular use (\"not something I'd do regularly\") might limit long-term dependence risks but does not mitigate acute risks.\n\n6. RECOMMENDED ACTIONS\n*   **Targeted Education:** Disseminate public health warnings specifically about the dangers of combining benzodiazepines (e.g., \"xans\") and alcohol, emphasizing the risk of respiratory depression and overdose even with a single use [FAERS:alcohol+Drug interaction respiratory depression], [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt].\n*   **Harm Reduction Messaging:** Provide clear, concise information about symptoms of overdose (e.g., extreme drowsiness, slowed breathing, unresponsiveness) and the importance of seeking immediate medical attention.\n*   **Monitor Social Media Trends:** Continue monitoring social media for discussions around \"mixing xans and drinks\" or similar polydrug experimentation to identify potential clusters of high-risk behavior.\n*   **Referral to Resources:** Offer easily accessible information about substance abuse prevention and treatment resources for individuals experimenting with drugs, regardless of their stated intent for future use.",
-    "elapsed_ms": 2908.82
+    "analyst_brief": "SIGNAL INTELLIGENCE BRIEF\nDate: 2023-10-27\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: alprazolam (benzo), alcohol (alcohol)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Experimentation (confidence: 0.66) - The user describes trying the combination \"last weekend\" and states \"not something I'd do regularly though,\" indicating a limited, possibly first-time, exposure and a lack of intent for repeated use.\n\n3. CLINICAL RISK PROFILE\n**Substance: Alprazolam**\n*   **Pharmacology Summary:** Alprazolam (Brand Name: Xanax) is classified as a triazolobenzodiazepine [KB:ingredient_alprazolam.txt]. It belongs to the benzodiazepine drug class, which are sedative-hypnotics, anxiolytics, anticonvulsants, and skeletal muscle relaxants [KB:benzo_pharmacology.txt]. It is a DEA Schedule IV controlled substance [KB:ingredient_alprazolam.txt].\n*   **Key Adverse Events:**\n    *   Respiratory depression [FAERS:alprazolam+Respiratory depression]\n    *   Drug dependence [FAERS:alprazolam+Drug dependence]\n    *   Withdrawal seizure [FAERS:alprazolam+Withdrawal seizure]\n    *   Cognitive impairment [FAERS:alprazolam+Cognitive impairment]\n    *   Somnolence [FAERS:alprazolam+Somnolence]\n\n**Substance: Alcohol**\n*   **Pharmacology Summary:** Alcohol (ethanol) is classified as a CNS depressant and sedative-hypnotic [KB:alcohol_classification.txt]. Its primary mechanism involves GABA-A positive allosteric modulation [KB:alcohol_pharmacology.txt]. It is not a DEA scheduled substance but is a legal regulated substance with age restrictions [KB:alcohol_classification.txt], [KB:alcohol_safety_profile.txt].\n*   **Key Adverse Events:**\n    *   Hepatotoxicity [FAERS:alcohol+Hepatotoxicity]\n    *   Withdrawal seizure [FAERS:alcohol+Withdrawal seizure]\n    *   Delirium tremens [FAERS:alcohol+Delirium tremens]\n    *   Pancreatitis [FAERS:alcohol+Pancreatitis]\n    *   Wernicke encephalopathy [FAERS:alcohol+Wernicke encephalopathy]\n    *   Fetal alcohol syndrome [FAERS:alcohol+Fetal alcohol syndrome]\n    *   Respiratory depression [FAERS:alcohol+Respiratory depression]\n    *   Cardiomyopathy [FAERS:alcohol+Cardiomyopathy]\n    *   Drug interaction respiratory depression [FAERS:alcohol+Drug interaction respiratory depression]\n    *   Cirrhosis [FAERS:alcohol+Cirrhosis]\n\n4. POLY-DRUG INTERACTION RISKS\nThe combination of alprazolam (a benzodiazepine) and alcohol (ethanol) presents significant interaction risks. Both substances act as central nervous system (CNS) depressants and primarily exert their effects through GABA-A positive allosteric modulation [KB:alcohol_pharmacology.txt], [KB:benzo_pharmacology.txt]. Concurrent use leads to a synergistic increase in CNS depression, which can manifest as enhanced sedation, cognitive impairment, and a heightened risk of respiratory depression [FAERS:alcohol+Drug interaction respiratory depression], [FAERS:alprazolam+Respiratory depression]. This potentiation of effects is a critical safety concern.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Experimentation\" stage, the user may be unaware of the heightened risks associated with mixing alprazolam and alcohol. Individuals experimenting with this combination are particularly vulnerable to acute adverse events due to potential lack of tolerance, inexperience with dosage effects, and an underestimation of the synergistic CNS depressant effects. The \"wild experience\" described could indicate acute intoxication, potentially approaching dangerous levels of CNS depression, including respiratory depression [FAERS:alprazolam+Respiratory depression], [FAERS:alcohol+Respiratory depression], which can be life-threatening. The casual context (\"at a party\") further suggests a setting where monitoring for adverse effects may be inadequate.\n\n6. RECOMMENDED ACTIONS\n*   **Targeted Education Campaigns:** Develop and disseminate public health messages specifically warning about the severe and potentially fatal risks of mixing benzodiazepines (like alprazolam) with alcohol, particularly highlighting the synergistic effect on CNS and respiratory depression [FAERS:alcohol+Drug interaction respiratory depression].\n*   **Focus on Experimentation Stage:** Tailor messages to individuals in the experimentation stage, emphasizing the dangers of \"trying out\" combinations without understanding pharmacological interactions and the increased risk in uncontrolled environments like social gatherings.\n*   **First Responder Training:** Provide training for first responders and emergency personnel on recognizing and managing combined alprazolam and alcohol overdose symptoms, including respiratory depression.\n*   **Healthcare Provider Alerts:** Remind healthcare providers to counsel patients prescribed benzodiazepines about avoiding alcohol due to dangerous interactions [KB:benzo_interactions.txt].",
+    "elapsed_ms": 3700.55
   },
   "Dependence \u2014 opioids": {
     "post_id": "dependence_\u2014_opioids",
@@ -1010,7 +1045,7 @@
           "substance_name": "percs",
           "clinical_name": "oxycodone",
           "drug_class": "opioid",
-          "confidence": 0.505,
+          "confidence": 0.6462,
           "method": "ensemble",
           "context_snippet": "I literally cannot get through a day without my percs anymore. When I try to stop I get so sick I can't...",
           "is_negated": false,
@@ -1035,13 +1070,25 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 1.31
+          "elapsed_ms": 1.42
         },
         {
           "post_id": "dependence_\u2014_opioids",
-          "matches": [],
+          "matches": [
+            {
+              "substance_name": "oxycodone",
+              "clinical_name": "oxycodone",
+              "drug_class": "opioid",
+              "confidence": 0.5646,
+              "method": "embedding",
+              "context_snippet": "I literally cannot get through a day without my percs anymore. When I try to stop I get so sick I ca...",
+              "is_negated": false,
+              "char_start": 0,
+              "char_end": 122
+            }
+          ],
           "method": "embedding",
-          "elapsed_ms": 538.91
+          "elapsed_ms": 451.45
         },
         {
           "post_id": "dependence_\u2014_opioids",
@@ -1059,17 +1106,17 @@
             }
           ],
           "method": "llm",
-          "elapsed_ms": 2.21
+          "elapsed_ms": 0.84
         }
       ],
-      "agreement_count": 2
+      "agreement_count": 3
     },
     "narrative_results": {
       "post_id": "dependence_\u2014_opioids",
       "top_stage": {
         "stage": "Dependence",
         "stage_index": 3,
-        "confidence": 0.6032,
+        "confidence": 0.6168,
         "method": "ensemble",
         "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
       },
@@ -1077,42 +1124,42 @@
         {
           "stage": "Curiosity",
           "stage_index": 0,
-          "confidence": 0.0512,
+          "confidence": 0.0479,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         },
         {
           "stage": "Experimentation",
           "stage_index": 1,
-          "confidence": 0.053,
+          "confidence": 0.0497,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         },
         {
           "stage": "Regular Use",
           "stage_index": 2,
-          "confidence": 0.0646,
+          "confidence": 0.0616,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         },
         {
           "stage": "Dependence",
           "stage_index": 3,
-          "confidence": 0.6032,
+          "confidence": 0.6168,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         },
         {
           "stage": "Crisis",
           "stage_index": 4,
-          "confidence": 0.1738,
+          "confidence": 0.1687,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         },
         {
           "stage": "Recovery",
           "stage_index": 5,
-          "confidence": 0.0541,
+          "confidence": 0.0553,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Dependence, fine_tuned=Dependence, llm=Dependence"
         }
@@ -1172,7 +1219,7 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 434.59
+          "elapsed_ms": 415.69
         },
         {
           "post_id": "dependence_\u2014_opioids",
@@ -1228,7 +1275,7 @@
             }
           ],
           "method": "fine_tuned",
-          "elapsed_ms": 115.61
+          "elapsed_ms": 415.91
         },
         {
           "post_id": "dependence_\u2014_opioids",
@@ -1237,54 +1284,54 @@
             "stage_index": 3,
             "confidence": 0.95,
             "method": "llm",
-            "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+            "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
           },
           "all_stages": [
             {
               "stage": "Curiosity",
               "stage_index": 0,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             },
             {
               "stage": "Experimentation",
               "stage_index": 1,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             },
             {
               "stage": "Regular Use",
               "stage_index": 2,
-              "confidence": 0.03,
+              "confidence": 0.02,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             },
             {
               "stage": "Dependence",
               "stage_index": 3,
               "confidence": 0.95,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             },
             {
               "stage": "Crisis",
               "stage_index": 4,
-              "confidence": 0.05,
+              "confidence": 0.03,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             },
             {
               "stage": "Recovery",
               "stage_index": 5,
               "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post directly describes key characteristics of Dependence: 'cannot get through a day without my percs anymore' indicates compulsive use and an inability to function without the substance, and 'When I try to stop I get so sick I can't move' explicitly describes severe withdrawal symptoms. The phrase 'I need help' signifies a recognition of the problem's severity, but the core narrative is focused on the direct experience of dependence and withdrawal, aligning perfectly with the 'Dependence' stage definition and signals like 'can't function without' and 'sick when I stop'."
+              "reasoning": "The post clearly indicates compulsive use, the inability to function without the substance, and severe physical withdrawal symptoms ('get so sick I can't move') upon attempting to stop. These are hallmark characteristics of the Dependence stage. While the severity of the sickness could border on crisis, it is framed as a direct symptom of trying to stop use (withdrawal), rather than an acute event like an overdose or major external life consequence typically associated with the Crisis stage. The 'I need help' reinforces the recognition of a dependent state requiring intervention."
             }
           ],
           "method": "llm",
-          "elapsed_ms": 0.79
+          "elapsed_ms": 6.87
         }
       ],
       "agreement_count": 3
@@ -1305,28 +1352,28 @@
             "chunk_filename": "safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt",
             "chunk_type": "safety",
             "drug_name": "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet",
-            "relevance_score": 0.8097314238548279,
+            "relevance_score": 0.8876004815101624,
             "text_snippet": "DRUG SAFETY PROFILE: 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet\n\nRxCUI: 1049502\nCategory: natural/semi-synthetic\nOpioid ingredients: oxycodone\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Accidental overdose, Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, neonatal, fatal, rems, abuse, misuse\nWarning text: Risk of Medication Errors Ensure accuracy when prescribing, dispensing, and administering Oxycodone H"
-          },
-          {
-            "chunk_filename": "signals_oxycodone.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "oxycodone",
-            "relevance_score": 0.6661503911018372,
-            "text_snippet": "FAERS SAFETY SIGNALS: OXYCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 14\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 65,099 reports, 3/3 methods flagging\n    Signal strength: PRR=46.51, ROR=59.56, EBGM=27.94\n  - Overdose: 46,720 reports, 3/3 methods flagging\n    Signal strength: PRR=11.16, ROR=13.10, EBGM=9.72\n  - Death: 28,513 reports, 3/3 methods flagging\n    Signal streng"
           },
           {
             "chunk_filename": "opioid_ingredients_list.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.6656951904296875,
+            "relevance_score": 0.789350152015686,
             "text_snippet": "COMPLETE OPIOID INGREDIENT LIST BY CATEGORY\n\n### Combination (4 ingredients)\n  - codeine\n  - hydrocodone\n  - oxycodone\n  - tramadol\n\n### Natural/Semi-Synthetic (6 ingredients)\n  - hydromorphone\n  - morphine\n  - naloxone\n  - naltrexone\n  - oxycodone\n  - oxymorphone\n\n### Semi-Synthetic (2 ingredients)\n  - buprenorphine\n  - butorphanol\n\n### Synthetic (6 ingredients)\n  - fentanyl\n  - meperidine\n  - naloxone\n  - pentazocine\n  - tapentadol\n  - tramadol\n\n### Treatment/Recovery (1 ingredients)\n  - metha"
+          },
+          {
+            "chunk_filename": "signals_oxycodone.txt",
+            "chunk_type": "faers_signals",
+            "drug_name": "oxycodone",
+            "relevance_score": 0.7318572402000427,
+            "text_snippet": "FAERS SAFETY SIGNALS: OXYCODONE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 14\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 65,099 reports, 3/3 methods flagging\n    Signal strength: PRR=46.51, ROR=59.56, EBGM=27.94\n  - Overdose: 46,720 reports, 3/3 methods flagging\n    Signal strength: PRR=11.16, ROR=13.10, EBGM=9.72\n  - Death: 28,513 reports, 3/3 methods flagging\n    Signal streng"
           },
           {
             "chunk_filename": "ingredient_oxymorphone.txt",
             "chunk_type": "pharmacology",
             "drug_name": "oxymorphone",
-            "relevance_score": 0.6242191791534424,
+            "relevance_score": 0.6887415647506714,
             "text_snippet": "PHARMACOLOGY: OXYMORPHONE\n\nIdentifiers: RxCUI=7814, ChEMBL=CHEMBL963, PubChem CID=5284604\nMolecular: C17H19NO4, MW=301.34\n\nReceptor Binding Affinities:\n  - mu: Ki = 1.79 nM (source: ChEMBL)\n  - kappa: Ki = 25.3 nM (source: ChEMBL)\n  - delta: Ki = 70.0 nM (source: ChEMBL)\n\nPotency vs morphine: 0.18x\n\nOxymorphone is classified as an opioid because it acts as a full agonist at the mu opioid receptor (OPRM1) with Ki = 1.8 nM, showing 14-fold selectivity over kappa. Its primary opioid effects \u2014 analg"
           }
         ],
@@ -1469,8 +1516,8 @@
         "narrative_stage": "Dependence"
       }
     ],
-    "analyst_brief": "---\nSIGNAL INTELLIGENCE BRIEF\nDate: 2024-07-30\n\n1. SUBSTANCE IDENTIFICATION\nOxycodone (opioid) [Detected substances: oxycodone (opioid)]\n\n2. NARRATIVE STAGE ASSESSMENT\nDependence (confidence: 0.60) [Stage: Dependence (confidence: 0.60)]\n\n3. CLINICAL RISK PROFILE\n**Substance: oxycodone (class: opioid)**\n*   **Pharmacology Summary:** Oxycodone is a natural/semi-synthetic opioid [KB:opioid_ingredients_list.txt]. Its molecular formula is C18H21NO4 with a molecular weight of 315.4 [KB:ingredient_oxycodone.txt]. It exhibits high affinity for the mu-opioid receptor, with a Ki of 12.0 nM [KB:ingredient_oxycodone.txt].\n*   **Key Adverse Events:**\n    *   Oxycodone has a Black Box Warning [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt].\n    *   FAERS signals indicate significant risks for drug dependence (PRR=46.5, ROR=59.6) [FAERS:oxycodone+Drug dependence], drug abuse (PRR=11.3, ROR=11.8) [FAERS:oxycodone+Drug abuse], and substance abuse (PRR=13.9, ROR=14.0) [FAERS:oxycodone+Substance abuse].\n    *   Other severe adverse events include respiratory depression (PRR=5.3, ROR=5.4) [FAERS:oxycodone+Respiratory depression], respiratory failure (PRR=1.5, ROR=1.5) [FAERS:oxycodone+Respiratory failure], and respiratory arrest (PRR=5.4, ROR=5.5) [FAERS:oxycodone+Respiratory arrest].\n    *   Overdose (PRR=11.2, ROR=13.1) [FAERS:oxycodone+Overdose], intentional overdose (PRR=1.2, ROR=1.2) [FAERS:oxycodone+Intentional overdose], and accidental overdose (PRR=4.8, ROR=4.8) [FAERS:oxycodone+Accidental overdose] are also significant risks.\n    *   Drug toxicity (PRR=3.4, ROR=3.4) is also a concern [FAERS:oxycodone+Drug toxicity].\n\n4. POLY-DRUG INTERACTION RISKS\nN/A (only one substance detected).\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nThe narrative indicates a high risk of opioid dependence (\"cannot get through a day without my percs anymore\") and severe withdrawal symptoms (\"When I try to stop I get so sick I can't move\") [INPUT POST]. This aligns with strong FAERS signals for drug dependence [FAERS:oxycodone+Drug dependence]. Individuals experiencing such severe dependence are at increased risk for continued use, escalating dosage, and overdose [FAERS:oxycodone+Overdose]. The physical sickness described strongly suggests withdrawal, requiring medical intervention to manage safely. There is an immediate risk to the individual's health and safety due to the challenges of cessation.\n\n6. RECOMMENDED ACTIONS\n*   **Outreach and Engagement:** Directly engage with individuals expressing dependence and distress to provide immediate support and information on treatment options.\n*   **Access to Treatment:** Promote access to evidence-based treatment for opioid use disorder (OUD), including medication-assisted treatment (MAT) which can help manage withdrawal symptoms and cravings.\n*   **Overdose Prevention:** Provide information and access to naloxone, an opioid overdose reversal medication, to individuals at risk and their social networks. Educate on overdose recognition and response.\n*   **Withdrawal Management:** Emphasize that managing opioid withdrawal can be extremely challenging and dangerous without medical supervision, and encourage seeking professional medical help for detoxification.\n*   **Harm Reduction Education:** Distribute information on harm reduction strategies for individuals unable or unwilling to stop using immediately, to minimize risks associated with use.\n---",
-    "elapsed_ms": 1587.33
+    "analyst_brief": "SIGNAL INTELLIGENCE BRIEF\nDate: 2024-07-29\n\n1. SUBSTANCE IDENTIFICATION\nDetected substance: oxycodone (opioid)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Dependence (confidence: 0.62). The user explicitly states \"I literally cannot get through a day without my percs anymore. When I try to stop I get so sick I can't move,\" which strongly indicates physical dependence and withdrawal symptoms upon cessation.\n\n3. CLINICAL RISK PROFILE\n**Substance: oxycodone (class: opioid)**\n*   **Pharmacology Summary**: Oxycodone is an opioid with a molecular weight of 315.4 [KB:ingredient_oxycodone.txt]. It exhibits strong binding affinity to the mu-opioid receptor, with a Ki of 12.0 nM [KB:ingredient_oxycodone.txt]. It is classified as a natural/semi-synthetic opioid [KB:opioid_ingredients_list.txt].\n*   **Key Adverse Events**:\n    *   **Respiratory Depression**: Oxycodone has a FAERS signal for Respiratory depression (PRR=5.3, ROR=5.4) [FAERS:oxycodone+Respiratory depression].\n    *   **Respiratory Failure**: There is a FAERS signal for Respiratory failure (PRR=1.5, ROR=1.5) [FAERS:oxycodone+Respiratory failure].\n    *   **Respiratory Arrest**: Oxycodone shows a FAERS signal for Respiratory arrest (PRR=5.4, ROR=5.5) [FAERS:oxycodone+Respiratory arrest].\n    *   **Drug Dependence**: Oxycodone has a very strong FAERS signal for Drug dependence (PRR=46.5, ROR=59.6) [FAERS:oxycodone+Drug dependence].\n    *   **Drug Abuse/Substance Abuse**: FAERS signals exist for Drug abuse (PRR=11.3, ROR=11.8) [FAERS:oxycodone+Drug abuse] and Substance abuse (PRR=13.9, ROR=14.0) [FAERS:oxycodone+Substance abuse].\n    *   **Overdose**: FAERS signals indicate a risk of Overdose (PRR=11.2, ROR=13.1) [FAERS:oxycodone+Overdose], including Accidental overdose (PRR=4.8, ROR=4.8) [FAERS:oxycodone+Accidental overdose].\n    *   **Drug Toxicity**: There is a FAERS signal for Drug toxicity (PRR=3.4, ROR=3.4) [FAERS:oxycodone+Drug toxicity].\n*   **Black Box Warning**: Formulations such as 12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet carry a Boxed Warning [KB:safety_12_hr_oxycodone_hydrochloride_10_mg_extended_release_oral_ta.txt].\n\n4. POLY-DRUG INTERACTION RISKS\nNo poly-drug interactions are detected as only one substance (oxycodone) was identified in the input.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Dependence\" narrative stage, the primary risks are severe withdrawal symptoms and overdose. The user's statement \"When I try to stop I get so sick I can't move\" is consistent with opioid withdrawal, a severe and distressing syndrome that can impede cessation efforts. The strong FAERS signal for Drug dependence (PRR=46.5, ROR=59.6) for oxycodone reinforces this risk [FAERS:oxycodone+Drug dependence]. Continued use to avoid withdrawal, coupled with escalating tolerance, increases the risk of accidental overdose (PRR=4.8, ROR=4.8) [FAERS:oxycodone+Accidental overdose] and associated severe adverse events such as respiratory depression (PRR=5.3, ROR=5.4) [FAERS:oxycodone+Respiratory depression], respiratory failure (PRR=1.5, ROR=1.5) [FAERS:oxycodone+Respiratory failure], and respiratory arrest (PRR=5.4, ROR=5.5) [FAERS:oxycodone+Respiratory arrest].\n\n6. RECOMMENDED ACTIONS\n*   **Promote Access to Treatment**: Disseminate information on accessible opioid use disorder treatment options, including medication-assisted treatment (MAT) with buprenorphine/naloxone or methadone, which can alleviate withdrawal symptoms and support recovery [KB:no_citation_available].\n*   **Naloxone Distribution**: Encourage the widespread availability and education on naloxone for overdose reversal, emphasizing its use for individuals at risk of opioid overdose [KB:no_citation_available].\n*   **Withdrawal Management Resources**: Provide resources and support for managing opioid withdrawal symptoms, including clinical guidance on safe tapering strategies or supervised withdrawal [KB:no_citation_available].\n*   **Harm Reduction Education**: Educate on harm reduction strategies such as avoiding illicitly obtained pills (which may be adulterated with fentanyl) and not using alone [KB:no_citation_available].",
+    "elapsed_ms": 1703.08
   },
   "Crisis \u2014 poly-drug": {
     "post_id": "crisis_\u2014_poly-drug",
@@ -1482,7 +1529,7 @@
           "substance_name": "fentanyl",
           "clinical_name": "fentanyl",
           "drug_class": "opioid",
-          "confidence": 0.715,
+          "confidence": 0.8639,
           "method": "ensemble",
           "context_snippet": "I overdosed on fentanyl last night. My roommate had to call 911. I was mi...",
           "is_negated": false,
@@ -1555,9 +1602,21 @@
         },
         {
           "post_id": "crisis_\u2014_poly-drug",
-          "matches": [],
+          "matches": [
+            {
+              "substance_name": "fentanyl",
+              "clinical_name": "fentanyl",
+              "drug_class": "opioid",
+              "confidence": 0.5958,
+              "method": "embedding",
+              "context_snippet": "I overdosed on fentanyl last night. My roommate had to call 911. I was mixing lean with bars and I a...",
+              "is_negated": false,
+              "char_start": 0,
+              "char_end": 111
+            }
+          ],
           "method": "embedding",
-          "elapsed_ms": 517.67
+          "elapsed_ms": 470.67
         },
         {
           "post_id": "crisis_\u2014_poly-drug",
@@ -1597,17 +1656,17 @@
             }
           ],
           "method": "llm",
-          "elapsed_ms": 0.96
+          "elapsed_ms": 1.28
         }
       ],
-      "agreement_count": 2
+      "agreement_count": 3
     },
     "narrative_results": {
       "post_id": "crisis_\u2014_poly-drug",
       "top_stage": {
         "stage": "Crisis",
         "stage_index": 4,
-        "confidence": 0.7658,
+        "confidence": 0.7928,
         "method": "ensemble",
         "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
       },
@@ -1615,42 +1674,42 @@
         {
           "stage": "Curiosity",
           "stage_index": 0,
-          "confidence": 0.0365,
+          "confidence": 0.032,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         },
         {
           "stage": "Experimentation",
           "stage_index": 1,
-          "confidence": 0.0472,
+          "confidence": 0.0427,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         },
         {
           "stage": "Regular Use",
           "stage_index": 2,
-          "confidence": 0.0446,
+          "confidence": 0.0401,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         },
         {
           "stage": "Dependence",
           "stage_index": 3,
-          "confidence": 0.0604,
+          "confidence": 0.0514,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         },
         {
           "stage": "Crisis",
           "stage_index": 4,
-          "confidence": 0.7658,
+          "confidence": 0.7928,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         },
         {
           "stage": "Recovery",
           "stage_index": 5,
-          "confidence": 0.0454,
+          "confidence": 0.0409,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Crisis, fine_tuned=Crisis, llm=Crisis"
         }
@@ -1710,7 +1769,7 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 470.0
+          "elapsed_ms": 974.03
         },
         {
           "post_id": "crisis_\u2014_poly-drug",
@@ -1766,63 +1825,63 @@
             }
           ],
           "method": "fine_tuned",
-          "elapsed_ms": 111.1
+          "elapsed_ms": 410.4
         },
         {
           "post_id": "crisis_\u2014_poly-drug",
           "top_stage": {
             "stage": "Crisis",
             "stage_index": 4,
-            "confidence": 0.92,
+            "confidence": 0.98,
             "method": "llm",
-            "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+            "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
           },
           "all_stages": [
             {
               "stage": "Curiosity",
               "stage_index": 0,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             },
             {
               "stage": "Experimentation",
               "stage_index": 1,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             },
             {
               "stage": "Regular Use",
               "stage_index": 2,
-              "confidence": 0.02,
+              "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             },
             {
               "stage": "Dependence",
               "stage_index": 3,
-              "confidence": 0.03,
+              "confidence": 0.01,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             },
             {
               "stage": "Crisis",
               "stage_index": 4,
-              "confidence": 0.92,
+              "confidence": 0.98,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             },
             {
               "stage": "Recovery",
               "stage_index": 5,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states 'I overdosed on fentanyl last night' and 'almost died,' along with the need for emergency services ('My roommate had to call 911'). These are direct and strong signals of an acute, life-threatening event, clearly classifying it into the Crisis stage."
+              "reasoning": "The post explicitly describes an overdose on multiple substances, requiring emergency medical intervention ('roommate had to call 911'), and a near-death experience ('almost died'). These are direct and strong indicators of the 'Crisis' stage, which involves acute harm and severe consequences like overdose."
             }
           ],
           "method": "llm",
-          "elapsed_ms": 0.76
+          "elapsed_ms": 1.61
         }
       ],
       "agreement_count": 3
@@ -1843,28 +1902,28 @@
             "chunk_filename": "safety_0_5_ml_fentanyl_0_05_mg_ml_prefilled_syringe.txt",
             "chunk_type": "safety",
             "drug_name": "0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe",
-            "relevance_score": 0.7740153074264526,
+            "relevance_score": 0.8568869233131409,
             "text_snippet": "DRUG SAFETY PROFILE: 0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe\n\nRxCUI: 2629337\nCategory: synthetic\nOpioid ingredients: fentanyl\n\nBoxed Warning: None\n\nREMS Required: Medication Guide\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Respiratory depression, Serotonin syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
-          },
-          {
-            "chunk_filename": "signals_fentanyl.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "fentanyl",
-            "relevance_score": 0.7205766439437866,
-            "text_snippet": "FAERS SAFETY SIGNALS: FENTANYL\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 16\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug abuse: 12,500 reports, 3/3 methods flagging\n    Signal strength: PRR=26.48, ROR=29.02, EBGM=22.53\n  - Overdose: 10,763 reports, 3/3 methods flagging\n    Signal strength: PRR=4.87, ROR=5.20, EBGM=4.75\n  - Withdrawal syndrome: 7,329 reports, 3/3 methods flagging\n    Signal s"
           },
           {
             "chunk_filename": "epi_three_waves.txt",
             "chunk_type": "epidemiology",
             "drug_name": null,
-            "relevance_score": 0.7145295143127441,
+            "relevance_score": 0.7948845624923706,
             "text_snippet": "THE THREE WAVES OF THE OPIOID EPIDEMIC\n\nThe U.S. opioid crisis has unfolded in three overlapping waves:\n\nWave 1 (1990s\u20132010): Prescription opioid overdoses. Driven by aggressive marketing of OxyContin and liberal prescribing. Deaths from natural and semi-synthetic opioids (T40.2) \u2014 oxycodone, hydrocodone \u2014 dominated.\n\nWave 2 (2010\u20132013): Heroin overdoses. As prescription opioids became harder to obtain, users transitioned to cheaper heroin. Heroin deaths (T40.1) surged.\n\nWave 3 (2013\u2013present): S"
+          },
+          {
+            "chunk_filename": "signals_fentanyl.txt",
+            "chunk_type": "faers_signals",
+            "drug_name": "fentanyl",
+            "relevance_score": 0.7537569403648376,
+            "text_snippet": "FAERS SAFETY SIGNALS: FENTANYL\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 16\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug abuse: 12,500 reports, 3/3 methods flagging\n    Signal strength: PRR=26.48, ROR=29.02, EBGM=22.53\n  - Overdose: 10,763 reports, 3/3 methods flagging\n    Signal strength: PRR=4.87, ROR=5.20, EBGM=4.75\n  - Withdrawal syndrome: 7,329 reports, 3/3 methods flagging\n    Signal s"
           },
           {
             "chunk_filename": "receptor_system.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.5514162182807922,
+            "relevance_score": 0.6973050832748413,
             "text_snippet": "THE OPIOID RECEPTOR SYSTEM\n\nOpioids exert their effects through four G-protein coupled receptors:\n\n1. Mu receptor (OPRM1, MOR) \u2014 Primary mediator of analgesia, euphoria, respiratory depression, and physical dependence. Most clinically used opioids target mu. High mu affinity (low Ki value) correlates with potency.\n\n2. Kappa receptor (OPRK1, KOR) \u2014 Mediates spinal analgesia, sedation, and dysphoria. Kappa agonists (pentazocine, butorphanol) produce less euphoria and have lower abuse potential but"
           }
         ],
@@ -2009,8 +2068,8 @@
               "benzo",
               "opioid"
             ],
-            "risk_description": "DRUG SAFETY PROFILE: 1 ML butorphanol tartrate 1 MG/ML Injection\n\nRxCUI: 886627\nCategory: semi-synthetic\nOpioid ingredients: butorphanol\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, n",
-            "source_chunk": "safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt"
+            "risk_description": "BENZODIAZEPINE DRUG INTERACTIONS\n\nBenzodiazepines + Opioids (FDA BLACK BOX WARNING):\nIn 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respirator",
+            "source_chunk": "benzo_interactions.txt"
           }
         ],
         "narrative_stage": "Crisis"
@@ -2030,29 +2089,29 @@
             "chunk_filename": "safety_acetaminophen_24_mg_ml_codeine_phosphate_2_4_mg_ml_oral_solu.txt",
             "chunk_type": "safety",
             "drug_name": "acetaminophen 24 MG/ML / codeine phosphate 2.4 MG/ML Oral Solution",
-            "relevance_score": 0.76985764503479,
+            "relevance_score": 0.8543843030929565,
             "text_snippet": "DRUG SAFETY PROFILE: acetaminophen 24 MG/ML / codeine phosphate 2.4 MG/ML Oral Solution\n\nRxCUI: 993755\nCategory: combination\nOpioid ingredients: codeine\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, neonatal, fatal, rems, abuse, misuse\nWarning text: Addiction, Abuse, and Misuse Because the use of ASCOMP with Codeine exposes patients and other users to the risks of opioid addiction,"
           },
           {
             "chunk_filename": "opioid_ingredients_list.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.6711848378181458,
+            "relevance_score": 0.7825872898101807,
             "text_snippet": "COMPLETE OPIOID INGREDIENT LIST BY CATEGORY\n\n### Combination (4 ingredients)\n  - codeine\n  - hydrocodone\n  - oxycodone\n  - tramadol\n\n### Natural/Semi-Synthetic (6 ingredients)\n  - hydromorphone\n  - morphine\n  - naloxone\n  - naltrexone\n  - oxycodone\n  - oxymorphone\n\n### Semi-Synthetic (2 ingredients)\n  - buprenorphine\n  - butorphanol\n\n### Synthetic (6 ingredients)\n  - fentanyl\n  - meperidine\n  - naloxone\n  - pentazocine\n  - tapentadol\n  - tramadol\n\n### Treatment/Recovery (1 ingredients)\n  - metha"
           },
           {
             "chunk_filename": "signals_codeine.txt",
             "chunk_type": "faers_signals",
             "drug_name": "codeine",
-            "relevance_score": 0.6173827648162842,
+            "relevance_score": 0.6955125331878662,
             "text_snippet": "FAERS SAFETY SIGNALS: CODEINE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 16\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Overdose: 7,688 reports, 3/3 methods flagging\n    Signal strength: PRR=4.83, ROR=5.16, EBGM=4.74\n  - Drug abuse: 3,094 reports, 3/3 methods flagging\n    Signal strength: PRR=8.07, ROR=8.30, EBGM=7.80\n  - Drug dependence: 2,543 reports, 3/3 methods flagging\n    Signal strength: P"
           },
           {
-            "chunk_filename": "classification_categories.txt",
+            "chunk_filename": "dea_scheduling.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.5465632677078247,
-            "text_snippet": "OPIOID CLASSIFICATION CATEGORIES\n\nOpioids are classified by chemical origin into several categories. This classification matters for clinical pharmacology, regulation, and risk assessment.\n\n- Combination: codeine, hydrocodone, oxycodone, tramadol\n- Natural/Semi-Synthetic: hydromorphone, morphine, naloxone, naltrexone, oxycodone, oxymorphone\n- Semi-Synthetic: buprenorphine, butorphanol\n- Synthetic: fentanyl, meperidine, naloxone, pentazocine, tapentadol, tramadol\n- Treatment/Recovery: methadone\n-"
+            "relevance_score": 0.6514884233474731,
+            "text_snippet": "DEA SCHEDULING FOR OPIOIDS\n\nThe U.S. Drug Enforcement Administration (DEA) classifies controlled substances into five schedules based on accepted medical use, abuse potential, and dependence liability.\n\nSchedule II \u2014 High abuse potential, severe dependence. Includes morphine, fentanyl, oxycodone, hydrocodone, methadone. (0 products in registry)\n\nSchedule III \u2014 Moderate abuse potential. Includes buprenorphine products (Suboxone), codeine combinations. (0 products in registry)\n\nSchedule IV \u2014 Lower"
           }
         ],
         "faers_signals": [
@@ -2196,8 +2255,8 @@
               "benzo",
               "opioid"
             ],
-            "risk_description": "DRUG SAFETY PROFILE: 1 ML butorphanol tartrate 1 MG/ML Injection\n\nRxCUI: 886627\nCategory: semi-synthetic\nOpioid ingredients: butorphanol\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, n",
-            "source_chunk": "safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt"
+            "risk_description": "BENZODIAZEPINE DRUG INTERACTIONS\n\nBenzodiazepines + Opioids (FDA BLACK BOX WARNING):\nIn 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respirator",
+            "source_chunk": "benzo_interactions.txt"
           }
         ],
         "narrative_stage": "Crisis"
@@ -2207,39 +2266,39 @@
         "drug_class": "benzo",
         "evidence": [
           {
-            "chunk_filename": "safety_naloxone_0_5_mg_pentazocine_50_mg_oral_tablet.txt",
-            "chunk_type": "safety",
-            "drug_name": "naloxone 0.5 MG / pentazocine 50 MG Oral Tablet",
-            "relevance_score": 0.699999988079071,
-            "text_snippet": "DRUG SAFETY PROFILE: naloxone 0.5 MG / pentazocine 50 MG Oral Tablet\n\nRxCUI: 312289\nCategory: synthetic\nOpioid ingredients: naloxone, pentazocine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "ingredient_alprazolam.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": "alprazolam",
+            "relevance_score": 0.9428846836090088,
+            "text_snippet": "PHARMACOLOGY: ALPRAZOLAM\n\nIdentifiers: RxCUI=596, ChEMBL=CHEMBL661, PubChem CID=2118\nMolecular: C17H13ClN4, MW=308.76\nBrand Name: Xanax\nDEA Schedule: IV\n\nAlprazolam is classified as a triazolobenzodiazepine (triazole ring fused to benzodiazepine core). It is the most prescribed benzodiazepine in the United States and the most commonly diverted benzodiazepine in illicit markets.\n\nReceptor Binding:\n  - GABA-A positive allosteric modulator (benzodiazepine binding site)\n  - High affinity for alpha-1"
           },
           {
-            "chunk_filename": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.16 ML buprenorphine 50 MG/ML Prefilled Syringe",
-            "relevance_score": 0.6833591461181641,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "benzo_interactions.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.8270127177238464,
+            "text_snippet": "BENZODIAZEPINE DRUG INTERACTIONS\n\nBenzodiazepines + Opioids (FDA BLACK BOX WARNING):\nIn 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respiratory depression that is frequently fatal.\n  - CDC data: benzodiazepines are co-involved in approximately 16% of opioid overdose deaths\n  - Naloxone partially reverses the opioid component but does NOT re"
           },
           {
-            "chunk_filename": "safety_0_5_ml_fentanyl_0_05_mg_ml_prefilled_syringe.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe",
-            "relevance_score": 0.6656597852706909,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.5 ML fentanyl 0.05 MG/ML Prefilled Syringe\n\nRxCUI: 2629337\nCategory: synthetic\nOpioid ingredients: fentanyl\n\nBoxed Warning: None\n\nREMS Required: Medication Guide\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Respiratory depression, Serotonin syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "benzo_pharmacology.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.7090413570404053,
+            "text_snippet": "PHARMACOLOGY: BENZODIAZEPINES (CLASS OVERVIEW)\n\nDrug Class: sedative-hypnotic, anxiolytic, anticonvulsant, skeletal muscle relaxant\nDEA Schedule: Schedule IV (all benzodiazepines)\nChemical structure: 1,4-benzodiazepine ring fused to a diazepine ring\n\nPrimary Mechanism \u2014 GABA-A Positive Allosteric Modulation:\nBenzodiazepines bind to the benzodiazepine binding site (alpha/gamma subunit interface) on GABA-A receptors. They do NOT directly open the chloride channel \u2014 they increase the FREQUENCY of c"
           },
           {
-            "chunk_filename": "safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector",
-            "relevance_score": 0.6489402651786804,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector\n\nRxCUI: 2596175\nCategory: unclassified\nOpioid ingredients: naloxone\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
+            "chunk_filename": "ingredient_clonazepam.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": "clonazepam",
+            "relevance_score": 0.6816039085388184,
+            "text_snippet": "PHARMACOLOGY: CLONAZEPAM\n\nIdentifiers: RxCUI=2598, ChEMBL=CHEMBL452, PubChem CID=2802\nMolecular: C15H10ClN3O3, MW=315.71\nBrand Name: Klonopin\nDEA Schedule: IV\n\nClonazepam is a 7-nitrobenzodiazepine with prominent anticonvulsant properties in addition to standard benzodiazepine effects. It is the second most commonly prescribed benzodiazepine in the US.\n\nReceptor Binding:\n  - GABA-A positive allosteric modulator (benzodiazepine binding site)\n  - High affinity across alpha subtypes\n  - Enhanced an"
           },
           {
-            "chunk_filename": "safety_levorphanol_tartrate_2_mg_oral_tablet.txt",
-            "chunk_type": "safety",
-            "drug_name": "levorphanol tartrate 2 MG Oral Tablet",
-            "relevance_score": 0.6466373205184937,
-            "text_snippet": "DRUG SAFETY PROFILE: levorphanol tartrate 2 MG Oral Tablet\n\nRxCUI: 197873\nCategory: unclassified\nOpioid ingredients: levorphanol\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, neonatal, fatal, rems, abuse, misuse\nWarning text: WARNING: SERIOUS AND LIFE-THREATENING RISKS FROM USE OF LEVORPHANOL TARTRATE TABLETS Addiction, Abuse, and Misuse Because the use of levorphanol tartrate tabl"
+            "chunk_filename": "benzo_withdrawal.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.6126033663749695,
+            "text_snippet": "BENZODIAZEPINE WITHDRAWAL SYNDROME\n\nBenzodiazepine withdrawal, like alcohol withdrawal, can be life-threatening. Seizures and status epilepticus are the primary lethal risks. Protracted withdrawal syndrome is a distinctive feature that differentiates benzodiazepine dependence from most other substances.\n\nPathophysiology:\nChronic benzodiazepine exposure causes GABA-A receptor downregulation and conformational changes, reducing GABAergic inhibition. Concurrent glutamatergic upregulation creates a "
           }
         ],
         "faers_signals": [
@@ -2285,15 +2344,15 @@
               "benzo",
               "opioid"
             ],
-            "risk_description": "DRUG SAFETY PROFILE: 1 ML butorphanol tartrate 1 MG/ML Injection\n\nRxCUI: 886627\nCategory: semi-synthetic\nOpioid ingredients: butorphanol\n\nBOXED WARNING (Black Box): Yes\nKey warnings: Coma, Death, Neonatal opioid withdrawal syndrome, Overdose, Respiratory depression, Withdrawal syndrome, addiction, n",
-            "source_chunk": "safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt"
+            "risk_description": "BENZODIAZEPINE DRUG INTERACTIONS\n\nBenzodiazepines + Opioids (FDA BLACK BOX WARNING):\nIn 2016, the FDA issued a black box warning for concurrent benzodiazepine-opioid prescribing. Combined CNS depression from GABA-A modulation (benzos) and mu-opioid receptor activation produces synergistic respirator",
+            "source_chunk": "benzo_interactions.txt"
           }
         ],
         "narrative_stage": "Crisis"
       }
     ],
-    "analyst_brief": "---\nSIGNAL INTELLIGENCE BRIEF\nDate: 2023-10-27\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: fentanyl (opioid), codeine (opioid), alprazolam (benzodiazepine)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Crisis (confidence: 0.77). The post explicitly describes an overdose event (\"I overdosed on fentanyl last night\") and a near-fatal outcome (\"I almost died\"), necessitating emergency medical intervention (\"My roommate had to call 911\").\n\n3. CLINICAL RISK PROFILE\n*   **Fentanyl (opioid)**\n    *   **Pharmacology Summary:** Fentanyl (C22H28N2O, MW=336.5) is an opioid that exerts its effects primarily through the mu-opioid receptor (Ki = 0.083 nM) [KB:ingredient_fentanyl.txt]. The mu receptor is responsible for analgesia, euphoria, and respiratory depression [KB:receptor_system.txt].\n    *   **Key Adverse Events:** Respiratory depression [FAERS:fentanyl+Respiratory depression], respiratory failure [FAERS:fentanyl+Respiratory failure], respiratory arrest [FAERS:fentanyl+Respiratory arrest], overdose [FAERS:fentanyl+Overdose], accidental overdose [FAERS:fentanyl+Accidental overdose], drug toxicity [FAERS:fentanyl+Drug toxicity], drug dependence [FAERS:fentanyl+Drug dependence], drug abuse [FAERS:fentanyl+Drug abuse], and substance abuse [FAERS:fentanyl+Substance abuse].\n*   **Codeine (opioid)**\n    *   **Pharmacology Summary:** Codeine (C18H21NO3, MW=299.4) is an opioid with affinity for the mu-opioid receptor (Ki = 727.0 nM) [KB:ingredient_codeine.txt]. Opioids, including codeine, exert effects via G-protein coupled receptors, with the mu receptor mediating respiratory depression and physical dependence [KB:receptor_system.txt].\n    *   **Key Adverse Events:** Respiratory depression [FAERS:codeine+Respiratory depression], respiratory failure [FAERS:codeine+Respiratory failure], respiratory arrest [FAERS:codeine+Respiratory arrest], overdose [FAERS:codeine+Overdose], intentional overdose [FAERS:codeine+Intentional overdose], accidental overdose [FAERS:codeine+Accidental overdose], drug toxicity [FAERS:codeine+Drug toxicity], drug dependence [FAERS:codeine+Drug dependence], drug abuse [FAERS:codeine+Drug abuse], and substance abuse [FAERS:codeine+Substance abuse].\n*   **Alprazolam (benzodiazepine)**\n    *   **Pharmacology Summary:** Alprazolam is a benzodiazepine. Specific molecular details or receptor binding affinities were not provided in the retrieved knowledge chunks.\n    *   **Key Adverse Events:** Respiratory depression [FAERS:alprazolam+Respiratory depression], drug dependence [FAERS:alprazolam+Drug dependence], withdrawal seizure [FAERS:alprazolam+Withdrawal seizure], cognitive impairment [FAERS:alprazolam+Cognitive impairment], and somnolence [FAERS:alprazolam+Somnolence].\n\n4. POLY-DRUG INTERACTION RISKS\nThe co-administration of benzodiazepines (alprazolam) and opioids (fentanyl, codeine) carries a significant risk. Warnings include coma, respiratory depression, and death [KB:safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt]. This combination greatly enhances central nervous system depression, making overdose more likely and severe.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Crisis\" stage, the primary and immediate risk is life-threatening respiratory depression and arrest, stemming from the synergistic depressant effects of fentanyl, codeine, and alprazolam [KB:safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt]. The user's statement of nearly dying directly reflects this critical risk. Long-term risks, even after a crisis, include developing or exacerbating drug dependence and substance abuse for all three detected substances [FAERS:fentanyl+Drug dependence], [FAERS:codeine+Drug dependence], [FAERS:alprazolam+Drug dependence].\n\n6. RECOMMENDED ACTIONS\n*   **Emergency Preparedness:** Promote widespread availability and education on the use of naloxone to reverse opioid overdoses, including those involving potent synthetic opioids like fentanyl [KB:safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt].\n*   **Harm Reduction Messaging:** Disseminate urgent public health warnings about the extreme dangers of combining opioids (especially fentanyl) with benzodiazepines due to the heightened risk of respiratory depression, coma, and death [KB:safety_1_ml_butorphanol_tartrate_1_mg_ml_injection.txt].\n*   **Substance Abuse Treatment Access:** Advocate for accessible and comprehensive treatment options for opioid and benzodiazepine use disorders, including medication-assisted treatment and counseling services.\n*   **Social Media Monitoring:** Continue to monitor social media for patterns of poly-drug use, particularly the combination of opioids and benzodiazepines, to identify emerging trends and risk behaviors.\n*   **Fentanyl Awareness:** Intensify public awareness campaigns regarding the pervasive presence and high potency of fentanyl in the illicit drug supply, which is a significant factor in the current opioid crisis [KB:epi_three_waves.txt].\n---",
-    "elapsed_ms": 3232.96
+    "analyst_brief": "SIGNAL INTELLIGENCE BRIEF\nDate: 2024-06-03\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances: fentanyl (opioid), codeine (opioid), alprazolam (benzodiazepine) [LAYER 1 \u2014 SUBSTANCE RESOLUTION]\n\n2. NARRATIVE STAGE ASSESSMENT\nThe narrative is classified as \"Crisis\" with a confidence of 0.79 [LAYER 2 \u2014 NARRATIVE STAGE]. This classification is supported by the user's explicit statement of \"I overdosed,\" \"almost died,\" and the need for emergency services (\"My roommate had to call 911\"), indicating an immediate, life-threatening event.\n\n3. CLINICAL RISK PROFILE\n*   **Fentanyl (Opioid)**\n    *   **Pharmacology Summary:** Fentanyl is a synthetic opioid [KB:safety_0_5_ml_fentanyl_0_05_mg_ml_prefilled_syringe.txt] that exerts its effects primarily through the mu-opioid receptor (OPRM1), which mediates analgesia, euphoria, and respiratory depression [KB:receptor_system.txt]. It has a high binding affinity for the mu receptor (Ki = 0.083 nM) [KB:ingredient_fentanyl.txt].\n    *   **Key Adverse Events:** Significant signals for Respiratory depression (PRR=17.7, ROR=17.8) [FAERS:fentanyl+Respiratory depression], Respiratory arrest (PRR=9.6, ROR=9.8) [FAERS:fentanyl+Respiratory arrest], Overdose (PRR=4.9, ROR=5.2) [FAERS:fentanyl+Overdose], Accidental overdose (PRR=5.5, ROR=5.5) [FAERS:fentanyl+Accidental overdose], Drug abuse (PRR=26.5, ROR=29.0) [FAERS:fentanyl+Drug abuse], and Drug toxicity (PRR=6.8, ROR=6.8) [FAERS:fentanyl+Drug toxicity] have been identified in FAERS.\n\n*   **Codeine (Opioid)**\n    *   **Pharmacology Summary:** Codeine is an opioid [KB:opioid_ingredients_list.txt] that acts as a mu-opioid receptor agonist [KB:ingredient_codeine.txt]. It is often found in combination medications [KB:safety_acetaminophen_24_mg_ml_codeine_phosphate_2_4_mg_ml_oral_solu.txt].\n    *   **Key Adverse Events:** FAERS signals show associations with Respiratory depression (PRR=7.7, ROR=7.7) [FAERS:codeine+Respiratory depression], Respiratory arrest (PRR=3.5, ROR=3.6) [FAERS:codeine+Respiratory arrest], Overdose (PRR=4.8, ROR=5.2) [FAERS:codeine+Overdose], Substance abuse (PRR=17.4, ROR=17.5) [FAERS:codeine+Substance abuse], and Drug toxicity (PRR=4.2, ROR=4.2) [FAERS:codeine+Drug toxicity].\n\n*   **Alprazolam (Benzodiazepine)**\n    *   **Pharmacology Summary:** Alprazolam (Brand Name: Xanax) is a triazolobenzodiazepine [KB:ingredient_alprazolam.txt] classified as a sedative-hypnotic, anxiolytic, anticonvulsant, and skeletal muscle relaxant [KB:benzo_pharmacology.txt]. It is a Schedule IV controlled substance [KB:ingredient_alprazolam.txt].\n    *   **Key Adverse Events:** FAERS signals indicate associations with Respiratory depression (PRR=5.2, ROR=5.5) [FAERS:alprazolam+Respiratory depression], Drug dependence (PRR=8.0, ROR=8.5) [FAERS:alprazolam+Drug dependence], and Somnolence (PRR=7.0, ROR=7.5) [FAERS:alprazolam+Somnolence].\n\n4. POLY-DRUG INTERACTION RISKS\nThere is a significant interaction risk between benzodiazepines (alprazolam) and opioids (fentanyl and codeine). The FDA issued a black box warning in 2016 for concurrent benzodiazepine-opioid prescribing due to the risk of combined central nervous system (CNS) depression [KB:benzo_interactions.txt]. This combination can lead to severe adverse outcomes including profound sedation, respiratory depression, coma, and death [KB:benzo_interactions.txt]. The simultaneous use of fentanyl, codeine, and alprazolam dramatically increases the risk of severe respiratory depression and fatal overdose due to their synergistic depressant effects on the CNS.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nGiven the \"Crisis\" stage and the user's explicit report of an \"overdose\" where they \"almost died\" after mixing \"lean\" (codeine), \"bars\" (alprazolam), and fentanyl, the immediate risks are extremely high. The primary risk is severe, life-threatening respiratory depression due to the synergistic CNS depressant effects of combining multiple opioids (fentanyl, codeine) with a benzodiazepine (alprazolam) [KB:benzo_interactions.txt]. This combination significantly increases the likelihood of respiratory arrest [FAERS:fentanyl+Respiratory arrest], [FAERS:codeine+Respiratory arrest] and death. The event required emergency medical intervention (\"roommate had to call 911\"), confirming the severity of the overdose.\n\n6. RECOMMENDED ACTIONS\n*   **Overdose Prevention & Response Education:** Emphasize the extreme dangers of mixing opioids (fentanyl, codeine) with benzodiazepines (alprazolam), highlighting the FDA Black Box Warning [KB:benzo_interactions.txt]. Promote widespread education on identifying overdose symptoms and the immediate administration of naloxone [FAERS:fentanyl+Overdose].\n*   **Naloxone Access & Distribution:** Reinforce community programs for naloxone distribution, especially to individuals at high risk of poly-substance use, and their social networks (e.g., roommates, family) [FAERS:fentanyl+Accidental overdose].\n*   **Harm Reduction Strategies:** Advocate for harm reduction services that provide fentanyl test strips and safe use practices, recognizing the prevalent issue of fentanyl contamination and its high potency [KB:signals_fentanyl.txt].\n*   **Targeted Outreach for Poly-Substance Use:** Develop and disseminate public health messaging specifically addressing the heightened risks of combining opioids and benzodiazepines, particularly in populations where \"lean\" (codeine cough syrup) and \"bars\" (alprazolam) are frequently misused.\n*   **Support for Recovery Services:** Increase awareness and access to substance use disorder treatment and recovery resources, especially following an overdose event, to prevent future occurrences and address underlying drug dependence [FAERS:fentanyl+Drug dependence], [FAERS:codeine+Drug dependence], [FAERS:alprazolam+Drug dependence].",
+    "elapsed_ms": 5620.41
   },
   "Recovery \u2014 MAT": {
     "post_id": "recovery_\u2014_mat",
@@ -2363,13 +2422,13 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 2.64
+          "elapsed_ms": 1.79
         },
         {
           "post_id": "recovery_\u2014_mat",
           "matches": [],
           "method": "embedding",
-          "elapsed_ms": 651.84
+          "elapsed_ms": 496.82
         },
         {
           "post_id": "recovery_\u2014_mat",
@@ -2398,7 +2457,7 @@
             }
           ],
           "method": "llm",
-          "elapsed_ms": 2.09
+          "elapsed_ms": 1.27
         }
       ],
       "agreement_count": 2
@@ -2408,7 +2467,7 @@
       "top_stage": {
         "stage": "Recovery",
         "stage_index": 5,
-        "confidence": 0.7129,
+        "confidence": 0.6994,
         "method": "ensemble",
         "reasoning": "Ensemble: rule_based=Recovery, fine_tuned=Recovery, llm=Recovery"
       },
@@ -2430,28 +2489,28 @@
         {
           "stage": "Regular Use",
           "stage_index": 2,
-          "confidence": 0.0829,
+          "confidence": 0.0784,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Recovery, fine_tuned=Recovery, llm=Recovery"
         },
         {
           "stage": "Dependence",
           "stage_index": 3,
-          "confidence": 0.0602,
+          "confidence": 0.0647,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Recovery, fine_tuned=Recovery, llm=Recovery"
         },
         {
           "stage": "Crisis",
           "stage_index": 4,
-          "confidence": 0.0657,
+          "confidence": 0.0792,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Recovery, fine_tuned=Recovery, llm=Recovery"
         },
         {
           "stage": "Recovery",
           "stage_index": 5,
-          "confidence": 0.7129,
+          "confidence": 0.6994,
           "method": "ensemble",
           "reasoning": "Ensemble: rule_based=Recovery, fine_tuned=Recovery, llm=Recovery"
         }
@@ -2511,7 +2570,7 @@
             }
           ],
           "method": "rule_based",
-          "elapsed_ms": 514.72
+          "elapsed_ms": 467.99
         },
         {
           "post_id": "recovery_\u2014_mat",
@@ -2567,16 +2626,16 @@
             }
           ],
           "method": "fine_tuned",
-          "elapsed_ms": 86.41
+          "elapsed_ms": 555.74
         },
         {
           "post_id": "recovery_\u2014_mat",
           "top_stage": {
             "stage": "Recovery",
             "stage_index": 5,
-            "confidence": 0.98,
+            "confidence": 0.95,
             "method": "llm",
-            "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+            "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
           },
           "all_stages": [
             {
@@ -2584,46 +2643,46 @@
               "stage_index": 0,
               "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             },
             {
               "stage": "Experimentation",
               "stage_index": 1,
               "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             },
             {
               "stage": "Regular Use",
               "stage_index": 2,
-              "confidence": 0.01,
+              "confidence": 0.0,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             },
             {
               "stage": "Dependence",
               "stage_index": 3,
-              "confidence": 0.01,
+              "confidence": 0.02,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             },
             {
               "stage": "Crisis",
               "stage_index": 4,
-              "confidence": 0.0,
+              "confidence": 0.03,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             },
             {
               "stage": "Recovery",
               "stage_index": 5,
-              "confidence": 0.98,
+              "confidence": 0.95,
               "method": "llm",
-              "reasoning": "The post explicitly states '90 days clean off heroin,' which signifies a period of sobriety after past substance use. The mention of 'Suboxone has been a lifesaver' indicates engagement with medication-assisted treatment, and referring to 'My sponsor says' points directly to participation in a recovery program (e.g., 12-step). All these elements are defining characteristics of the Recovery stage."
+              "reasoning": "The post explicitly states '90 days clean off heroin,' mentions the use of 'Suboxone' (a common medication for opioid use disorder treatment), and refers to a 'sponsor,' all strong indicators of an individual actively engaged in the process of recovery and sobriety maintenance."
             }
           ],
           "method": "llm",
-          "elapsed_ms": 0.98
+          "elapsed_ms": 10.91
         }
       ],
       "agreement_count": 3
@@ -2637,36 +2696,36 @@
             "chunk_filename": "epi_three_waves.txt",
             "chunk_type": "epidemiology",
             "drug_name": null,
-            "relevance_score": 0.9107255935668945,
+            "relevance_score": 0.9539384245872498,
             "text_snippet": "THE THREE WAVES OF THE OPIOID EPIDEMIC\n\nThe U.S. opioid crisis has unfolded in three overlapping waves:\n\nWave 1 (1990s\u20132010): Prescription opioid overdoses. Driven by aggressive marketing of OxyContin and liberal prescribing. Deaths from natural and semi-synthetic opioids (T40.2) \u2014 oxycodone, hydrocodone \u2014 dominated.\n\nWave 2 (2010\u20132013): Heroin overdoses. As prescription opioids became harder to obtain, users transitioned to cheaper heroin. Heroin deaths (T40.1) surged.\n\nWave 3 (2013\u2013present): S"
           },
           {
             "chunk_filename": "classification_categories.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.7453689575195312,
+            "relevance_score": 0.7551727890968323,
             "text_snippet": "OPIOID CLASSIFICATION CATEGORIES\n\nOpioids are classified by chemical origin into several categories. This classification matters for clinical pharmacology, regulation, and risk assessment.\n\n- Combination: codeine, hydrocodone, oxycodone, tramadol\n- Natural/Semi-Synthetic: hydromorphone, morphine, naloxone, naltrexone, oxycodone, oxymorphone\n- Semi-Synthetic: buprenorphine, butorphanol\n- Synthetic: fentanyl, meperidine, naloxone, pentazocine, tapentadol, tramadol\n- Treatment/Recovery: methadone\n-"
           },
           {
             "chunk_filename": "opioid_ingredients_list.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.5802291631698608,
+            "relevance_score": 0.6726043820381165,
             "text_snippet": "COMPLETE OPIOID INGREDIENT LIST BY CATEGORY\n\n### Combination (4 ingredients)\n  - codeine\n  - hydrocodone\n  - oxycodone\n  - tramadol\n\n### Natural/Semi-Synthetic (6 ingredients)\n  - hydromorphone\n  - morphine\n  - naloxone\n  - naltrexone\n  - oxycodone\n  - oxymorphone\n\n### Semi-Synthetic (2 ingredients)\n  - buprenorphine\n  - butorphanol\n\n### Synthetic (6 ingredients)\n  - fentanyl\n  - meperidine\n  - naloxone\n  - pentazocine\n  - tapentadol\n  - tramadol\n\n### Treatment/Recovery (1 ingredients)\n  - metha"
-          },
-          {
-            "chunk_filename": "receptor_system.txt",
-            "chunk_type": "classification",
-            "drug_name": null,
-            "relevance_score": 0.5399929285049438,
-            "text_snippet": "THE OPIOID RECEPTOR SYSTEM\n\nOpioids exert their effects through four G-protein coupled receptors:\n\n1. Mu receptor (OPRM1, MOR) \u2014 Primary mediator of analgesia, euphoria, respiratory depression, and physical dependence. Most clinically used opioids target mu. High mu affinity (low Ki value) correlates with potency.\n\n2. Kappa receptor (OPRK1, KOR) \u2014 Mediates spinal analgesia, sedation, and dysphoria. Kappa agonists (pentazocine, butorphanol) produce less euphoria and have lower abuse potential but"
           },
           {
             "chunk_filename": "demo_by_sex.txt",
             "chunk_type": "demographics",
             "drug_name": null,
-            "relevance_score": 0.5303066372871399,
+            "relevance_score": 0.6637120842933655,
             "text_snippet": "OPIOID OVERDOSE DEATHS BY SEX (2022)\n\n  Male: 53,562 deaths (33.1/100K, 69.2% of total)\n  Female: 23,841 deaths (14.2/100K, 30.8% of total)\n\nMales die from opioid overdoses at 2.3x the rate of females (33.1 vs 14.2 per 100K). Males account for nearly 70% of all opioid overdose deaths."
+          },
+          {
+            "chunk_filename": "stimulant_interactions.txt",
+            "chunk_type": "pharmacology",
+            "drug_name": null,
+            "relevance_score": 0.6551788449287415,
+            "text_snippet": "STIMULANT DRUG INTERACTIONS\n\nStimulants + Opioids \u2014 \"Speedball\" and \"Goofball\" (EXTREME RISK):\n  Speedball: cocaine + heroin (or fentanyl) \u2014 injected or smoked simultaneously\n  Goofball: methamphetamine + heroin (or fentanyl) \u2014 injected or smoked\n  Mechanism of danger: opposing CNS effects create unpredictable cardiorespiratory dynamics. The stimulant masks opioid sedation, enabling higher opioid doses. When the shorter-acting stimulant wears off, unopposed opioid respiratory depression can be f"
           }
         ],
         "faers_signals": [],
@@ -2681,36 +2740,36 @@
             "chunk_filename": "ingredient_buprenorphine.txt",
             "chunk_type": "pharmacology",
             "drug_name": "buprenorphine",
-            "relevance_score": 0.9617139101028442,
+            "relevance_score": 0.9655898809432983,
             "text_snippet": "PHARMACOLOGY: BUPRENORPHINE\n\nIdentifiers: RxCUI=1819, ChEMBL=CHEMBL511142, PubChem CID=644073\nMolecular: C29H41NO4, MW=467.6\n\nReceptor Binding Affinities:\n  - mu: Ki = 0.41 nM (source: ChEMBL)\n  - kappa: Ki = 0.04 nM (source: ChEMBL)\n  - delta: Ki = 1.15 nM (source: ChEMBL)\n\nPotency vs morphine: 0.78x\n\nBuprenorphine is classified as an opioid because it acts as a full agonist at the kappa opioid receptor (OPRK1) with Ki = 0.0 nM. Mu opioid receptor agonist. Its primary opioid effects \u2014 dysphoria"
           },
           {
             "chunk_filename": "ingredient_naloxone.txt",
             "chunk_type": "pharmacology",
             "drug_name": "naloxone",
-            "relevance_score": 0.9012584090232849,
+            "relevance_score": 0.9259249567985535,
             "text_snippet": "PHARMACOLOGY: NALOXONE\n\nIdentifiers: RxCUI=7242, ChEMBL=CHEMBL80, PubChem CID=5284596\nMolecular: C19H21NO4, MW=327.4\n\nReceptor Binding Affinities:\n  - mu: Ki = 1.0 nM (source: ChEMBL)\n  - kappa: Ki = 15.85 nM (source: ChEMBL)\n  - delta: Ki = 15.85 nM (source: ChEMBL)\n\nPotency vs morphine: 0.32x\n\nNaloxone is classified as an opioid because it acts as a full agonist at the mu opioid receptor (OPRM1) with Ki = 1.0 nM, showing 16-fold selectivity over kappa. Its primary opioid effects \u2014 analgesia, e"
           },
           {
             "chunk_filename": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt",
             "chunk_type": "safety",
             "drug_name": "0.16 ML buprenorphine 50 MG/ML Prefilled Syringe",
-            "relevance_score": 0.8717080950737,
+            "relevance_score": 0.9083933234214783,
             "text_snippet": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
-          },
-          {
-            "chunk_filename": "safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt",
-            "chunk_type": "safety",
-            "drug_name": "0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector",
-            "relevance_score": 0.800121009349823,
-            "text_snippet": "DRUG SAFETY PROFILE: 0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector\n\nRxCUI: 2596175\nCategory: unclassified\nOpioid ingredients: naloxone\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
           },
           {
             "chunk_filename": "ingredient_naltrexone.txt",
             "chunk_type": "pharmacology",
             "drug_name": "naltrexone",
-            "relevance_score": 0.7994421720504761,
+            "relevance_score": 0.8731217980384827,
             "text_snippet": "PHARMACOLOGY: NALTREXONE\n\nIdentifiers: RxCUI=7243, ChEMBL=CHEMBL19019, PubChem CID=5360515\nMolecular: C20H23NO4, MW=341.4\n\nReceptor Binding Affinities:\n  - mu: Ki = 0.33 nM (source: ChEMBL)\n  - kappa: Ki = 1.44 nM (source: ChEMBL)\n  - delta: Ki = 144.0 nM (source: ChEMBL)\n\nPotency vs morphine: 0.97x\n\nNaltrexone is classified as an opioid because it acts as a full agonist at the mu opioid receptor (OPRM1) with Ki = 0.3 nM, with moderate selectivity over kappa (4.4-fold). Opioid receptors; mu/kapp"
+          },
+          {
+            "chunk_filename": "safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt",
+            "chunk_type": "safety",
+            "drug_name": "0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector",
+            "relevance_score": 0.8684632778167725,
+            "text_snippet": "DRUG SAFETY PROFILE: 0.4 ML naloxone hydrochloride 25 MG/ML Auto-Injector\n\nRxCUI: 2596175\nCategory: unclassified\nOpioid ingredients: naloxone\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
           }
         ],
         "faers_signals": [],
@@ -2732,29 +2791,29 @@
             "chunk_filename": "safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt",
             "chunk_type": "safety",
             "drug_name": "0.16 ML buprenorphine 50 MG/ML Prefilled Syringe",
-            "relevance_score": 0.7744657397270203,
+            "relevance_score": 0.852776050567627,
             "text_snippet": "DRUG SAFETY PROFILE: 0.16 ML buprenorphine 50 MG/ML Prefilled Syringe\n\nRxCUI: 2639021\nCategory: semi-synthetic\nOpioid ingredients: buprenorphine\n\nBoxed Warning: None\nBenzodiazepine co-administration warning: YES\nCYP enzyme interactions: CYP3A4\n\nOverdose symptoms: respiratory depression, hypotension\n\nSafety terms in label: Neonatal opioid withdrawal syndrome, Withdrawal syndrome\n\nSource: DailyMed SPL label, NLP via CDCgov/Opioid_Involvement_NLP"
           },
           {
             "chunk_filename": "opioid_ingredients_list.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.5880767703056335,
+            "relevance_score": 0.7266722321510315,
             "text_snippet": "COMPLETE OPIOID INGREDIENT LIST BY CATEGORY\n\n### Combination (4 ingredients)\n  - codeine\n  - hydrocodone\n  - oxycodone\n  - tramadol\n\n### Natural/Semi-Synthetic (6 ingredients)\n  - hydromorphone\n  - morphine\n  - naloxone\n  - naltrexone\n  - oxycodone\n  - oxymorphone\n\n### Semi-Synthetic (2 ingredients)\n  - buprenorphine\n  - butorphanol\n\n### Synthetic (6 ingredients)\n  - fentanyl\n  - meperidine\n  - naloxone\n  - pentazocine\n  - tapentadol\n  - tramadol\n\n### Treatment/Recovery (1 ingredients)\n  - metha"
-          },
-          {
-            "chunk_filename": "signals_buprenorphine.txt",
-            "chunk_type": "faers_signals",
-            "drug_name": "buprenorphine",
-            "relevance_score": 0.5657650828361511,
-            "text_snippet": "FAERS SAFETY SIGNALS: BUPRENORPHINE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 13\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 10,040 reports, 3/3 methods flagging\n    Signal strength: PRR=31.49, ROR=40.91, EBGM=29.58\n  - Overdose: 6,624 reports, 3/3 methods flagging\n    Signal strength: PRR=9.63, ROR=11.22, EBGM=9.46\n  - Withdrawal syndrome: 5,435 reports, 3/3 methods flagging\n  "
           },
           {
             "chunk_filename": "receptor_system.txt",
             "chunk_type": "classification",
             "drug_name": null,
-            "relevance_score": 0.5382028222084045,
+            "relevance_score": 0.6681868433952332,
             "text_snippet": "THE OPIOID RECEPTOR SYSTEM\n\nOpioids exert their effects through four G-protein coupled receptors:\n\n1. Mu receptor (OPRM1, MOR) \u2014 Primary mediator of analgesia, euphoria, respiratory depression, and physical dependence. Most clinically used opioids target mu. High mu affinity (low Ki value) correlates with potency.\n\n2. Kappa receptor (OPRK1, KOR) \u2014 Mediates spinal analgesia, sedation, and dysphoria. Kappa agonists (pentazocine, butorphanol) produce less euphoria and have lower abuse potential but"
+          },
+          {
+            "chunk_filename": "signals_buprenorphine.txt",
+            "chunk_type": "faers_signals",
+            "drug_name": "buprenorphine",
+            "relevance_score": 0.6642143726348877,
+            "text_snippet": "FAERS SAFETY SIGNALS: BUPRENORPHINE\n\nTotal signal pairs tested: 19, Consensus signals (\u22652 methods): 13\nMethods: PRR (Proportional Reporting Ratio), ROR (Reporting Odds Ratio), MGPS/EBGM (Multi-item Gamma Poisson Shrinker)\n\n  - Drug dependence: 10,040 reports, 3/3 methods flagging\n    Signal strength: PRR=31.49, ROR=40.91, EBGM=29.58\n  - Overdose: 6,624 reports, 3/3 methods flagging\n    Signal strength: PRR=9.63, ROR=11.22, EBGM=9.46\n  - Withdrawal syndrome: 5,435 reports, 3/3 methods flagging\n  "
           }
         ],
         "faers_signals": [
@@ -2896,7 +2955,7 @@
         "narrative_stage": "Recovery"
       }
     ],
-    "analyst_brief": "---\nSIGNAL INTELLIGENCE BRIEF\nDate: October 26, 2023\n\n1. SUBSTANCE IDENTIFICATION\nDetected substances:\n- Heroin (opioid)\n- Buprenorphine/naloxone (opioid)\n- Buprenorphine (opioid)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Recovery (confidence: 0.71)\nReasoning: The user explicitly states \"90 days clean off heroin today\" and mentions using \"Suboxone has been a lifesaver,\" indicating active participation in treatment for opioid dependence. The reference to a \"sponsor\" further supports engagement in a recovery program [Input Post].\n\n3. CLINICAL RISK PROFILE\n**Substance: Heroin (class: opioid)**\n*   **Pharmacology Summary**: Heroin is an opioid [KB:classification_categories.txt] that exerts its effects primarily through the mu receptor (OPRM1, MOR), which mediates analgesia, euphoria, and respiratory depression [KB:receptor_system.txt]. The U.S. opioid crisis has included waves of prescription opioid overdoses [KB:epi_three_waves.txt].\n*   **Key Adverse Events**: Opioid overdose deaths are a significant concern, with males experiencing a 2.3 times higher rate than females [KB:demo_by_sex.txt].\n\n**Substance: Buprenorphine/naloxone (class: opioid)**\n*   **Pharmacology Summary**: Buprenorphine is a semi-synthetic opioid [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt] with high affinity for mu (Ki = 0.41 nM) and kappa (Ki = 0.46 nM) opioid receptors [KB:ingredient_buprenorphine.txt]. Naloxone is an opioid antagonist with affinity for mu (Ki = 1.0 nM) and kappa (Ki = 1.0 nM) receptors [KB:ingredient_naloxone.txt]. Neither buprenorphine nor naloxone have Boxed Warnings listed in their safety profiles [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt], [KB:safety_0_4_ml_naloxone_hydrochloride_25_mg_ml_auto_injector.txt].\n*   **Key Adverse Events**: No specific FAERS signals for the buprenorphine/naloxone combination were retrieved.\n\n**Substance: Buprenorphine (class: opioid)**\n*   **Pharmacology Summary**: Buprenorphine is a semi-synthetic opioid [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt] listed among natural/semi-synthetic opioids [KB:opioid_ingredients_list.txt]. It primarily acts on the mu-opioid receptor (OPRM1, MOR), which is responsible for analgesia, euphoria, respiratory depression, and physical dependence [KB:receptor_system.txt]. Buprenorphine has a high affinity for mu (Ki = 0.41 nM) and kappa (Ki = 0.46 nM) receptors [KB:ingredient_buprenorphine.txt]. There is no Boxed Warning listed for buprenorphine [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt].\n*   **Key Adverse Events**: FAERS safety signals for buprenorphine include Respiratory depression [FAERS:buprenorphine+Respiratory depression], Respiratory arrest [FAERS:buprenorphine+Respiratory arrest], Overdose [FAERS:buprenorphine+Overdose], Accidental overdose [FAERS:buprenorphine+Accidental overdose], Drug dependence [FAERS:buprenorphine+Drug dependence], Drug abuse [FAERS:buprenorphine+Drug abuse], and Substance abuse [FAERS:buprenorphine+Substance abuse].\n\n4. POLY-DRUG INTERACTION RISKS\nThe user is \"clean off heroin\" and using Suboxone (buprenorphine/naloxone) as treatment [Input Post], indicating that heroin and buprenorphine/naloxone are not being used concurrently. However, buprenorphine itself carries a specific warning against benzodiazepine co-administration [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt]. The mu-opioid receptor, which buprenorphine acts upon [KB:receptor_system.txt], mediates respiratory depression, and combining buprenorphine with other central nervous system depressants like benzodiazepines can increase this risk.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nIn the **Recovery** stage, the individual has successfully abstained from heroin for 90 days with the aid of buprenorphine/naloxone [Input Post]. The statement \"the first year is the hardest\" [Input Post] highlights the ongoing vulnerability to relapse. While buprenorphine/naloxone is a critical tool for recovery, buprenorphine itself has FAERS signals for drug dependence, drug abuse, and substance abuse [FAERS:buprenorphine+Drug dependence], [FAERS:buprenorphine+Drug abuse], [FAERS:buprenorphine+Substance abuse], necessitating continued monitoring for potential misuse or diversion. There is also a risk of respiratory depression and overdose with buprenorphine [FAERS:buprenorphine+Respiratory depression], [FAERS:buprenorphine+Overdose], especially if misused or taken with other depressants, such as benzodiazepines, for which a co-administration warning exists [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt].\n\n6. RECOMMENDED ACTIONS\n1.  **Monitor MAT Adherence and Challenges**: Continue to monitor social media for discussions related to medication-assisted treatment (MAT) with buprenorphine/naloxone, focusing on user experiences, challenges to adherence, and perceived benefits, particularly within the crucial initial year of recovery [Input Post].\n2.  **Disseminate Interaction Warnings**: Public health messaging should highlight the specific risks of combining buprenorphine with benzodiazepines or other CNS depressants, referencing the co-administration warning [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt] and the risk of respiratory depression [FAERS:buprenorphine+Respiratory depression].\n3.  **Reinforce Recovery Support**: Promote resources for individuals in long-term recovery, acknowledging the difficulties expressed (e.g., \"first year is the hardest\") [Input Post] and emphasizing the importance of sponsorship and ongoing support systems.\n4.  **Educate on Buprenorphine Risks**: Provide balanced information on buprenorphine's role in recovery while also educating on its potential for misuse, dependence, abuse, and overdose risks (e.g., respiratory depression, accidental overdose) as indicated by FAERS signals [FAERS:buprenorphine+Drug dependence], [FAERS:buprenorphine+Overdose], [FAERS:buprenorphine+Respiratory depression].\n5.  **Relapse Prevention Messaging**: Develop targeted messaging that supports individuals in recovery from heroin dependence and helps mitigate the risk of relapse, given the ongoing challenges of sustained recovery [Input Post].\n---",
-    "elapsed_ms": 2666.23
+    "analyst_brief": "SIGNAL INTELLIGENCE BRIEF\nDate: 2024-05-15\n\n1. SUBSTANCE IDENTIFICATION\n*   Heroin (Opioid)\n*   Buprenorphine/Naloxone (Opioid)\n*   Buprenorphine (Opioid)\n\n2. NARRATIVE STAGE ASSESSMENT\nStage: Recovery (confidence: 0.70)\nReasoning: The user explicitly states \"90 days clean off heroin today\" and mentions using \"Suboxone has been a lifesaver,\" which indicates engagement in medication-assisted treatment (MAT) for opioid use disorder. The reference to a \"sponsor\" further supports an active recovery process.\n\n3. CLINICAL RISK PROFILE\n**Substance: Heroin (class: opioid)**\n*   **Pharmacology Summary**: Heroin is an opioid, implicated in the U.S. opioid epidemic, which has unfolded in three overlapping waves, starting with prescription opioids [KB:epi_three_waves.txt]. Opioids exert their effects primarily through the mu receptor (OPRM1, MOR), mediating analgesia, euphoria, and respiratory depression [KB:receptor_system.txt]. Heroin is classified as an opioid [KB:opioid_ingredients_list.txt].\n*   **Key Adverse Events**: While specific adverse events for heroin are not explicitly detailed in the provided KB, its classification as an opioid indicates potential for severe respiratory depression, dependence, and overdose, common to the opioid class [KB:receptor_system.txt]. Males die from opioid overdoses at 2.3x the rate of females [KB:demo_by_sex.txt].\n\n**Substance: Buprenorphine/Naloxone (class: opioid)**\n*   **Pharmacology Summary**: Buprenorphine is a semi-synthetic opioid with high affinity for mu (Ki = 0.41 nM) and kappa opioid receptors [KB:ingredient_buprenorphine.txt]. Naloxone is an opioid antagonist with affinity for mu (Ki = 1.0 nM) and kappa opioid receptors [KB:ingredient_naloxone.txt]. The combination is categorized as a semi-synthetic opioid [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt].\n*   **Key Adverse Events**: Specific FAERS signals for the buprenorphine/naloxone combination were not provided. However, adverse events associated with buprenorphine alone (listed below) are relevant.\n\n**Substance: Buprenorphine (class: opioid)**\n*   **Pharmacology Summary**: Buprenorphine is a semi-synthetic opioid [KB:opioid_ingredients_list.txt] and has high binding affinity for mu (Ki = 0.41 nM) and kappa opioid receptors [KB:ingredient_buprenorphine.txt]. It is available in various forms, including prefilled syringes [KB:safety_0_16_ml_buprenorphine_50_mg_ml_prefilled_syringe.txt].\n*   **Key Adverse Events**:\n    *   Respiratory depression (PRR=13.6, ROR=13.7) [FAERS:buprenorphine+Respiratory depression]\n    *   Respiratory arrest (PRR=5.0, ROR=5.1) [FAERS:buprenorphine+Respiratory arrest]\n    *   Respiratory failure (PRR=0.8, ROR=0.8) [FAERS:buprenorphine+Respiratory failure]\n    *   Drug dependence (PRR=31.5, ROR=40.9) [FAERS:buprenorphine+Drug dependence]\n    *   Substance abuse (PRR=42.8, ROR=43.5) [FAERS:buprenorphine+Substance abuse]\n    *   Drug abuse (PRR=17.6, ROR=18.9) [FAERS:buprenorphine+Drug abuse]\n    *   Overdose (PRR=9.6, ROR=11.2) [FAERS:buprenorphine+Overdose]\n    *   Accidental overdose (PRR=4.8, ROR=4.8) [FAERS:buprenorphine+Accidental overdose]\n    *   Intentional overdose (PRR=1.6, ROR=1.6) [FAERS:buprenorphine+Intentional overdose]\n    *   Drug toxicity (PRR=1.2, ROR=1.2) [FAERS:buprenorphine+Drug toxicity]\n\n4. POLY-DRUG INTERACTION RISKS\nWhile the user is \"clean off heroin,\" the history of heroin use highlights potential risks. A \"Speedball\" combination of cocaine + heroin (or fentanyl) carries an \"EXTREME RISK\" when injected or smoked simultaneously [KB:stimulant_interactions.txt]. This risk is relevant should a relapse occur, or for public health messaging regarding heroin use in general.\n\n5. STAGE-SPECIFIC RISK ANNOTATION\nThe user is in the **Recovery** stage, 90 days \"clean off heroin\" and utilizing buprenorphine/naloxone.\n*   **Risk of Relapse**: Although in recovery, the first year is noted as challenging (\"the first year is the hardest\"), indicating a period of continued vulnerability to relapse.\n*   **Buprenorphine-related Risks**: Even in a therapeutic context, buprenorphine carries signals for drug dependence, substance abuse, and overdose [FAERS:buprenorphine+Drug dependence], [FAERS:buprenorphine+Substance abuse], [FAERS:buprenorphine+Overdose]. Monitoring for potential misuse or adverse effects of the medication is crucial.\n*   **Respiratory Risks**: Respiratory depression, arrest, and failure are identified adverse events for buprenorphine [FAERS:buprenorphine+Respiratory depression], [FAERS:buprenorphine+Respiratory arrest], [FAERS:buprenorphine+Respiratory failure], requiring ongoing clinical vigilance, especially if combined with other central nervous system depressants (though not indicated in this post).\n\n6. RECOMMENDED ACTIONS\n*   **Support Medication-Assisted Treatment (MAT)**: Public health workers should reinforce the benefits of buprenorphine/naloxone for opioid use disorder and encourage adherence to prescribed regimens.\n*   **Promote Social Support Networks**: Emphasize the importance of sponsors and support systems in navigating the challenges of recovery, especially during the critical first year.\n*   **Educate on Buprenorphine Safety**: Provide information on potential adverse effects of buprenorphine, including respiratory depression and the risks of misuse, while acknowledging its role in treatment.\n*   **Harm Reduction for Relapse Prevention**: While the user is clean, continued education on extreme poly-drug interaction risks (e.g., \"Speedball\" with heroin) [KB:stimulant_interactions.txt] is important for individuals with a history of opioid use, as relapse remains a risk factor.\n*   **Monitor Progress**: Encourage continued engagement with healthcare providers to monitor recovery progress and manage any emerging challenges.",
+    "elapsed_ms": 3711.77
   }
 }
