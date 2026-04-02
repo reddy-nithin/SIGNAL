@@ -85,13 +85,14 @@ DEMO_CACHE_PATH = CACHE_DIR / "demo_reports.json"
 @st.cache_resource(show_spinner="Loading SIGNAL pipeline...")
 def _get_pipeline():
     from signal.synthesis.pipeline import SIGNALPipeline
-    from signal.grounding.indexer import get_sbert_model
+    from signal.config import VERTEX_PROJECT_ID
     from signal.substance.embedding_detector import load_or_build_substance_embeddings
-    # Pre-warm SBERT: load model + run a dummy encode to trigger JIT compilation.
-    # This moves the 5-40s startup cost to page load (spinner shown) instead of
-    # the first user analysis request (invisible hang).
-    model = get_sbert_model()
-    model.encode(["warmup"], convert_to_numpy=True, show_progress_bar=False)
+    if not VERTEX_PROJECT_ID:
+        # No Vertex AI credentials — pre-warm SBERT so the 5-40s model load
+        # happens here (with spinner) instead of on the first user click.
+        from signal.grounding.indexer import get_sbert_model
+        model = get_sbert_model()
+        model.encode(["warmup"], convert_to_numpy=True, show_progress_bar=False)
     # Pre-load substance prototype embeddings from disk cache.
     load_or_build_substance_embeddings()
     return SIGNALPipeline()
