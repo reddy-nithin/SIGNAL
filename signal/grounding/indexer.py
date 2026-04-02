@@ -446,7 +446,29 @@ class HybridRetriever:
         alpha: float = 0.7,
         chunk_type_filter: Optional[str] = None,
     ) -> list[RetrievalResult]:
-        """Run hybrid search and return top_k results."""
+        """Run hybrid search and return top_k results.
+
+        Handles embedding-dim mismatch gracefully: if the loaded FAISS index
+        was built with a different embedder than what is currently active
+        (e.g. Vertex AI 768-dim index loaded but SBERT 384-dim queried),
+        the index is rebuilt in-memory with the active embedder before searching.
+        """
+        # Probe the active query dim with a cheap single-token embed
+        _, query_dim = embed_query(text[:10])
+        if query_dim != self._dim:
+            logger.warning(
+                "FAISS dim mismatch (index=%d, query=%d) — rebuilding index in memory.",
+                self._dim, query_dim,
+            )
+            texts = [c.text for c in self._chunks]
+            embeddings, self._dim = embed_texts(texts)
+            self._faiss = build_faiss_index(embeddings)
+            # Attempt to persist so subsequent cold-starts are consistent
+            try:
+                save_faiss_index(self._faiss, self._faiss_path)
+            except Exception:
+                pass  # read-only filesystem on Streamlit Cloud — in-memory is fine
+
         return hybrid_search(
             query_text=text,
             chunks=self._chunks,
