@@ -87,14 +87,20 @@ def _get_pipeline():
     from signal.synthesis.pipeline import SIGNALPipeline
     from signal.config import VERTEX_PROJECT_ID
     from signal.substance.embedding_detector import load_or_build_substance_embeddings
+    from signal.narrative.fine_tuned_classifier import _load_model as _load_distilbert
+
     if not VERTEX_PROJECT_ID:
         # No Vertex AI credentials — pre-warm SBERT so the 5-40s model load
         # happens here (with spinner) instead of on the first user click.
         from signal.grounding.indexer import get_sbert_model
         model = get_sbert_model()
         model.encode(["warmup"], convert_to_numpy=True, show_progress_bar=False)
-    # Pre-load substance prototype embeddings from disk cache.
+
+    # Pre-load substance prototype embeddings and DistilBERT at startup.
+    # Both are module-level singletons: this ensures they are resident in
+    # memory before any user request arrives, eliminating first-click lag.
     load_or_build_substance_embeddings()
+    _load_distilbert()
     return SIGNALPipeline()
 
 
