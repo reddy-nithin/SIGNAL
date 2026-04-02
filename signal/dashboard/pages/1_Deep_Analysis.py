@@ -85,6 +85,15 @@ DEMO_CACHE_PATH = CACHE_DIR / "demo_reports.json"
 @st.cache_resource(show_spinner="Loading SIGNAL pipeline...")
 def _get_pipeline():
     from signal.synthesis.pipeline import SIGNALPipeline
+    from signal.grounding.indexer import get_sbert_model
+    from signal.substance.embedding_detector import load_or_build_substance_embeddings
+    # Pre-warm SBERT: load model + run a dummy encode to trigger JIT compilation.
+    # This moves the 5-40s startup cost to page load (spinner shown) instead of
+    # the first user analysis request (invisible hang).
+    model = get_sbert_model()
+    model.encode(["warmup"], convert_to_numpy=True, show_progress_bar=False)
+    # Pre-load substance prototype embeddings from disk cache.
+    load_or_build_substance_embeddings()
     return SIGNALPipeline()
 
 
@@ -378,6 +387,10 @@ if example_choice != "Custom input" and user_text.strip():
     )
 
 analyze_clicked = st.button("Analyze", type="primary", use_container_width=True)
+
+# Pre-warm pipeline at page load (not on first click) so the spinner shows
+# immediately when the user arrives, not as a hidden hang on first analysis.
+_get_pipeline()
 
 # ── Rate limiting ──────────────────────────────────────────────────────────────
 

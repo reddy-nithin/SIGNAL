@@ -130,16 +130,27 @@ def _embed_vertex(
     return np.array(all_embeddings, dtype=np.float32)
 
 
-_sbert_model: object = None  # module-level singleton — loaded once per process
+_sbert_model: object = None  # module-level singleton used outside Streamlit context
 
 
-def _embed_sbert(texts: list[str]) -> np.ndarray:
-    """Embed texts via local SentenceTransformer (fallback)."""
+def get_sbert_model():
+    """Return the SBERT model singleton.
+
+    Outside Streamlit: uses module-level global, loaded once per process.
+    Inside Streamlit: callers should wrap this with @st.cache_resource at the
+    call site so the model object is reused across reruns.
+    """
     global _sbert_model
     if _sbert_model is None:
         from sentence_transformers import SentenceTransformer
         _sbert_model = SentenceTransformer(FALLBACK_EMBEDDING_MODEL)
-    return _sbert_model.encode(texts, convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
+    return _sbert_model
+
+
+def _embed_sbert(texts: list[str]) -> np.ndarray:
+    """Embed texts via local SentenceTransformer (fallback)."""
+    model = get_sbert_model()
+    return model.encode(texts, convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
 
 
 def _l2_normalize(vectors: np.ndarray) -> np.ndarray:
@@ -156,7 +167,8 @@ def embed_texts(
 ) -> tuple[np.ndarray, int]:
     """Embed a list of texts, returning L2-normalized vectors.
 
-    Tries Vertex AI first; falls back to local SBERT on any error.
+    Uses Vertex AI when GCP_PROJECT_ID is configured; otherwise goes straight to
+    local SBERT to avoid a slow failed-attempt on every call.
 
     Args:
         texts: Strings to embed.
@@ -167,20 +179,20 @@ def embed_texts(
         (embeddings, dim) — float32 array of shape (len(texts), dim),
         and the embedding dimension used.
     """
-    try:
-        vecs = _embed_vertex(texts, task_type=task_type, batch_size=batch_size)
-        dim = EMBEDDING_DIM
-        logger.info("Embedded %d texts via Vertex AI (dim=%d)", len(texts), dim)
-    except Exception as exc:
-        warnings.warn(
-            f"Vertex AI embedding failed ({exc!r}), falling back to SBERT.",
-            stacklevel=2,
-        )
-        vecs = _embed_sbert(texts)
-        dim = FALLBACK_EMBEDDING_DIM
-        logger.info("Embedded %d texts via SBERT fallback (dim=%d)", len(texts), dim)
+    if VERTEX_PROJECT_ID:
+        try:
+            vecs = _embed_vertex(texts, task_type=task_type, batch_size=batch_size)
+            logger.info("Embedded %d texts via Vertex AI (dim=%d)", len(texts), EMBEDDING_DIM)
+            return _l2_normalize(vecs), EMBEDDING_DIM
+        except Exception as exc:
+            warnings.warn(
+                f"Vertex AI embedding failed ({exc!r}), falling back to SBERT.",
+                stacklevel=2,
+            )
 
-    return _l2_normalize(vecs), dim
+    vecs = _embed_sbert(texts)
+    logger.info("Embedded %d texts via SBERT (dim=%d)", len(texts), FALLBACK_EMBEDDING_DIM)
+    return _l2_normalize(vecs), FALLBACK_EMBEDDING_DIM
 
 
 def embed_query(text: str) -> tuple[np.ndarray, int]:

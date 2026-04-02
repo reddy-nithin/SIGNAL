@@ -7,6 +7,7 @@ and pharmacological constants. All other modules import from here.
 from __future__ import annotations
 
 import os
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -45,6 +46,15 @@ BM25_INDEX_PATH: Path = MODELS_DIR / "bm25_index.pkl"
 CHUNK_METADATA_PATH: Path = MODELS_DIR / "chunk_metadata.json"
 
 # ── Vertex AI / Gemini ────────────────────────────────────────────────────────
+# Bootstrap GCP service account from Streamlit secret when running on Streamlit Cloud.
+# Store the full service account JSON under the secret key GOOGLE_APPLICATION_CREDENTIALS_JSON.
+_gac_json = _get_secret("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+if _gac_json and not os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
+    _tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False)
+    _tmp.write(_gac_json)
+    _tmp.close()
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = _tmp.name
+
 VERTEX_PROJECT_ID: str = _get_secret("GCP_PROJECT_ID", "") or ""
 VERTEX_LOCATION: str = "us-central1"
 EMBEDDING_MODEL: str = "text-embedding-004"

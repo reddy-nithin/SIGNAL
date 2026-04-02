@@ -1,5 +1,8 @@
 datasets/
-models/
+models/*
+!models/faiss_index.bin
+!models/bm25_index.pkl
+!models/chunk_metadata.json
 __pycache__/
 *.pyc
 .env
@@ -8,7 +11,7 @@ __pycache__/
 evidence/**/*.png
 evidence/**/*.jpg
 .venv/
-cache/
+cache/*
 !cache/demo_reports.json
 !cache/method_comparison.json
 !cache/narrative_distributions.json
