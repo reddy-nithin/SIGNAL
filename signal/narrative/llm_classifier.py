@@ -114,8 +114,8 @@ def _load_exemplars_cached() -> list[Exemplar]:
     return _exemplars_cache
 
 
-def _build_few_shot_prompt(post_text: str, exemplars_per_stage: int = 2) -> str:
-    """Build a few-shot classification prompt with exemplars."""
+def _build_few_shot_prompt(post_text: str, exemplars_per_stage: int = 4) -> str:
+    """Build a few-shot classification prompt with exemplars and chain-of-thought."""
     exemplars = _load_exemplars_cached()
 
     # Select top exemplars per stage (highest confidence validated ones)
@@ -128,7 +128,6 @@ def _build_few_shot_prompt(post_text: str, exemplars_per_stage: int = 2) -> str:
     for stage_name in STAGE_NAMES:
         stage_exs = sorted(by_stage[stage_name], key=lambda e: e.confidence, reverse=True)
         for ex in stage_exs[:exemplars_per_stage]:
-            # Truncate long exemplar text
             txt = ex.text[:300].replace('"', '\\"')
             examples_block += f'Post: "{txt}"\nStage: {stage_name}\n\n'
 
@@ -145,12 +144,19 @@ def _build_few_shot_prompt(post_text: str, exemplars_per_stage: int = 2) -> str:
 ## Examples
 {examples_block}
 ## Task
-Classify this post into exactly ONE stage. Consider the language, tense, emotional tone, and narrative position.
+Before classifying, reason through these 5 questions:
+1. What substances are mentioned or implied?
+2. What is the temporal framing? (past experience, present state, future intent, hypothetical)
+3. What emotional tone dominates? (curious, casual/recreational, functional, distressed, hopeful)
+4. Does the language indicate control over use or loss of control?
+5. Are there consequences mentioned? (social, health, legal, financial)
+
+Then classify the post into exactly ONE stage. For posts that could belong to multiple stages, weight the most prominent narrative signal. If truly ambiguous, distribute confidence more evenly across plausible stages rather than forcing a high-confidence single pick.
 
 Post: "{post_text[:2000]}"
 
 Return ONLY a JSON object with this structure:
-{{"stage": "StageName", "stage_index": 0, "confidence": 0.85, "all_stages": [{{"stage": "Curiosity", "score": 0.05}}, {{"stage": "Experimentation", "score": 0.10}}, {{"stage": "Regular Use", "score": 0.15}}, {{"stage": "Dependence", "score": 0.20}}, {{"stage": "Crisis", "score": 0.45}}, {{"stage": "Recovery", "score": 0.05}}], "reasoning": "Brief explanation"}}"""
+{{"stage": "StageName", "stage_index": 0, "confidence": 0.85, "reasoning_steps": "1. Mentions fentanyl. 2. Present tense, ongoing. 3. Distressed tone. 4. Loss of control — can't stop. 5. Health consequences.", "all_stages": [{{"stage": "Curiosity", "score": 0.05}}, {{"stage": "Experimentation", "score": 0.05}}, {{"stage": "Regular Use", "score": 0.10}}, {{"stage": "Dependence", "score": 0.70}}, {{"stage": "Crisis", "score": 0.08}}, {{"stage": "Recovery", "score": 0.02}}], "reasoning": "Brief explanation"}}"""
 
 
 # ── Classification ───────────────────────────────────────────────────────────

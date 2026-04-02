@@ -13,6 +13,7 @@ import numpy as np
 
 from signal.config import (
     NARRATIVE_ENSEMBLE_WEIGHTS,
+    NARRATIVE_ENSEMBLE_FALLBACK_WEIGHTS,
     NARRATIVE_ENSEMBLE_THRESHOLD,
     STAGE_NAMES,
     STAGE_COUNT,
@@ -118,8 +119,8 @@ def classify(
     if fine_tuned_classifier.is_model_available():
         results.append(fine_tuned_classifier.classify(post))
     else:
-        logger.info("DistilBERT not available — redistributing weight")
-        weights = _redistribute_weights(weights, "fine_tuned")
+        logger.info("DistilBERT not available — using explicit fallback weights %s", NARRATIVE_ENSEMBLE_FALLBACK_WEIGHTS)
+        weights = dict(NARRATIVE_ENSEMBLE_FALLBACK_WEIGHTS)
 
     # LLM (Gemini few-shot)
     results.append(llm_classifier.classify(post))

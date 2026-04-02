@@ -263,6 +263,13 @@ NARRATIVE_ENSEMBLE_WEIGHTS: dict[str, float] = {
     "fine_tuned": 0.35,
     "llm": 0.45,
 }
+# Explicit fallback when DistilBERT checkpoint is unavailable.
+# Proportional redistribution of {rule:0.20, llm:0.45} gives rule≈0.31, llm≈0.69 —
+# too LLM-heavy. This explicit split gives rule-based a fairer share.
+NARRATIVE_ENSEMBLE_FALLBACK_WEIGHTS: dict[str, float] = {
+    "rule_based": 0.35,
+    "llm": 0.65,
+}
 NARRATIVE_ENSEMBLE_THRESHOLD: float = 0.15
 NARRATIVE_CLASSIFICATION_METHODS: tuple[str, ...] = ("rule_based", "fine_tuned", "llm")
 

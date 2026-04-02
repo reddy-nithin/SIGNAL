@@ -289,9 +289,17 @@ def _render_grounding(report) -> None:
                     )
 
 
-def _render_brief(report) -> None:
-    """Render Layer 4: Analyst Brief tab — structured section renderer with fallback."""
-    brief_text = report.analyst_brief if hasattr(report, "analyst_brief") else None
+def _render_brief(report, brief_override: str | None = None) -> None:
+    """Render Layer 4: Analyst Brief tab — structured section renderer with fallback.
+
+    Args:
+        report: SignalReport (or SimpleNamespace for cached reports).
+        brief_override: If provided, use this string instead of report.analyst_brief.
+            Used in two-phase rendering where the brief is generated after core results.
+    """
+    brief_text = brief_override if brief_override is not None else (
+        report.analyst_brief if hasattr(report, "analyst_brief") else None
+    )
     if not brief_text:
         st.info("No analyst brief generated (no substances detected or brief was skipped).")
         return
@@ -414,6 +422,8 @@ if "last_analysis_time" not in st.session_state:
 cached_reports = _load_cached_reports()
 report = None
 
+_live_brief: str | None = None  # brief generated in Phase 2 of two-phase rendering
+
 if analyze_clicked and user_text.strip():
     now = time.time()
     seconds_since_last = now - st.session_state.last_analysis_time
@@ -425,18 +435,44 @@ if analyze_clicked and user_text.strip():
         st.info(f"Please wait {remaining}s before analyzing again.")
         st.stop()
     else:
-        with st.spinner("Running 4-layer SIGNAL analysis…"):
-            pipeline = _get_pipeline()
+        pipeline = _get_pipeline()
+
+        # Phase 1: Run L1+L2 (parallel) + L3 — show core results fast
+        with st.status("Running SIGNAL analysis…", expanded=True) as _status:
+            _status.update(label="Detecting substances & classifying narrative stage (parallel)…")
             try:
-                report = pipeline.analyze(user_text.strip())
-                st.session_state.analysis_count += 1
-                st.session_state.last_analysis_time = time.time()
+                report = pipeline.analyze_core(user_text.strip())
             except ValueError as e:
                 st.warning(f"Invalid input: {e}")
                 st.stop()
             except Exception:
                 st.error("Analysis failed. Please try again or select a demo example.")
                 st.stop()
+
+            _status.update(label="Retrieving clinical evidence…")
+            # Layer 3 already ran inside analyze_core(); just update the label.
+
+            _status.update(
+                label=f"Core analysis complete — {report.elapsed_ms:.0f} ms  ·  Generating analyst brief…",
+                state="running",
+            )
+
+        st.session_state.analysis_count += 1
+        st.session_state.last_analysis_time = time.time()
+
+        # Phase 2: Generate brief separately so core results render first
+        if report.clinical_contexts:
+            from signal.synthesis.brief_generator import generate_brief as _gen_brief
+            with st.spinner("Generating analyst brief…"):
+                try:
+                    _live_brief = _gen_brief(
+                        original_text=user_text.strip(),
+                        narrative_stage=report.narrative_results.top_stage.stage,
+                        narrative_confidence=report.narrative_results.top_stage.confidence,
+                        contexts=report.clinical_contexts,
+                    )
+                except Exception as exc:
+                    _live_brief = f"[Brief generation failed: {exc!r}]"
 
 elif not analyze_clicked and example_choice != "Custom input" and cached_reports:
     cached_dict = cached_reports.get(example_choice)
@@ -482,7 +518,9 @@ if report is not None:
     with tab3:
         _render_grounding(report)
     with tab4:
-        _render_brief(report)
+        # For live analyses: use the brief generated in Phase 2 (_live_brief).
+        # For cached demo reports: brief is already on the report object.
+        _render_brief(report, brief_override=_live_brief)
 
 elif example_choice != "Custom input" and cached_reports is None:
     st.info(

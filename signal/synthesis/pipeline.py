@@ -15,6 +15,7 @@ from __future__ import annotations
 import logging
 import time
 import uuid
+from concurrent.futures import Future, ThreadPoolExecutor
 
 from signal.grounding.clinical_contextualizer import contextualize_all
 from signal.grounding.indexer import HybridRetriever
@@ -55,21 +56,19 @@ class SIGNALPipeline:
             source="pipeline_input",
         )
 
-    def analyze(
+    def analyze_core(
         self,
         text: str,
         post_id: str = "",
-        skip_brief: bool = False,
     ) -> SignalReport:
-        """Run full 4-layer SIGNAL analysis on a single post.
+        """Run Layers 1–3 only (no analyst brief) with L1+L2 parallelized.
 
-        Args:
-            text: Social media post text.
-            post_id: Optional identifier. Generated if empty.
-            skip_brief: If True, skip Layer 4 (Gemini brief) for faster results.
+        Layers 1 (substance) and 2 (narrative) are independent and run
+        concurrently via ThreadPoolExecutor. Layer 3 runs after both complete.
+        Returns a SignalReport with analyst_brief="".
 
-        Returns:
-            SignalReport with all layers populated.
+        Use this when you want to show core results fast and generate the brief
+        separately (e.g. two-phase dashboard rendering).
         """
         t0 = time.perf_counter()
         text = text.strip() if text else ""
@@ -80,22 +79,31 @@ class SIGNALPipeline:
         post = self._make_post(text, post_id)
         retriever = self._ensure_retriever()
 
-        # Layer 1: Substance Resolution
         from signal.substance import ensemble as substance_ensemble
-        substance_result: EnsembleResult = substance_ensemble.detect(post)
-        logger.info(
-            "Layer 1: %d substances detected in post %s",
-            len(substance_result.matches), post.id,
-        )
-
-        # Layer 2: Narrative Stage Classification
         from signal.narrative import ensemble as narrative_ensemble
-        narrative_result: NarrativeEnsembleResult = narrative_ensemble.classify(post)
+
+        # Layer 1 + Layer 2: run in parallel (both take Post, produce independent results)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future_substance: Future[EnsembleResult] = executor.submit(
+                substance_ensemble.detect, post
+            )
+            future_narrative: Future[NarrativeEnsembleResult] = executor.submit(
+                narrative_ensemble.classify, post
+            )
+            try:
+                substance_result: EnsembleResult = future_substance.result()
+            except Exception as exc:
+                raise RuntimeError(f"Layer 1 (substance detection) failed: {exc}") from exc
+            try:
+                narrative_result: NarrativeEnsembleResult = future_narrative.result()
+            except Exception as exc:
+                raise RuntimeError(f"Layer 2 (narrative classification) failed: {exc}") from exc
+
         stage_name = narrative_result.top_stage.stage
         stage_conf = narrative_result.top_stage.confidence
         logger.info(
-            "Layer 2: stage=%s (conf=%.2f) for post %s",
-            stage_name, stage_conf, post.id,
+            "Layer 1: %d substances | Layer 2: stage=%s (conf=%.2f) for post %s",
+            len(substance_result.matches), stage_name, stage_conf, post.id,
         )
 
         # Layer 3: Clinical Grounding
@@ -104,36 +112,63 @@ class SIGNALPipeline:
             narrative_stage=stage_name,
             retriever=retriever,
         )
-        logger.info(
-            "Layer 3: %d clinical contexts for post %s",
-            len(contexts), post.id,
-        )
-
-        # Layer 4: Analyst Brief
-        if skip_brief or not contexts:
-            brief = ""
-        else:
-            try:
-                brief = generate_brief(
-                    original_text=text,
-                    narrative_stage=stage_name,
-                    narrative_confidence=stage_conf,
-                    contexts=contexts,
-                )
-            except Exception as exc:
-                logger.error("Layer 4 failed for post %s: %r", post.id, exc)
-                brief = f"[Brief generation failed: {exc!r}]"
+        logger.info("Layer 3: %d clinical contexts for post %s", len(contexts), post.id)
 
         elapsed = (time.perf_counter() - t0) * 1000
-
         return SignalReport(
             post_id=post.id,
             original_text=text,
             substance_results=substance_result,
             narrative_results=narrative_result,
             clinical_contexts=contexts,
-            analyst_brief=brief,
+            analyst_brief="",
             elapsed_ms=round(elapsed, 2),
+        )
+
+    def analyze(
+        self,
+        text: str,
+        post_id: str = "",
+        skip_brief: bool = False,
+    ) -> SignalReport:
+        """Run full 4-layer SIGNAL analysis on a single post.
+
+        Layers 1 and 2 run in parallel; Layer 4 (brief) is optional.
+
+        Args:
+            text: Social media post text.
+            post_id: Optional identifier. Generated if empty.
+            skip_brief: If True, skip Layer 4 (Gemini brief) for faster results.
+
+        Returns:
+            SignalReport with all layers populated.
+        """
+        core = self.analyze_core(text, post_id=post_id)
+
+        if skip_brief or not core.clinical_contexts:
+            return core
+
+        stage_name = core.narrative_results.top_stage.stage
+        stage_conf = core.narrative_results.top_stage.confidence
+        try:
+            brief = generate_brief(
+                original_text=core.original_text,
+                narrative_stage=stage_name,
+                narrative_confidence=stage_conf,
+                contexts=core.clinical_contexts,
+            )
+        except Exception as exc:
+            logger.error("Layer 4 failed for post %s: %r", core.post_id, exc)
+            brief = f"[Brief generation failed: {exc!r}]"
+
+        return SignalReport(
+            post_id=core.post_id,
+            original_text=core.original_text,
+            substance_results=core.substance_results,
+            narrative_results=core.narrative_results,
+            clinical_contexts=core.clinical_contexts,
+            analyst_brief=brief,
+            elapsed_ms=core.elapsed_ms,
         )
 
     def analyze_batch(
