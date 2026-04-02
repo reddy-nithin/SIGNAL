@@ -14,7 +14,9 @@ import numpy as np
 
 from signal.config import (
     SUBSTANCE_EMBEDDING_THRESHOLD,
+    SUBSTANCE_EMBEDDING_THRESHOLD_SBERT,
     SUBSTANCE_EMBEDDINGS_CACHE,
+    FALLBACK_EMBEDDING_DIM,
 )
 from signal.grounding.indexer import embed_texts, embed_query
 from signal.ingestion.post_ingester import Post
@@ -174,14 +176,26 @@ def detect(
         proto_embeddings, dim = load_or_build_substance_embeddings()
 
     # Embed the post
-    query_vec, _ = embed_query(post.text)
+    query_vec, query_dim = embed_query(post.text)
     query_vec = query_vec.flatten()
+
+    # If the cached prototype dim doesn't match the query dim (e.g. pkl was built
+    # with Vertex AI 768-dim but we're now running SBERT 384-dim), force a rebuild
+    # so both vectors live in the same embedding space.
+    if query_dim != dim:
+        proto_embeddings, dim = load_or_build_substance_embeddings(force_rebuild=True)
+        _cached_embeddings = None  # don't propagate stale cache to callers
+
+    # Use a lower threshold when running SBERT fallback (384-dim) vs Vertex AI (768-dim)
+    effective_threshold = (
+        SUBSTANCE_EMBEDDING_THRESHOLD_SBERT if dim == FALLBACK_EMBEDDING_DIM else threshold
+    )
 
     # Compute cosine similarity against all prototypes
     matches: list[SubstanceMatch] = []
     for name, proto_vec in proto_embeddings.items():
         sim = float(np.dot(query_vec, proto_vec))
-        if sim >= threshold:
+        if sim >= effective_threshold:
             drug_class = CLINICAL_TO_CLASS.get(name, "other")
             # Simple sentence-level negation check on the full text
             negated = is_negated_in_context(post.text, 0, len(post.text))

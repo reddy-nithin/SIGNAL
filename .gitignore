@@ -12,3 +12,4 @@ cache/
 !cache/demo_reports.json
 !cache/method_comparison.json
 !cache/narrative_distributions.json
+!cache/substance_proto_embeddings.pkl

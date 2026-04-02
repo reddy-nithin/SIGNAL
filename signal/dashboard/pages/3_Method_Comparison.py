@@ -181,7 +181,7 @@ with left_col:
                 height=320,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
 
         if "rule_based" in eval_data and "per_class" in eval_data["rule_based"]:
             per_class = eval_data["rule_based"]["per_class"]
@@ -214,7 +214,7 @@ with left_col:
                 height=280,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_heat, use_container_width=True)
+            st.plotly_chart(fig_heat, width='stretch')
 
     # ── 3-Method demo corpus comparison ───────────────────────────────────────
     demo_reports = _load_demo_reports()
@@ -246,7 +246,7 @@ with left_col:
         if comparison_rows:
             st.dataframe(
                 pd.DataFrame(comparison_rows),
-                use_container_width=True,
+                width='stretch',
                 hide_index=True,
             )
 
@@ -282,13 +282,13 @@ with left_col:
                 height=240,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_lex, use_container_width=True)
+            st.plotly_chart(fig_lex, width='stretch')
 
         if sample_rows:
             with st.expander("Sample slang → clinical mappings"):
                 st.dataframe(
                     pd.DataFrame(sample_rows),
-                    use_container_width=True,
+                    width='stretch',
                     hide_index=True,
                 )
     else:
@@ -352,7 +352,7 @@ with right_col:
             showlegend=False,
             **PLOTLY_LAYOUT,
         )
-        st.plotly_chart(fig_folds, use_container_width=True)
+        st.plotly_chart(fig_folds, width='stretch')
 
         # Per-stage F1 heatmap from best fold
         best_report_str = cv_report["fold_results"][best_fold_idx]["classification_report"]
@@ -379,7 +379,7 @@ with right_col:
                 height=270,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_stage_heat, use_container_width=True)
+            st.plotly_chart(fig_stage_heat, width='stretch')
             st.caption(
                 "Crisis F1=0.95, Curiosity F1=0.93 — high-stakes stages classified with greatest precision. "
                 "Dependence is hardest (F1=0.67), reflecting genuine clinical ambiguity with Regular Use."
@@ -455,7 +455,7 @@ with right_col:
                 height=290,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_kappa, use_container_width=True)
+            st.plotly_chart(fig_kappa, width='stretch')
 
         pairwise_agree = agreement_data.get("pairwise_agreement", {})
         if pairwise_agree:
@@ -463,7 +463,7 @@ with right_col:
             for key, val in sorted(pairwise_agree.items()):
                 pair = key.replace("_vs_", " vs ").replace("_", " ").title()
                 rows.append({"Method Pair": pair, "Agreement %": f"{val:.1%}"})
-            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
 
         stage_dist = agreement_data.get("stage_distribution", {})
         if stage_dist:
@@ -484,7 +484,7 @@ with right_col:
                 height=270,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_dist, use_container_width=True)
+            st.plotly_chart(fig_dist, width='stretch')
 
         st.markdown(
             '<div style="font-size:0.82rem;opacity:0.55;line-height:1.6;padding:10px 0;">'
@@ -605,7 +605,7 @@ if method_votes:
             height=520,
             **PLOTLY_LAYOUT,
         )
-        st.plotly_chart(fig_sankey, use_container_width=True)
+        st.plotly_chart(fig_sankey, width='stretch')
         st.caption(
             "Wide diagonal bands = methods agree on stage. "
             "Thin cross-links (e.g., Dependence → Regular Use) reveal primary confusion boundaries. "

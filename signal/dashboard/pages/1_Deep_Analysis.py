@@ -142,7 +142,7 @@ def _render_substances(report) -> None:
             "Confidence": f"{m.confidence:.0%}",
             "Negated": "Yes" if m.is_negated else "",
         })
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
 
     # Per-method breakdown
     with st.expander("Per-method detection details"):
@@ -200,7 +200,7 @@ def _render_narrative(report) -> None:
             },
         },
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     # Per-method comparison
     from signal.narrative.ensemble import build_comparison_table
@@ -213,7 +213,7 @@ def _render_narrative(report) -> None:
     with st.expander("Per-method stage scores"):
         st.dataframe(pivot.style.format("{:.0%}").background_gradient(
             cmap="YlOrRd", axis=None
-        ), use_container_width=True)
+        ), width='stretch')
 
 
 def _render_grounding(report) -> None:
@@ -242,7 +242,7 @@ def _render_grounding(report) -> None:
                         "Relevance": f"{ev.relevance_score:.3f}",
                         "Snippet": ev.text_snippet[:200] + "…" if len(ev.text_snippet) > 200 else ev.text_snippet,
                     })
-                st.dataframe(pd.DataFrame(ev_rows), use_container_width=True, hide_index=True)
+                st.dataframe(pd.DataFrame(ev_rows), width='stretch', hide_index=True)
 
             # FAERS signals
             if ctx.faers_signals:
@@ -261,7 +261,7 @@ def _render_grounding(report) -> None:
                         "Source": sig.source,
                     })
                 df_sig = pd.DataFrame(sig_rows)
-                st.dataframe(df_sig, use_container_width=True, hide_index=True)
+                st.dataframe(df_sig, width='stretch', hide_index=True)
 
             # Interaction warnings
             if ctx.interactions:

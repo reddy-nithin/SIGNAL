@@ -130,12 +130,16 @@ def _embed_vertex(
     return np.array(all_embeddings, dtype=np.float32)
 
 
+_sbert_model: object = None  # module-level singleton — loaded once per process
+
+
 def _embed_sbert(texts: list[str]) -> np.ndarray:
     """Embed texts via local SentenceTransformer (fallback)."""
-    from sentence_transformers import SentenceTransformer
-
-    model = SentenceTransformer(FALLBACK_EMBEDDING_MODEL)
-    return model.encode(texts, convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
+    global _sbert_model
+    if _sbert_model is None:
+        from sentence_transformers import SentenceTransformer
+        _sbert_model = SentenceTransformer(FALLBACK_EMBEDDING_MODEL)
+    return _sbert_model.encode(texts, convert_to_numpy=True, show_progress_bar=False).astype(np.float32)
 
 
 def _l2_normalize(vectors: np.ndarray) -> np.ndarray:

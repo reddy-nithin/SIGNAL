@@ -228,7 +228,8 @@ SUBSTANCE_ENSEMBLE_WEIGHTS: dict[str, float] = {
     "llm": 0.40,
 }
 SUBSTANCE_ENSEMBLE_THRESHOLD: float = 0.30
-SUBSTANCE_EMBEDDING_THRESHOLD: float = 0.72
+SUBSTANCE_EMBEDDING_THRESHOLD: float = 0.55        # Vertex AI text-embedding-004 (768-dim)
+SUBSTANCE_EMBEDDING_THRESHOLD_SBERT: float = 0.40  # SBERT all-MiniLM-L6-v2 (384-dim) fallback
 
 # Cache paths
 SUBSTANCE_EMBEDDINGS_CACHE: Path = CACHE_DIR / "substance_proto_embeddings.pkl"

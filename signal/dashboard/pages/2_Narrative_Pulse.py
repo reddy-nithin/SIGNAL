@@ -149,7 +149,7 @@ fig.update_layout(
 )
 fig.update_traces(marker_line_width=0)
 fig.update_xaxes(tickangle=-40, tickfont=dict(size=11))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width='stretch')
 
 # ── Highest-risk community callout ─────────────────────────────────────────────
 
@@ -211,7 +211,7 @@ def _color_tier(val: str) -> str:
 
 
 styled_df = summary_df.style.applymap(_color_tier, subset=["Risk Tier"])
-st.dataframe(styled_df, use_container_width=True, hide_index=True)
+st.dataframe(styled_df, width='stretch', hide_index=True)
 
 # ── Intervention Recommendations ───────────────────────────────────────────────
 
@@ -309,7 +309,7 @@ with st.expander("CDC Overdose Mortality Trends (contextual reference)"):
                 height=340,
                 **PLOTLY_LAYOUT,
             )
-            st.plotly_chart(fig_mort, use_container_width=True)
+            st.plotly_chart(fig_mort, width='stretch')
         else:
             st.caption("Mortality data present but format not visualizable.")
     else:
