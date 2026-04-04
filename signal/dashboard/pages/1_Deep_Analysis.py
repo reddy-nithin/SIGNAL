@@ -37,6 +37,14 @@ from signal.dashboard.theme import (
     section_header_html,
     gradient_divider_html,
     agreement_badge,
+    highlighted_text_html,
+    narrative_arc_indicator_html,
+    evidence_meter_html,
+    substance_badge_html,
+    evidence_card_html,
+    brief_summary_card_html,
+    brief_section_html,
+    confidence_matrix_html,
 )
 
 inject_css()
@@ -149,32 +157,46 @@ def _render_substances(report) -> None:
         unsafe_allow_html=True,
     )
 
-    rows = []
-    for m in matches:
-        rows.append({
-            "Slang Term": m.substance_name,
-            "Clinical Name": m.clinical_name,
-            "Drug Class": m.drug_class.title(),
-            "Confidence": f"{m.confidence:.0%}",
-            "Negated": "Yes" if m.is_negated else "",
-        })
-    st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
+    # Substance badge grid (replaces plain dataframe)
+    badges = "".join(
+        substance_badge_html(m.substance_name, m.clinical_name, m.drug_class, m.confidence)
+        for m in matches if not m.is_negated
+    )
+    st.markdown(
+        f'<div style="display:flex; flex-wrap:wrap; gap:6px; margin:12px 0;">{badges}</div>',
+        unsafe_allow_html=True,
+    )
 
-    # Per-method breakdown
-    with st.expander("Per-method detection details"):
-        for mr in report.substance_results.method_results:
-            method_label = mr.method.replace("_", " ").title()
-            det_names = [m.clinical_name for m in mr.matches if not m.is_negated]
-            color = METHOD_COLORS.get(mr.method, "#888")
-            st.markdown(
-                f'<div style="padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05);">'
-                f'<span style="color:{color}; font-weight:700;">{method_label}</span> '
-                f'<span style="opacity:0.5; font-size:0.85em;">({mr.elapsed_ms:.0f}ms)</span>'
-                f'<span style="margin-left:12px;">'
-                f'{", ".join(det_names) if det_names else "<em>none detected</em>"}'
-                f'</span></div>',
-                unsafe_allow_html=True,
+    # Inline method comparison strip (replaces hidden expander)
+    st.markdown(
+        '<div style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; '
+        'text-transform:uppercase; opacity:0.4; margin:16px 0 8px 0;">Per-Method Detection</div>',
+        unsafe_allow_html=True,
+    )
+    for mr in report.substance_results.method_results:
+        method_label = mr.method.replace("_", " ").title()
+        det_names = [m.clinical_name for m in mr.matches if not m.is_negated]
+        color = METHOD_COLORS.get(mr.method, "#888")
+        if det_names:
+            sub_pills = " ".join(
+                f'<span style="background:{color}15; color:{color}; border:1px solid {color}30; '
+                f'border-radius:12px; padding:2px 10px; font-size:0.72rem; font-weight:600;">'
+                f'{n}</span>'
+                for n in det_names
             )
+        else:
+            sub_pills = '<span style="opacity:0.35; font-size:0.76rem; font-style:italic;">none detected</span>'
+        elapsed = getattr(mr, "elapsed_ms", 0)
+        st.markdown(
+            f'<div style="display:flex; align-items:center; gap:10px; padding:8px 0; '
+            f'border-bottom:1px solid rgba(255,255,255,0.04);">'
+            f'<span style="min-width:90px; color:{color}; font-weight:700; font-size:0.82rem;">'
+            f'{method_label}</span>'
+            f'<span style="opacity:0.3; font-size:0.72rem;">{elapsed:.0f}ms</span>'
+            f'<div style="display:flex; flex-wrap:wrap; gap:4px;">{sub_pills}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
 
 
 def _render_narrative(report) -> None:
@@ -183,14 +205,42 @@ def _render_narrative(report) -> None:
     n_methods = len(report.narrative_results.method_results)
     color = STAGE_COLORS.get(top.stage, "#888")
 
+    # ── Visual Arc Position Indicator (D2: core novelty visualization) ─────
+    conf_dict = {sc.stage: sc.confidence for sc in report.narrative_results.all_stages}
     st.markdown(
-        f'<div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">'
-        f'<span style="font-size:1.5rem; font-weight:800; color:{color};">{top.stage}</span>'
-        f'<span style="font-size:1rem; opacity:0.7; font-weight:600;">{top.confidence:.0%} confidence</span>'
-        f'<span style="font-size:0.85rem; opacity:0.5;">— Agreement: {agreement_badge(report.narrative_results.agreement_count, n_methods)}</span>'
+        narrative_arc_indicator_html(top.stage, conf_dict),
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        f'<div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px; '
+        f'justify-content:center;">'
+        f'<span style="font-size:1.3rem; font-weight:800; color:{color};">{top.stage}</span>'
+        f'<span style="font-size:0.9rem; opacity:0.7; font-weight:600;">{top.confidence:.0%} confidence</span>'
+        f'<span style="font-size:0.8rem; opacity:0.5;">Agreement: {agreement_badge(report.narrative_results.agreement_count, n_methods)}</span>'
         f'</div>',
         unsafe_allow_html=True,
     )
+
+    # ── Full confidence matrix (6 stages × 3 methods) ────────────────────────
+    method_names: list[str] = []
+    matrix_values: list[list[float]] = []
+    for mr in report.narrative_results.method_results:
+        method_names.append(mr.method)
+        stage_map = {sc.stage: sc.confidence for sc in mr.all_stages}
+        matrix_values.append([stage_map.get(s, 0) for s in STAGE_ORDER])
+
+    if method_names:
+        st.markdown(
+            '<div style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; '
+            'text-transform:uppercase; opacity:0.4; margin:8px 0 4px 0;">'
+            'Method × Stage Confidence</div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            confidence_matrix_html(STAGE_ORDER, method_names, matrix_values),
+            unsafe_allow_html=True,
+        )
 
     # Ensemble confidence bar chart
     stages = [sc.stage for sc in report.narrative_results.all_stages]
@@ -206,7 +256,7 @@ def _render_narrative(report) -> None:
     fig.update_layout(
         title="Ensemble Stage Confidence",
         xaxis_title="Confidence",
-        height=300,
+        height=280,
         **{
             **PLOTLY_LAYOUT,
             "yaxis": {
@@ -216,20 +266,7 @@ def _render_narrative(report) -> None:
             },
         },
     )
-    st.plotly_chart(fig, width='stretch')
-
-    # Per-method comparison
-    from signal.narrative.ensemble import build_comparison_table
-    comp_rows = build_comparison_table(report.narrative_results)
-    df = pd.DataFrame(comp_rows)
-    pivot = df.pivot_table(index="stage", columns="method", values="confidence")
-    stage_order_present = [s for s in STAGE_ORDER if s in pivot.index]
-    pivot = pivot.reindex(stage_order_present)
-
-    with st.expander("Per-method stage scores"):
-        st.dataframe(pivot.style.format("{:.0%}").background_gradient(
-            cmap="YlOrRd", axis=None
-        ), width='stretch')
+    st.plotly_chart(fig, use_container_width=True)
 
 
 def _render_grounding(report) -> None:
@@ -244,40 +281,96 @@ def _render_grounding(report) -> None:
             f"{ctx.substance}  ·  {ctx.drug_class}",
             expanded=len(contexts) <= 2,
         ):
-            # Evidence chunks
+            # Evidence strength meter (D5)
+            n_chunks = len(ctx.evidence) if ctx.evidence else 0
+            n_signals = len(ctx.faers_signals) if ctx.faers_signals else 0
+            avg_rel = (
+                sum(e.relevance_score for e in ctx.evidence) / n_chunks
+                if ctx.evidence and n_chunks > 0 else 0
+            )
+            st.markdown(
+                evidence_meter_html(n_chunks, n_signals, avg_rel),
+                unsafe_allow_html=True,
+            )
+
+            # Evidence chunks as visual cards
             if ctx.evidence:
                 st.markdown(
                     section_header_html("Retrieved Knowledge Chunks"),
                     unsafe_allow_html=True,
                 )
-                ev_rows = []
-                for ev in ctx.evidence:
-                    ev_rows.append({
-                        "Chunk": ev.chunk_filename,
-                        "Type": ev.chunk_type,
-                        "Relevance": f"{ev.relevance_score:.3f}",
-                        "Snippet": ev.text_snippet[:200] + "…" if len(ev.text_snippet) > 200 else ev.text_snippet,
-                    })
-                st.dataframe(pd.DataFrame(ev_rows), width='stretch', hide_index=True)
+                drug_color = {
+                    "opioid": "#FF6B6B", "benzodiazepine": "#E8A838",
+                    "stimulant": "#45B7D1", "alcohol": "#B07CC6",
+                }.get(ctx.drug_class.lower(), "#4ECDC4")
+                cards_html = "".join(
+                    evidence_card_html(
+                        ev.chunk_filename, ev.chunk_type, ev.relevance_score,
+                        ev.text_snippet[:200] + "..." if len(ev.text_snippet) > 200 else ev.text_snippet,
+                        drug_color,
+                    )
+                    for ev in ctx.evidence
+                )
+                st.markdown(cards_html, unsafe_allow_html=True)
 
-            # FAERS signals
+            # FAERS signals — bubble chart + table
             if ctx.faers_signals:
                 st.markdown(
                     section_header_html("Adverse Event Signals"),
                     unsafe_allow_html=True,
                 )
+                # Build data for bubble chart
                 sig_rows = []
                 for sig in ctx.faers_signals:
-                    prr_str = f"{sig.prr:.1f}" if sig.prr is not None else "—"
-                    ror_str = f"{sig.ror:.1f}" if sig.ror is not None else "—"
+                    prr_val = sig.prr if sig.prr is not None else 0
+                    ror_val = sig.ror if sig.ror is not None else 0
                     sig_rows.append({
                         "Reaction": sig.reaction,
-                        "PRR": prr_str,
-                        "ROR": ror_str,
+                        "PRR": prr_val,
+                        "ROR": ror_val,
                         "Source": sig.source,
                     })
                 df_sig = pd.DataFrame(sig_rows)
-                st.dataframe(df_sig, width='stretch', hide_index=True)
+
+                # Bubble chart (D3: visual proof of clinical grounding)
+                valid_sigs = df_sig[(df_sig["PRR"] > 0) & (df_sig["ROR"] > 0)]
+                if len(valid_sigs) >= 3:
+                    fig_bubble = go.Figure()
+                    fig_bubble.add_trace(go.Scatter(
+                        x=valid_sigs["PRR"],
+                        y=valid_sigs["ROR"],
+                        mode="markers",
+                        marker=dict(
+                            size=[max(8, min(v * 3, 40)) for v in valid_sigs["PRR"]],
+                            color=valid_sigs["PRR"],
+                            colorscale=[[0, "#45B7D1"], [0.5, "#FFA07A"], [1, "#E63946"]],
+                            showscale=True,
+                            colorbar=dict(title="PRR", thickness=12),
+                            opacity=0.75,
+                            line=dict(width=1, color="rgba(255,255,255,0.2)"),
+                        ),
+                        text=valid_sigs["Reaction"],
+                        hovertemplate="<b>%{text}</b><br>PRR: %{x:.1f}<br>ROR: %{y:.1f}<extra></extra>",
+                    ))
+                    fig_bubble.add_hline(y=1, line_dash="dot", line_color="rgba(255,255,255,0.2)",
+                                         annotation_text="ROR=1 (baseline)", annotation_position="bottom right",
+                                         annotation_font_color="rgba(255,255,255,0.3)")
+                    fig_bubble.add_vline(x=1, line_dash="dot", line_color="rgba(255,255,255,0.2)")
+                    fig_bubble.update_layout(
+                        title="Adverse Event Signal Strength",
+                        xaxis_title="PRR (Proportional Reporting Ratio)",
+                        yaxis_title="ROR (Reporting Odds Ratio)",
+                        height=320,
+                        showlegend=False,
+                        **PLOTLY_LAYOUT,
+                    )
+                    st.plotly_chart(fig_bubble, use_container_width=True)
+
+                with st.expander("Signal details table"):
+                    display_df = df_sig.copy()
+                    display_df["PRR"] = display_df["PRR"].apply(lambda v: f"{v:.1f}" if v > 0 else "—")
+                    display_df["ROR"] = display_df["ROR"].apply(lambda v: f"{v:.1f}" if v > 0 else "—")
+                    st.dataframe(display_df, width='stretch', hide_index=True)
 
             # Interaction warnings
             if ctx.interactions:
@@ -290,13 +383,7 @@ def _render_grounding(report) -> None:
 
 
 def _render_brief(report, brief_override: str | None = None) -> None:
-    """Render Layer 4: Analyst Brief tab — structured section renderer with fallback.
-
-    Args:
-        report: SignalReport (or SimpleNamespace for cached reports).
-        brief_override: If provided, use this string instead of report.analyst_brief.
-            Used in two-phase rendering where the brief is generated after core results.
-    """
+    """Render Layer 4: Analyst Brief tab — summary card + visible sections."""
     brief_text = brief_override if brief_override is not None else (
         report.analyst_brief if hasattr(report, "analyst_brief") else None
     )
@@ -304,12 +391,25 @@ def _render_brief(report, brief_override: str | None = None) -> None:
         st.info("No analyst brief generated (no substances detected or brief was skipped).")
         return
 
-    # Try to split into sections on patterns like "1. SUBSTANCE IDENTIFICATION" or "## Header"
+    # Summary card from report data (not brief text)
+    top_stage = report.narrative_results.top_stage.stage
+    substances = [m.clinical_name for m in report.substance_results.matches if not m.is_negated]
+    # Extract first actionable sentence from brief for recommendation preview
+    rec_match = re.search(
+        r"(?:recommend|action|intervention|response)[:\s]*(.+?)(?:\n|$)",
+        brief_text, re.IGNORECASE,
+    )
+    rec_preview = rec_match.group(1).strip() if rec_match else ""
+    st.markdown(
+        brief_summary_card_html(substances, top_stage, top_stage, rec_preview),
+        unsafe_allow_html=True,
+    )
+
+    # Parse into sections
     section_pattern = re.compile(
         r"(?:^|\n)(?:\d+\.\s+)?([A-Z][A-Z\s&/\-]{4,}:?)\s*\n",
         re.MULTILINE,
     )
-
     parts = section_pattern.split(brief_text)
 
     if len(parts) < 3:
@@ -318,7 +418,11 @@ def _render_brief(report, brief_override: str | None = None) -> None:
 
     preamble = parts[0].strip()
     if preamble:
-        st.markdown(preamble)
+        st.markdown(
+            f'<div style="font-size:0.86rem; opacity:0.7; line-height:1.6; '
+            f'margin:10px 0 16px 0;">{preamble}</div>',
+            unsafe_allow_html=True,
+        )
 
     sections: list[tuple[str, str]] = []
     for i in range(1, len(parts) - 1, 2):
@@ -331,34 +435,31 @@ def _render_brief(report, brief_override: str | None = None) -> None:
         st.markdown(brief_text)
         return
 
-    action_keywords = {"RECOMMEND", "ACTION", "INTERVENTION", "RESPONSE"}
+    # Section color + icon mapping
+    section_style: dict[str, tuple[str, str]] = {
+        "SUBSTANCE": ("#4ECDC4", "\U0001f48a"),
+        "DRUG": ("#4ECDC4", "\U0001f48a"),
+        "NARRATIVE": ("#45B7D1", "\U0001f4ca"),
+        "STAGE": ("#45B7D1", "\U0001f4ca"),
+        "RISK": ("#FFA07A", "\u26a0\ufe0f"),
+        "CLINICAL": ("#FFA07A", "\u26a0\ufe0f"),
+        "INTERACTION": ("#E63946", "\u26a1"),
+        "POLY": ("#E63946", "\u26a1"),
+        "RECOMMEND": ("#98D8C8", "\u2705"),
+        "ACTION": ("#98D8C8", "\u2705"),
+        "INTERVENTION": ("#98D8C8", "\u2705"),
+    }
 
-    for j, (header, body) in enumerate(sections):
-        is_action = any(kw in header.upper() for kw in action_keywords)
-        is_last = j == len(sections) - 1
-
-        color = "#FAFAFA"
-        if "SUBSTANCE" in header.upper() or "DRUG" in header.upper():
-            color = "#4ECDC4"
-        elif "NARRATIVE" in header.upper() or "STAGE" in header.upper():
-            color = "#45B7D1"
-        elif "RISK" in header.upper() or "CLINICAL" in header.upper():
-            color = "#FFA07A"
-        elif "INTERACTION" in header.upper() or "POLY" in header.upper():
-            color = "#E63946"
-        elif "RECOMMEND" in header.upper() or "ACTION" in header.upper():
-            color = "#98D8C8"
-
-        with st.expander(header, expanded=(is_action or is_last)):
-            st.markdown(
-                f'<div style="border-left:3px solid {color}; padding:2px 0 2px 12px; '
-                f'margin-bottom:10px;">'
-                f'<span style="color:{color}; font-weight:700; font-size:0.85rem; '
-                f'letter-spacing:0.05em; text-transform:uppercase;">{header}</span>'
-                f'</div>',
-                unsafe_allow_html=True,
-            )
-            st.markdown(body)
+    for header, body in sections:
+        color, icon = "#FAFAFA", ""
+        for keyword, (c, ic) in section_style.items():
+            if keyword in header.upper():
+                color, icon = c, ic
+                break
+        st.markdown(
+            brief_section_html(header, body, color, icon),
+            unsafe_allow_html=True,
+        )
 
 
 # ── Main page ──────────────────────────────────────────────────────────────────
@@ -489,6 +590,14 @@ if report is not None:
     top_stage = report.narrative_results.top_stage.stage
     stage_conf = report.narrative_results.top_stage.confidence
     elapsed = getattr(report, "elapsed_ms", 0)
+
+    # ── Inline highlighted text (D1: biggest visual impact) ───────────────
+    _source_text = user_text.strip() if user_text.strip() else ""
+    if _source_text and report.substance_results.matches:
+        st.markdown(
+            highlighted_text_html(_source_text, report.substance_results.matches),
+            unsafe_allow_html=True,
+        )
 
     # Metrics row
     c1, c2, c3, c4 = st.columns(4)

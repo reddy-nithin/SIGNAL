@@ -32,6 +32,8 @@ from signal.dashboard.theme import (
     inject_css,
     section_header_html, gradient_divider_html,
     distilbert_card_html,
+    metric_grid_html,
+    training_story_html,
 )
 
 inject_css()
@@ -134,6 +136,30 @@ def _load_slang_lexicon_stats() -> tuple[int, dict[str, int], list[dict]]:
     except Exception:
         return 0, {}, []
 
+
+# ── Hero Metrics (M1) ─────────────────────────────────────────────────────────
+
+# Pre-load key metrics for hero cards
+_cv_report_hero = _load_distilbert_report()
+_sub_eval_hero = _load_substance_eval()
+
+_sub_f1 = "—"
+if _sub_eval_hero and "rule_based" in _sub_eval_hero:
+    _sub_f1 = f"{_sub_eval_hero['rule_based'].get('f1', 0):.2f}"
+
+_nar_f1 = "—"
+if _cv_report_hero:
+    _nar_f1 = f"{_cv_report_hero.get('mean_f1_macro', 0):.3f}"
+
+st.markdown(
+    metric_grid_html([
+        (_sub_f1, "Substance Detection F1", "#4ECDC4"),
+        (_nar_f1, "DistilBERT Macro F1", "#E8A838"),
+        ("3 × 2", "Methods × Tasks", "#45B7D1"),
+        ("199", "Posts Evaluated", "#FF6B6B"),
+    ]),
+    unsafe_allow_html=True,
+)
 
 # ── Main page ──────────────────────────────────────────────────────────────────
 
@@ -384,118 +410,130 @@ with right_col:
                 "Crisis F1=0.95, Curiosity F1=0.93 — high-stakes stages classified with greatest precision. "
                 "Dependence is hardest (F1=0.67), reflecting genuine clinical ambiguity with Regular Use."
             )
+
+        # Training story (M3)
+        st.markdown(training_story_html(), unsafe_allow_html=True)
     else:
         st.info("DistilBERT cv_report.json not found in models/distilbert_narrative/")
 
-    st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
-    # ── Inter-Method Agreement ─────────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════════════════════
+# FULL WIDTH: Inter-Method Agreement
+# ════════════════════════════════════════════════════════════════════════════
+
+st.markdown(gradient_divider_html(), unsafe_allow_html=True)
+st.markdown(
+    section_header_html("Inter-Method Agreement"),
+    unsafe_allow_html=True,
+)
+
+agreement_data = _load_narrative_agreement()
+
+if agreement_data is None:
+    st.info(
+        "Narrative agreement data not cached yet. "
+        "Run: `python -m signal.dashboard.demo_cache`"
+    )
+    if st.button("Compute now"):
+        with st.spinner("Computing narrative agreement stats..."):
+            from signal.dashboard.demo_cache import compute_narrative_agreement
+            agreement_data = compute_narrative_agreement()
+            st.rerun()
+else:
     st.markdown(
-        section_header_html("Inter-Method Agreement"),
-        unsafe_allow_html=True,
+        """
+        Three architecturally distinct classifiers — keyword rules, fine-tuned DistilBERT,
+        and Gemini LLM reasoning — capture complementary aspects of narrative stage.
+        **On 5 pre-selected demo examples, 4/5 achieve unanimous 3/3 method agreement.**
+        On the broader 199-post Reddit evaluation, lower agreement reflects genuine
+        stage ambiguity in general MH posts — a clinically meaningful finding.
+        """
     )
 
-    agreement_data = _load_narrative_agreement()
+    a1, a2 = st.columns(2)
+    a1.metric("Demo Consensus Rate", "4 / 5", delta="3/3 method agreement")
+    fleiss = agreement_data.get("fleiss_kappa", 0)
+    a2.metric("Fleiss' Kappa (199-post eval)", f"{fleiss:.3f}",
+              delta="Expected low for novel task")
 
-    if agreement_data is None:
-        st.info(
-            "Narrative agreement data not cached yet. "
-            "Run: `python -m signal.dashboard.demo_cache`"
+    # Full-width 2-column layout for kappa heatmap + agreement table
+    agree_left, agree_right = st.columns(2)
+
+    # Pairwise kappa heatmap
+    pairwise = agreement_data.get("pairwise_kappa", {})
+    if pairwise:
+        methods = sorted(set(
+            m for key in pairwise for m in key.split("_vs_")
+        ))
+        n = len(methods)
+        matrix = np.ones((n, n))
+        for key, val in pairwise.items():
+            parts = key.split("_vs_")
+            if len(parts) == 2:
+                i = methods.index(parts[0]) if parts[0] in methods else -1
+                j = methods.index(parts[1]) if parts[1] in methods else -1
+                if i >= 0 and j >= 0:
+                    matrix[i][j] = val
+                    matrix[j][i] = val
+
+        method_labels = [m.replace("_", " ").title() for m in methods]
+        fig_kappa = px.imshow(
+            matrix,
+            x=method_labels, y=method_labels,
+            color_continuous_scale="Blues",
+            zmin=-0.2, zmax=1.0,
+            text_auto=".3f",
+            aspect="auto",
         )
-        if st.button("Compute now"):
-            with st.spinner("Computing narrative agreement stats…"):
-                from signal.dashboard.demo_cache import compute_narrative_agreement
-                agreement_data = compute_narrative_agreement()
-                st.rerun()
-    else:
-        st.markdown(
-            """
-            Three architecturally distinct classifiers — keyword rules, fine-tuned DistilBERT,
-            and Gemini LLM reasoning — capture complementary aspects of narrative stage.
-            **On 5 pre-selected demo examples, 4/5 achieve unanimous 3/3 method agreement.**
-            On the broader 199-post Reddit evaluation, lower agreement reflects genuine
-            stage ambiguity in general MH posts — a clinically meaningful finding.
-            """
+        fig_kappa.update_layout(
+            title="Pairwise Cohen's Kappa",
+            height=350,
+            **PLOTLY_LAYOUT,
         )
-
-        a1, a2 = st.columns(2)
-        a1.metric("Demo Consensus Rate", "4 / 5", delta="3/3 method agreement")
-        fleiss = agreement_data.get("fleiss_kappa", 0)
-        a2.metric("Fleiss' Kappa (199-post eval)", f"{fleiss:.3f}",
-                  delta="Expected low for novel task")
-
-        # Pairwise kappa heatmap
-        pairwise = agreement_data.get("pairwise_kappa", {})
-        if pairwise:
-            methods = sorted(set(
-                m for key in pairwise for m in key.split("_vs_")
-            ))
-            n = len(methods)
-            matrix = np.ones((n, n))
-            for key, val in pairwise.items():
-                parts = key.split("_vs_")
-                if len(parts) == 2:
-                    i = methods.index(parts[0]) if parts[0] in methods else -1
-                    j = methods.index(parts[1]) if parts[1] in methods else -1
-                    if i >= 0 and j >= 0:
-                        matrix[i][j] = val
-                        matrix[j][i] = val
-
-            method_labels = [m.replace("_", " ").title() for m in methods]
-            fig_kappa = px.imshow(
-                matrix,
-                x=method_labels, y=method_labels,
-                color_continuous_scale="Blues",
-                zmin=-0.2, zmax=1.0,
-                text_auto=".3f",
-                aspect="auto",
-            )
-            fig_kappa.update_layout(
-                title="Pairwise Cohen's Kappa",
-                height=290,
-                **PLOTLY_LAYOUT,
-            )
+        with agree_left:
             st.plotly_chart(fig_kappa, width='stretch')
 
-        pairwise_agree = agreement_data.get("pairwise_agreement", {})
-        if pairwise_agree:
-            rows = []
-            for key, val in sorted(pairwise_agree.items()):
-                pair = key.replace("_vs_", " vs ").replace("_", " ").title()
-                rows.append({"Method Pair": pair, "Agreement %": f"{val:.1%}"})
+    pairwise_agree = agreement_data.get("pairwise_agreement", {})
+    if pairwise_agree:
+        rows = []
+        for key, val in sorted(pairwise_agree.items()):
+            pair = key.replace("_vs_", " vs ").replace("_", " ").title()
+            rows.append({"Method Pair": pair, "Agreement %": f"{val:.1%}"})
+        with agree_right:
             st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
 
-        stage_dist = agreement_data.get("stage_distribution", {})
-        if stage_dist:
-            stages = [s for s in STAGE_ORDER if s in stage_dist]
-            counts = [stage_dist[s] for s in stages]
-            colors = [STAGE_COLORS[s] for s in stages]
+    stage_dist = agreement_data.get("stage_distribution", {})
+    if stage_dist:
+        stages = [s for s in STAGE_ORDER if s in stage_dist]
+        counts = [stage_dist[s] for s in stages]
+        colors = [STAGE_COLORS[s] for s in stages]
 
-            fig_dist = go.Figure(go.Bar(
-                x=stages, y=counts,
-                marker_color=colors,
-                marker_line_width=0,
-                text=counts,
-                textposition="auto",
-            ))
-            fig_dist.update_layout(
-                title="Stage Distribution in Evaluation Sample",
-                yaxis_title="Posts",
-                height=270,
-                **PLOTLY_LAYOUT,
-            )
+        fig_dist = go.Figure(go.Bar(
+            x=stages, y=counts,
+            marker_color=colors,
+            marker_line_width=0,
+            text=counts,
+            textposition="auto",
+        ))
+        fig_dist.update_layout(
+            title="Stage Distribution in Evaluation Sample",
+            yaxis_title="Posts",
+            height=300,
+            **PLOTLY_LAYOUT,
+        )
+        with agree_right:
             st.plotly_chart(fig_dist, width='stretch')
 
-        st.markdown(
-            '<div style="font-size:0.82rem;opacity:0.55;line-height:1.6;padding:10px 0;">'
-            '<strong style="opacity:0.8;">Evaluation note:</strong> '
-            'No gold-standard labels exist for narrative stage classification on social media '
-            '(novel task — primary contribution of SIGNAL). '
-            'Inter-method agreement is the primary metric. '
-            'Rule-based vs LLM agreement (39.2%) is highest; fine-tuned vs LLM (26.1%) is lowest.'
-            '</div>',
-            unsafe_allow_html=True,
-        )
+    st.markdown(
+        '<div style="font-size:0.82rem;opacity:0.55;line-height:1.6;padding:10px 0;">'
+        '<strong style="opacity:0.8;">Evaluation note:</strong> '
+        'No gold-standard labels exist for narrative stage classification on social media '
+        '(novel task — primary contribution of SIGNAL). '
+        'Inter-method agreement is the primary metric. '
+        'Rule-based vs LLM agreement (39.2%) is highest; fine-tuned vs LLM (26.1%) is lowest.'
+        '</div>',
+        unsafe_allow_html=True,
+    )
 
 
 # ════════════════════════════════════════════════════════════════════════════

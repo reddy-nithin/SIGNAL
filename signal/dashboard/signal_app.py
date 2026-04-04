@@ -29,6 +29,9 @@ from signal.dashboard.theme import (
     nav_cards_html,
     gradient_divider_html,
     section_header_html,
+    architecture_diagram_html,
+    comparison_grid_html,
+    how_it_works_html,
     STAGE_COLORS,
 )
 
@@ -83,86 +86,99 @@ st.markdown(
 # ── Key Stats Grid ────────────────────────────────────────────────────────────
 
 st.markdown(
-    metric_grid_html([
+    '<div class="signal-fade-in" style="animation-delay:0.1s;">'
+    + metric_grid_html([
         ("84",    "Knowledge Chunks",      "#4ECDC4"),
         ("310",   "Adverse Event Signals", "#45B7D1"),
         ("6",     "Narrative Stages",      "#FFA07A"),
         ("3 × 2", "Detection Methods",     "#FF6B6B"),
-    ]),
+    ])
+    + '</div>',
     unsafe_allow_html=True,
 )
+
+# ── How It Works ─────────────────────────────────────────────────────────────
+
+st.markdown(
+    '<div class="signal-fade-in" style="animation-delay:0.2s;">'
+    + section_header_html(
+        "How It Works",
+        "A real post flowing through all 4 layers of analysis",
+    )
+    + '</div>',
+    unsafe_allow_html=True,
+)
+st.markdown(how_it_works_html(), unsafe_allow_html=True)
+
+st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
 # ── Addiction Narrative Arc ───────────────────────────────────────────────────
 
 st.markdown(
-    section_header_html(
+    '<div class="signal-fade-in" style="animation-delay:0.3s;">'
+    + section_header_html(
         "Addiction Narrative Arc",
         "6 stages classified from unstructured social media text — a novel NLP task",
-    ),
+    )
+    + '</div>',
     unsafe_allow_html=True,
 )
 st.markdown(stage_arc_html(), unsafe_allow_html=True)
 
 st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
-# ── Page Navigation Cards ─────────────────────────────────────────────────────
+# ── Innovation Comparison ─────────────────────────────────────────────────────
 
 st.markdown(
-    section_header_html("Dashboard Pages"),
+    '<div class="signal-fade-in" style="animation-delay:0.4s;">'
+    + section_header_html(
+        "What Makes SIGNAL Different",
+        "Novel contributions vs. standard approaches in substance abuse NLP",
+    )
+    + '</div>',
     unsafe_allow_html=True,
 )
-st.markdown(
-    nav_cards_html([
-        (
-            "Page 01",
-            "Deep Analysis",
-            "Paste any social media post for full 4-layer analysis: "
-            "substance resolution, narrative stage classification, "
-            "clinical grounding, and an evidence-cited analyst brief.",
-        ),
-        (
-            "Page 02",
-            "Narrative Pulse",
-            "Cross-community narrative stage distributions. Identify "
-            "which communities are in escalation patterns vs. "
-            "recovery-dominant, with risk tier scoring.",
-        ),
-        (
-            "Page 03",
-            "Method Comparison",
-            "Compare 3 detection methods across both tasks. "
-            "Precision, recall, F1, DistilBERT cross-validation, "
-            "and inter-method agreement statistics.",
-        ),
-    ]),
-    unsafe_allow_html=True,
-)
+st.markdown(comparison_grid_html(), unsafe_allow_html=True)
 
 st.markdown(gradient_divider_html(), unsafe_allow_html=True)
 
 # ── Architecture Pipeline ─────────────────────────────────────────────────────
 
 st.markdown(
-    section_header_html(
+    '<div class="signal-fade-in" style="animation-delay:0.5s;">'
+    + section_header_html(
         "4-Layer Detection Pipeline",
         "Each layer feeds into the next — substance → stage → grounding → brief",
-    ),
+    )
+    + '</div>',
     unsafe_allow_html=True,
 )
-st.markdown(
-    pipeline_html([
-        "Layer 1 — Substance Resolution",
-        "Layer 2 — Narrative Stage Classification",
-        "Layer 3 — Clinical Grounding",
-        "Layer 4 — Analyst Brief",
-    ]),
-    unsafe_allow_html=True,
-)
+st.markdown(architecture_diagram_html(), unsafe_allow_html=True)
+
+st.markdown(gradient_divider_html(), unsafe_allow_html=True)
+
+# ── Page Navigation Cards ─────────────────────────────────────────────────────
 
 st.markdown(
-    '<div style="margin-top:12px; font-size:0.83rem; opacity:0.45; text-align:center;">'
-    'Rule-based &middot; Embedding classifier &middot; Fine-tuned DistilBERT &middot; '
-    'Gemini LLM &middot; FAISS/BM25 retrieval &middot; FAERS adverse event signals'
-    '</div>',
+    '<div class="signal-fade-in" style="animation-delay:0.6s;">'
+    + section_header_html("Explore the Dashboard")
+    + nav_cards_html([
+        (
+            "Page 01",
+            "Deep Analysis",
+            "Paste any post for full 4-layer analysis with inline substance highlighting and evidence-cited briefs.",
+        ),
+        (
+            "Page 02",
+            "Narrative Pulse",
+            "Cross-community stage distributions, risk profiles, and CDC mortality context.",
+        ),
+        (
+            "Page 03",
+            "Method Comparison",
+            "3-method evaluation on both tasks: DistilBERT CV, agreement stats, and Sankey vote flow.",
+        ),
+    ])
+    + '</div>',
     unsafe_allow_html=True,
 )
